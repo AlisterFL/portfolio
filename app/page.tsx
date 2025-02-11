@@ -1,5 +1,5 @@
 'use client'
-import Navigation from '@/components/navigation';
+import Navigation from '@/components/Navigation';
 
 const Page = () => {
   return (
@@ -11,7 +11,7 @@ const Page = () => {
       <main className="pt-20 px-4">
         <section id="about" className="py-16">
           <h2 className="text-3xl font-bold">À propos</h2>
-          <p className="mt-4">Voici un peu plus d'informations sur moi...</p>
+          <p className="mt-4">Voici un peu plus d&apos;informations sur moi...</p>
         </section>
 
         <section id="projects" className="py-16 bg-gray-100">
