@@ -1,13 +1,9 @@
-'use client'
 import Navigation from '@/components/Navigation';
 
 const Page = () => {
   return (
     <div>
-      {/* Navigation component */}
       <Navigation />
-
-      {/* Main content */}
       <main className="pt-20 px-4">
         <section id="about" className="py-16">
           <h2 className="text-3xl font-bold">À propos</h2>
