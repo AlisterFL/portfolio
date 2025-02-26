@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.variable} ${AnekTelugu.variable} ${BokorFont.className}antialiased h-full bg-[#121212] mx-4`}>
+      <body className={`${GeistSans.variable} ${AnekTelugu.variable} ${BokorFont.className}antialiased h-full bg-[#121212]`}>
         <LanguageProvider>
           {children}
         </LanguageProvider>

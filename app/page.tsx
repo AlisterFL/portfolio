@@ -4,8 +4,8 @@ const Page = () => {
   return (
     <div>
       <Navigation />
-      <main className="pt-20 px-4">
-        <section id="about" className="py-16">
+      <main className="pt-20">
+        <section id="about" className="py-16 bg-gray-100">
           <h2 className="text-3xl font-bold">À propos</h2>
           <p className="mt-4">Voici un peu plus d&apos;informations sur moi...</p>
         </section>
