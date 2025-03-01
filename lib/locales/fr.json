@@ -3,5 +3,10 @@
   "projects": "Projets",
   "skills": "Compétences",
   "contact": "Contact",
-  "language": "Langue"
+  "language": "Langue",
+  "full_stack": "Full-stack",
+  "developer": "Developeur",
+  "quote": "Plus j'apprends, plus je me rends compte de combien je ne sais pas.",
+  "aboutMe": "Hey ! Je m'appelle Alister, j'ai 23 ans et je suis développeur avec 2 ans d'expérience. Passionné par l'informatique, j'aime relever des défis et apprendre chaque jour pour améliorer mes compétences et explorer de nouvelles technologies.",
+  "tools": "Outils"
 }

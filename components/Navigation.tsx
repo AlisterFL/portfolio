@@ -1,15 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { Fira_Code } from "next/font/google";
 import { useLanguage } from "../context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from 'react';
-
-const FiraCodeFont = Fira_Code({
-  subsets: ["latin"],
-  weight: ["400", "700"]
-});
+import { FiraCodeFont } from "../lib/fonts";
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +27,7 @@ const Navigation: React.FC = () => {
   const { language, toggleLanguage, translations } = useLanguage();
 
   return (
-    <nav className={`relative text-white top-0 left-0 w-full shadow-md z-50 ${FiraCodeFont.className}`}>
+    <nav className={`max-w-[1300px] m-auto relative text-white top-0 left-0 w-full shadow-md z-50 ${FiraCodeFont.className}`}>
       <div className="w-full m-auto px-4 py-3 flex justify-between items-center">
         <div className="text-xl font-normal flex flex-col">
           <Link className="flex flex-col" href="/">
@@ -76,14 +71,6 @@ const Navigation: React.FC = () => {
             FR
           </button>
         </div>
-
-        {/* <div className="md:hidden">
-          <button onClick={toggleMenu} className="focus:outline-none">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div> */}
 
         <div className="md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none">

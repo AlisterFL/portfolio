@@ -3,5 +3,10 @@
   "projects": "Projects",
   "skills": "Skills",
   "contact": "Contact",
-  "language": "Language"
+  "language": "Language",
+  "full_stack": "Full-stack",
+  "developer": "Developer",
+  "quote": "The more I learn, the more I realize how much I don't know.",
+  "aboutMe": "Hey! I'm Alister, 23 years old, and a developer with 2 years of experience. Passionate about technology, I love taking on challenges and learning every day to improve my skills and explore new technologies.",
+  "tools": "Tools"
 }
