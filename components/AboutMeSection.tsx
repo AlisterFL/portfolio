@@ -1,11 +1,9 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 import { FiraCodeFont, OpenSansFont } from "../lib/fonts";
 import { motion } from "framer-motion";
-import Image from 'next/image'
 
 
 const AboutMeSection: React.FC = () => {
@@ -42,6 +40,7 @@ const AboutMeSection: React.FC = () => {
                             <div className="absolute w-12 h-12 flex items-center justify-center rounded-full border border-[#A6A6A6] bg-white left-[58%]">
                                 <motion.span
                                     className="text-black text-xl"
+                                    suppressHydrationWarning
                                     whileHover={{
                                     x: 4,
                                     y: -4,

@@ -29,6 +29,7 @@ const HeroSection: React.FC = () => {
               <div className="mt-4 ml-4 px-[14px] py-2 text-black bg-white text-xl rounded-full cursor-pointer flex items-center justify-center">
                 <motion.span
                   className="text-xl"
+                  suppressHydrationWarning
                   whileHover={{
                     x: 8,
                     transition: {
