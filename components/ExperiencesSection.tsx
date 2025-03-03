@@ -27,9 +27,9 @@ const ExperiencesSection = () => {
                 <span className="text-xs text-[#A6A6A6]">{exp.periodTime}</span>
               </div>
 
-              <p className="text-lg font-light w-1/2 text-center">{exp.company}</p>
+              <p className="text-lg font-light w-2/5 text-start">{exp.company}</p>
 
-              <h3 className="text-lg font-light w-1/4 text-right">{exp.title}</h3>
+              <h3 className="text-lg font-light w-2/5">{exp.title}</h3>
             </motion.div>
           ))}
         </div>
