@@ -8,5 +8,43 @@
   "developer": "Developeur",
   "quote": "Plus j'apprends, plus je me rends compte de combien je ne sais pas.",
   "aboutMe": "Hey ! Je m'appelle Alister, j'ai 23 ans et je suis développeur avec 2 ans d'expérience. Passionné par l'informatique, j'aime relever des défis et apprendre chaque jour pour améliorer mes compétences et explorer de nouvelles technologies.",
-  "tools": "Outils"
+  "tools": "Outils",
+  "experience": "Experiences",
+  "experiences": [
+    {
+      "id": 1,
+      "period": "2023 - 2025",
+      "periodTime": "2 ans",
+      "title": "Développeur Full stack ",
+      "company": "SAASAK",
+      "description": "Travail en full-stack pour divers clients du secteur industriel, en concevant et développant des solutions sur mesure adaptées à leurs besoins spécifiques."
+    }
+  ],
+  "education": "Formations",
+  "education_list": [
+    {
+      "id": 1,
+      "period": "2024 - 2026",
+      "periodTime": "2 ans",
+      "title": "Expert en informatique et système d'information",
+      "company": " Master | EPSI Lille",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "period": "2023 - 2024",
+      "periodTime": "1 an",
+      "title": "Concepteur développeur d'applications",
+      "company": " Bachelor | EPSI Lille",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "period": "2022 - 2023",
+      "periodTime": "1 an",
+      "title": "Concepteur développeur d'applications",
+      "company": "Bac +2 | OpenClassroom",
+      "description": ""
+    }
+  ]
 }

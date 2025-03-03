@@ -8,5 +8,43 @@
   "developer": "Developer",
   "quote": "The more I learn, the more I realize how much I don't know.",
   "aboutMe": "Hey! I'm Alister, 23 years old, and a developer with 2 years of experience. Passionate about technology, I love taking on challenges and learning every day to improve my skills and explore new technologies.",
-  "tools": "Tools"
+  "tools": "Tools",
+  "experience": "Experiences",
+  "experiences": [
+    {
+      "id": 1,
+      "period": "2023 - 2025",
+      "periodTime": "2 years",
+      "title": "Full stack developer",
+      "company": "SAASAk",
+      "description": "Full-stack development for various clients in the industrial sector, designing and building tailored solutions to meet their specific needs."
+    }
+  ],
+  "education": "Education",
+  "education_list": [
+    {
+      "id": 1,
+      "period": "2024 - 2026",
+      "periodTime": "2 years",
+      "title": "IT and Information Systems Expert",
+      "company": "Master's Degree | EPSI Lille",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "period": "2023 - 2024",
+      "periodTime": "1 year",
+      "title": "Application Developer Designer",
+      "company": "Bachelor's Degree | EPSI Lille",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "period": "2022 - 2023",
+      "periodTime": "1 year",
+      "title": "Application Developer Designer",
+      "company": "Associate's Degree | OpenClassrooms",
+      "description": ""
+    }
+  ]
 }

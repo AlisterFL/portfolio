@@ -1,6 +1,8 @@
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import AboutMeSection from '@/components/AboutMeSection';
+import ExperiencesSection from '@/components/ExperiencesSection';
+import EducationSection from '@/components/EducationSection';
 
 const Page = () => {
   return (
@@ -8,6 +10,8 @@ const Page = () => {
       <Navigation />
       <HeroSection />
       <AboutMeSection />
+      <EducationSection />
+      <ExperiencesSection />
     </div>
   );
 };
