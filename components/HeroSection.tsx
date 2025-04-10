@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 import { FiraCodeFont, OpenSansFont } from "../lib/fonts";
@@ -8,6 +8,11 @@ import { motion } from "framer-motion";
 
 const HeroSection: React.FC = () => {
   const { translations } = useLanguage();
+  const [hovered, setHovered] = useState(false);
+
+  const handleClick = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
@@ -22,44 +27,45 @@ const HeroSection: React.FC = () => {
             {translations.full_stack}
           </h1>
           <div className="flex-row hidden md:flex">
-            <div className="mt-4 px-20 py-2 text-black bg-white text-xl rounded-full">
-              {translations.projects}
-            </div>
-            <Link href="#projects">
-              <div className="mt-4 ml-4 px-[14px] py-2 text-black bg-white text-xl rounded-full cursor-pointer flex items-center justify-center">
-                <motion.span
-                  className="text-xl"
-                  suppressHydrationWarning
-                  whileHover={{
-                    x: 8,
-                    transition: {
-                      duration: 0.3,
-                    },
-                  }}
-                  animate={{
-                    x: 0,
-                    transition: {
-                      duration: 0.3,
-                    },
-                  }}
-                >
-                  &#8594;
-                </motion.span>
-              </div>
-            </Link>
-          </div>
+      {/* Bouton "Projects" qui redirige et déclenche l'animation */}
+      <div
+        className="mt-4 px-20 py-2 text-black bg-white text-xl rounded-full cursor-pointer"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onClick={handleClick} // Redirige vers #projects
+      >
+        {translations.projects}
+      </div>
+
+      {/* Flèche animée qui redirige aussi */}
+      <div
+        className="mt-4 ml-4 px-[14px] py-2 text-black bg-white text-xl rounded-full cursor-pointer flex items-center justify-center"
+        onClick={handleClick} // Redirige aussi vers #projects
+      >
+        <motion.span
+          className="text-xl"
+          suppressHydrationWarning
+          animate={{
+            x: hovered ? 8 : 0,
+            transition: { duration: 0.3 },
+          }}
+        >
+          &#8594;
+        </motion.span>
+      </div>
+    </div>
         </div>
 
         <div className="flex flex-row-reverse justify-between items-center w-full text-white mt-0">
           <h2
-            className={`font-medium ml-5 ${FiraCodeFont.className} mr-4 md=mr-0 mb-10`}
+            className={`leading_none font-medium ml-5 ${FiraCodeFont.className} mr-4 md=mr-0 mb-10`}
             style={{ fontSize: "clamp(3rem, 9vw, 8rem)" }}
           >
             {translations.developer}
           </h2>
           <div className="flex-col hidden md:block text-left max-w-72">
             <p
-              className={` ${OpenSansFont.className}`}
+              className={`ml_4 ${OpenSansFont.className}`}
               style={{ fontStyle: "italic", fontSize: "clamp(7px, 2vw, 16px)" }}
             >
               {translations.quote.split(" ").map((word, index) => (

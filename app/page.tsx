@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutMeSection from '@/components/AboutMeSection';
 import ExperiencesSection from '@/components/ExperiencesSection';
 import EducationSection from '@/components/EducationSection';
+import ProjectsSection from '@/components/ProjectsSection';
 
 const Page = () => {
   return (
@@ -12,6 +13,7 @@ const Page = () => {
       <AboutMeSection />
       <EducationSection />
       <ExperiencesSection />
+      <ProjectsSection />
     </div>
   );
 };

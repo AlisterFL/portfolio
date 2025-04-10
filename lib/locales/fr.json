@@ -46,5 +46,9 @@
       "company": "Bac +2 | OpenClassroom",
       "description": ""
     }
-  ]
+  ],
+  "projectsTitle": "Mes Projets",
+  "projectsDescription": "Voici quelques-uns des projets sur lesquels j'ai travaillé.",
+  "projectName": "Guzzle (En Developpement)",
+  "projectDescription": "Guzzle est une application conçue pour animer vos soirées entre amis.\nÀ travers une série de défis et de mini-jeux interactifs, l'application crée une ambiance festive et conviviale,\noù chaque participant peut s'impliquer et relever des défis amusants.\nIdéale pour les groupes, Guzzle transforme chaque soirée en un moment mémorable, rempli de rires et de compétition amicale."
 }

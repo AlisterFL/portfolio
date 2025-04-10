@@ -46,5 +46,9 @@
       "company": "Associate's Degree | OpenClassrooms",
       "description": ""
     }
-  ]
+  ],
+  "projectsTitle": "My Projects",
+  "projectsDescription": "Here are some of the projects I have worked on.",
+  "projectName": "Guzzle (Work in progress)",
+  "projectDescription": "An immersive app to spice up your parties."
 }
