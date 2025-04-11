@@ -9,9 +9,9 @@ interface ImageGridProps {
   tallImage: string;
 }
 
-const ImageGrid: React.FC<ImageGridProps> = ({ smallImage, halfImage, largeImage, tallImage }) => {
+const ImageGrid1: React.FC<ImageGridProps> = ({ smallImage, halfImage, largeImage, tallImage }) => {
   return (
-    <div className="grid grid-cols-4 grid-rows-3 gap-4 max-w-5xl mx-auto p-6
+    <div className="grid grid-cols-4 grid-rows-3 gap-4 max-w-5xl mx-auto
       grid-auto-rows-[1fr] grid-auto-columns-[1fr]">
       {/* Petite image (col 1, row 2) */}
       <motion.div 
@@ -84,4 +84,4 @@ const ImageGrid: React.FC<ImageGridProps> = ({ smallImage, halfImage, largeImage
   );
 };
 
-export default ImageGrid;
+export default ImageGrid1;

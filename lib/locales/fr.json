@@ -13,6 +13,14 @@
   "experiences": [
     {
       "id": 1,
+      "period": "Sept 2025",
+      "periodTime": "1 an",
+      "title": "Alternance développeur Full-stack ",
+      "company": "En recherche d'entreprise",
+      "description": "Travail en full-stack pour divers clients du secteur industriel, en concevant et développant des solutions sur mesure adaptées à leurs besoins spécifiques."
+    },
+    {
+      "id": 1,
       "period": "2023 - 2025",
       "periodTime": "2 ans",
       "title": "Développeur Full stack ",
@@ -49,6 +57,10 @@
   ],
   "projectsTitle": "Mes Projets",
   "projectsDescription": "Voici quelques-uns des projets sur lesquels j'ai travaillé.",
-  "projectName": "Guzzle (En Developpement)",
-  "projectDescription": "Guzzle est une application conçue pour animer vos soirées entre amis.\nÀ travers une série de défis et de mini-jeux interactifs, l'application crée une ambiance festive et conviviale,\noù chaque participant peut s'impliquer et relever des défis amusants.\nIdéale pour les groupes, Guzzle transforme chaque soirée en un moment mémorable, rempli de rires et de compétition amicale."
+  "projectNameGuzzle": "Guzzle (En Developpement)",
+  "projectDescriptionGuzzle": "Guzzle est une application conçue pour animer vos soirées entre amis.\nÀ travers une série de défis et de mini-jeux interactifs, l'application crée une ambiance festive et conviviale,\noù chaque participant peut s'impliquer et relever des défis amusants.\nIdéale pour les groupes, Guzzle transforme chaque soirée en un moment mémorable, rempli de rires et de compétition amicale.",
+  "projectNameJobManager": "Outilde gestion de chantiers et dépannages",
+  "projectDescriptionJobManager": "J’ai conçu une application web à destination des techniciens d’une entreprise permettant de simplifier la gestion de leurs interventions, en particulier pour la rédaction de rapports de chantiers, la génération automatique de rapport PDF, la planification des interventions de dépannage à venir et le suivi des interventions effectuées. Un système de login sécurisé permet d’assurer la confidentialité et la gestion des accès.",
+  "projectNameArosaje": "Arosaje",
+  "projectDescriptionArosaje": "Dans le contexte de mon parcours scolaire, j’ai conçu une application web de mise en relation entre particuliers pour s’entraider sur le gardiennage de plantes. Les particuliers peuvent publier des petites annonces pour faire garder leurs plantes pendant leur absence, proposer leurs disponibilités, ou partager des conseils sur l’entretien de plantes. L’objectif est de créer une communauté d’entraide autour du soin des plantes de manière simple et amicale."
 }

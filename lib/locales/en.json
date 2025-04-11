@@ -13,9 +13,17 @@
   "experiences": [
     {
       "id": 1,
+      "period": "Sept 2025",
+      "periodTime": "1 year",
+      "title": "Full stack developer Work-Study",
+      "company": "Searching Company",
+      "description": "Travail en full-stack pour divers clients du secteur industriel, en concevant et développant des solutions sur mesure adaptées à leurs besoins spécifiques."
+    },
+    {
+      "id": 1,
       "period": "2023 - 2025",
       "periodTime": "2 years",
-      "title": "Full stack developer",
+      "title": "Full stack developer Work-Study",
       "company": "SAASAK",
       "description": "Full-stack development for various clients in the industrial sector, designing and building tailored solutions to meet their specific needs."
     }
@@ -49,6 +57,10 @@
   ],
   "projectsTitle": "My Projects",
   "projectsDescription": "Here are some of the projects I have worked on.",
-  "projectName": "Guzzle (Work in progress)",
-  "projectDescription": "An immersive app to spice up your parties."
+  "projectNameGuzzle": "Guzzle (Work in progress)",
+  "projectDescriptionGuzzle": "Guzzle is an app designed to liven up your evenings with friends. Through a series of challenges and interactive mini-games, the app creates a festive and friendly atmosphere, where every participant can get involved and take on fun dares. Perfect for groups, Guzzle turns every gathering into a memorable moment, full of laughter and friendly competition.",
+  "projectNameJobManager": "Job Site & Maintenance Manager",
+  "projectDescriptionJobManager": "I developed a web application for company technicians to simplify the management of their field operations. The app enables easy creation of job site reports, automatic PDF report generation, planning of upcoming maintenance tasks, and tracking of completed interventions. A secure login system ensures data confidentiality and access control.",
+  "projectNameArosaje": "Arosaje",
+  "projectDescriptionArosaje": "As part of my academic journey, I developed a web application that connects individuals to support each other with plant sitting. Users can post small ads to find someone to take care of their plants while they’re away, share their availability to help others, or give advice on plant care. The goal is to create a friendly and supportive community centered around plant care."
 }
