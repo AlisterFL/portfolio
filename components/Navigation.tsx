@@ -31,10 +31,10 @@ const Navigation: React.FC = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (
-        isMenuOpen &&
-        menuRef.current &&
-        buttonRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
+        isMenuOpen && 
+        menuRef.current && 
+        buttonRef.current && 
+        !menuRef.current.contains(event.target as Node) && 
         !buttonRef.current.contains(event.target as Node)
       ) {
         setIsMenuOpen(false);
