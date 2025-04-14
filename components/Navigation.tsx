@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
+import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from "react";
 import { FiraCodeFont } from "../lib/fonts";
 
 const Navigation: React.FC = () => {
@@ -29,52 +29,52 @@ const Navigation: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (
-        isMenuOpen && 
-        menuRef.current && 
-        buttonRef.current && 
-        !menuRef.current.contains(event.target as Node) && 
+        isMenuOpen &&
+        menuRef.current &&
+        buttonRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
         !buttonRef.current.contains(event.target as Node)
       ) {
         setIsMenuOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, [isMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      
+
       // Déterminer si on défile vers le haut ou vers le bas
       const isScrollingDown = currentScrollPos > prevScrollPos;
-      
+
       // Si on défile plus bas que le header et qu'on défile vers le bas, cacher le header
       // Si on défile vers le haut, montrer le header
       setVisible(!isScrollingDown || currentScrollPos < 10);
-      
+
       // Mettre à jour la position de défilement précédente
       setPrevScrollPos(currentScrollPos);
     };
 
     // Ajouter l'écouteur d'événement pour le défilement
-    window.addEventListener('scroll', handleScroll);
-    
+    window.addEventListener("scroll", handleScroll);
+
     // Nettoyer l'écouteur d'événement
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
   const { language, toggleLanguage, translations } = useLanguage();
 
   return (
-    <motion.nav 
+    <motion.nav
       className={`fixed text-white w-full shadow-md z-50 ${FiraCodeFont.className}`}
       initial={{ y: 0 }}
       animate={{ y: visible ? 0 : -100 }}
@@ -84,50 +84,60 @@ const Navigation: React.FC = () => {
         <div className="max-w-[1300px] m-auto px-4 py-3 flex justify-between items-center">
           <div className="text-xl font-normal flex flex-col">
             <Link className="flex flex-col" href="/">
-              <span className="cursor-pointer hover:text-gray-400">Alister</span>
-              <span className="cursor-pointer hover:text-gray-400">Flandrinck</span>
+              <span className="cursor-pointer hover:text-gray-400">
+                Alister
+              </span>
+              <span className="cursor-pointer hover:text-gray-400">
+                Flandrinck
+              </span>
             </Link>
           </div>
 
           <ul className="text-xs hidden md:flex space-x-14">
-            {(['about', 'projects', 'skills', 'contact'] as const).map((key) => (
-              <li key={key}>
-                <Link href={`#${key}`}>
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={language}
-                      initial={{ opacity: 0, y: -5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 5 }}
-                      transition={{ duration: 0.3 }}
-                      className="cursor-pointer hover:text-gray-400"
-                    >
-                      {translations[key]}
-                    </motion.span>
-                  </AnimatePresence>
-                </Link>
-              </li>
-            ))}
+            {(["about", "projects", "skills", "contact"] as const).map(
+              (key) => (
+                <li key={key}>
+                  <Link href={`#${key}`}>
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={language}
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 5 }}
+                        transition={{ duration: 0.3 }}
+                        className="cursor-pointer hover:text-gray-400"
+                      >
+                        {translations[key]}
+                      </motion.span>
+                    </AnimatePresence>
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
 
           <div className="md:flex hidden text-xl font-bold">
             <button
               onClick={() => toggleLanguage("en")}
-              className={`px-2 py-1 ${language === "en" ? "font-bold" : "font-normal text-gray-400"}`}
+              className={`px-2 py-1 ${
+                language === "en" ? "font-bold" : "font-normal text-gray-400"
+              }`}
             >
               EN
             </button>
             <button
               onClick={() => toggleLanguage("fr")}
-              className={`px-2 py-1 ${language === "fr" ? "font-bold" : "font-normal text-gray-400"}`}
+              className={`px-2 py-1 ${
+                language === "fr" ? "font-bold" : "font-normal text-gray-400"
+              }`}
             >
               FR
             </button>
           </div>
 
           <div className="md:hidden">
-            <button 
-              onClick={toggleMenu} 
+            <button
+              onClick={toggleMenu}
               className="focus:outline-none"
               ref={buttonRef}
             >
@@ -168,33 +178,46 @@ const Navigation: React.FC = () => {
           >
             <div className="max-w-[1300px] m-auto px-4 py-3">
               <ul className="m-auto space-y-4 pb-4">
-                {(['about', 'projects', 'skills', 'contact'] as const).map((key) => (
-                  <li key={key}>
-                    <Link href={`#${key}`} onClick={() => setIsMenuOpen(false)}>
-                      <motion.span
-                        initial={{ opacity: 0, y: -5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 5 }}
-                        transition={{ duration: 0.3 }}
-                        className="cursor-pointer hover:text-gray-400"
+                {(["about", "projects", "skills", "contact"] as const).map(
+                  (key) => (
+                    <li key={key}>
+                      <Link
+                        href={`#${key}`}
+                        onClick={() => setIsMenuOpen(false)}
                       >
-                        {translations[key]}
-                      </motion.span>
-                    </Link>
-                  </li>
-                ))}
+                        <motion.span
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 5 }}
+                          transition={{ duration: 0.3 }}
+                          className="cursor-pointer hover:text-gray-400"
+                        >
+                          {translations[key]}
+                        </motion.span>
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
 
               <div className="text-xl font-bold">
                 <button
                   onClick={() => toggleLanguage("en")}
-                  className={`py-1 pr-[6px] ${language === "en" ? "font-bold" : "font-normal text-gray-400"}`}
+                  className={`py-1 pr-[6px] ${
+                    language === "en"
+                      ? "font-bold"
+                      : "font-normal text-gray-400"
+                  }`}
                 >
                   EN
                 </button>
                 <button
                   onClick={() => toggleLanguage("fr")}
-                  className={`py-1 ${language === "fr" ? "font-bold" : "font-normal text-gray-400"}`}
+                  className={`py-1 ${
+                    language === "fr"
+                      ? "font-bold"
+                      : "font-normal text-gray-400"
+                  }`}
                 >
                   FR
                 </button>
