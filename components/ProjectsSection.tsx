@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import ImageGrid1 from "./ui/imageGrid1";
 import ImageGrid2 from "./ui/imageGrid2";
 import ImageGrid3 from "./ui/imageGrid3";
 import { useLanguage } from "../context/LanguageContext";
 import { FiraCodeFont, OpenSansFont } from "../lib/fonts";
+import { motion } from "framer-motion";
 
 const ProjectsSection: React.FC = () => {
   const { translations } = useLanguage();
@@ -12,6 +13,44 @@ const ProjectsSection: React.FC = () => {
   const pastillesGuzzle = ["React native", "Expo"];
   const pastillesJobManager = ["Svelte", "Supabase", "N8N", "Gotenberg"];
   const pastillesArosaje = ["React native", "Expo", "SQLite"];
+
+  // Variantes d'animation pour les textes
+  const textVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { 
+        duration: 0.6, 
+        ease: "easeOut",
+        staggerChildren: 0.1,
+      } 
+    }
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+  };
+
+  // Variantes pour les textes à droite (Job Manager)
+  const textVariantsRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { 
+        duration: 0.6, 
+        ease: "easeOut",
+        staggerChildren: 0.1,
+      } 
+    }
+  };
+
+  const childVariantsRight = {
+    hidden: { opacity: 0, x: 20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+  };
 
   return (
     <section
@@ -27,25 +66,41 @@ const ProjectsSection: React.FC = () => {
       </div>
 
       {/* Guzzle */}
-      <div className="flex flex-col items-center md:flex-row my-6 gap-8 ">
-        <div className="w-full md:w-1/3 flex flex-col justify-center text-white">
-          <h3 className={`${OpenSansFont.className} text-5xl font-thin`}>
+      <div className="flex flex-col items-center md:flex-row my-6 gap-8">
+        <motion.div 
+          className="w-full md:w-1/3 flex flex-col justify-center text-white"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={textVariants}
+        >
+          <motion.h3 
+            className={`${OpenSansFont.className} text-5xl font-thin`}
+            variants={childVariants}
+          >
             {translations.projectNameGuzzle}
-          </h3>
-          <div className="flex justify-start gap-2 mt-10 flex-wrap">
+          </motion.h3>
+          <motion.div 
+            className="flex justify-start gap-2 mt-10 flex-wrap"
+            variants={childVariants}
+          >
             {pastillesGuzzle.map((pastille, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="border-2 border-white px-4 py-0.5 rounded-full text-white"
+                variants={childVariants}
               >
                 {pastille}
-              </div>
+              </motion.div>
             ))}
-          </div>
-          <p className="mt-4 text-lg">
+          </motion.div>
+          <motion.p 
+            className="mt-4 text-lg"
+            variants={childVariants}
+          >
             {translations.projectDescriptionGuzzle}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="w-full md:w-2/3">
           <ImageGrid1
@@ -67,46 +122,78 @@ const ProjectsSection: React.FC = () => {
             image4="/images/jobManager/list.png"
           />
         </div>
-        <div className="w-full md:w-1/3 flex flex-col justify-center text-white">
-          <h3 className={`${OpenSansFont.className} text-5xl font-thin`}>
+        <motion.div 
+          className="w-full md:w-1/3 flex flex-col justify-center text-white"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={textVariantsRight}
+        >
+          <motion.h3 
+            className={`${OpenSansFont.className} text-5xl font-thin`}
+            variants={childVariantsRight}
+          >
             {translations.projectNameJobManager}
-          </h3>
-          <div className="flex justify-start gap-2 mt-10 flex-wrap">
+          </motion.h3>
+          <motion.div 
+            className="flex justify-start gap-2 mt-10 flex-wrap"
+            variants={childVariantsRight}
+          >
             {pastillesJobManager.map((pastille, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="border-2 border-white px-4 py-0.5 rounded-full text-white"
+                variants={childVariantsRight}
               >
                 {pastille}
-              </div>
+              </motion.div>
             ))}
-          </div>
-          <p className="mt-4 text-lg">
+          </motion.div>
+          <motion.p 
+            className="mt-4 text-lg"
+            variants={childVariantsRight}
+          >
             {translations.projectDescriptionJobManager}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </div>
 
       {/* Arosaje */}
       <div className="flex flex-col items-center md:flex-row md:mb-10 gap-8 my-6">
-        <div className="w-full md:w-1/3 flex flex-col justify-center text-white">
-          <h3 className={`${OpenSansFont.className} text-5xl font-thin`}>
+        <motion.div 
+          className="w-full md:w-1/3 flex flex-col justify-center text-white"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={textVariants}
+        >
+          <motion.h3 
+            className={`${OpenSansFont.className} text-5xl font-thin`}
+            variants={childVariants}
+          >
             {translations.projectNameArosaje}
-          </h3>
-          <div className="flex justify-start gap-2 mt-10 flex-wrap">
+          </motion.h3>
+          <motion.div 
+            className="flex justify-start gap-2 mt-10 flex-wrap"
+            variants={childVariants}
+          >
             {pastillesArosaje.map((pastille, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="border-2 border-white px-4 py-0.5 rounded-full text-white"
+                variants={childVariants}
               >
                 {pastille}
-              </div>
+              </motion.div>
             ))}
-          </div>
-          <p className="mt-4 text-lg">
+          </motion.div>
+          <motion.p 
+            className="mt-4 text-lg"
+            variants={childVariants}
+          >
             {translations.projectDescriptionArosaje}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="w-full md:w-2/3">
           <ImageGrid3
