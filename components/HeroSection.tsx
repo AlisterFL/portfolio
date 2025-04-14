@@ -43,7 +43,6 @@ const HeroSection: React.FC = () => {
             {translations.full_stack}
           </motion.h1>
           <div className="flex-row hidden md:flex">
-            {/* Bouton "Projects" qui redirige et déclenche l'animation */}
             <motion.div
               className="mt-4 px-20 py-2 text-black bg-white text-xl rounded-full cursor-pointer"
               onMouseEnter={() => setHovered(true)}
@@ -63,7 +62,6 @@ const HeroSection: React.FC = () => {
               {translations.projects}
             </motion.div>
 
-            {/* Flèche animée qui redirige aussi */}
             <motion.div
               className="mt-4 ml-4 px-[14px] py-2 text-black bg-white text-xl rounded-full cursor-pointer flex items-center justify-center"
               onClick={handleClick}
@@ -151,7 +149,7 @@ const HeroSection: React.FC = () => {
                 </span>
               ))}
             </p>
-            <p className={`${FiraCodeFont.className} text-xs font-bold align-right`}>Albert Einstein</p>
+            <p className={`${FiraCodeFont.className} text-xs font-bold text-right`}>Albert Einstein</p>
           </motion.div>
         </div>
       </div>
