@@ -96,7 +96,7 @@ const AboutMeSection: React.FC = () => {
             {translations.aboutMe}
           </p>
           <Image
-            src="/alisterTest.jpg"
+            src="/images/alister.jpeg"
             alt="picture of alister flandrinck"
             width={450}
             height={600}
