@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import ImageGrid1 from "./ui/imageGrid1";
 import ImageGrid2 from "./ui/imageGrid2";
 import ImageGrid3 from "./ui/imageGrid3";
