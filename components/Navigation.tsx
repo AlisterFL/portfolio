@@ -29,7 +29,7 @@ const Navigation: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+    const handleClickOutside = (event: Event) => {
       if (
         isMenuOpen && 
         menuRef.current && 
@@ -40,7 +40,7 @@ const Navigation: React.FC = () => {
         setIsMenuOpen(false);
       }
     };
-
+  
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("touchstart", handleClickOutside);
     return () => {
