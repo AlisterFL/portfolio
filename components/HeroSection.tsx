@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Déclencher l'animation après que le composant soit monté
+    // Déclencher l'animation immédiatement après que le composant soit monté
     setIsLoaded(true);
   }, []);
 
@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => {
             transition={{ 
               duration: 0.8, 
               ease: "easeOut",
-              delay: 0.2
+              delay: 0 // Suppression du délai
             }}
           >
             {translations.full_stack}
@@ -56,7 +56,7 @@ const HeroSection: React.FC = () => {
               transition={{ 
                 duration: 0.6, 
                 ease: "easeOut",
-                delay: 1.2
+                delay: 0 // Suppression du délai
               }}
             >
               {translations.projects}
@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
               transition={{ 
                 duration: 0.6, 
                 ease: "easeOut",
-                delay: 1.3
+                delay: 0 // Suppression du délai
               }}
             >
               <motion.span
@@ -102,7 +102,7 @@ const HeroSection: React.FC = () => {
             transition={{ 
               duration: 0.8, 
               ease: "easeOut",
-              delay: 0.5
+              delay: 0 // Suppression du délai
             }}
           >
             {translations.developer}
@@ -114,7 +114,7 @@ const HeroSection: React.FC = () => {
             transition={{ 
               duration: 0.8, 
               ease: "easeOut",
-              delay: 0.9
+              delay: 0 // Suppression du délai
             }}
           >
             <p
@@ -162,7 +162,7 @@ const HeroSection: React.FC = () => {
         transition={{ 
           duration: 0.8, 
           ease: "easeOut",
-          delay: 0.9
+          delay: 0 // Suppression du délai
         }}
       >
         <p className={`${OpenSansFont.className} font-light md:text-right md:w-2/3 text-white max-w-[300px] text-center m-auto`}>
@@ -207,7 +207,7 @@ const HeroSection: React.FC = () => {
             transition={{ 
               duration: 0.6, 
               ease: "easeOut",
-              delay: 1.2
+              delay: 0 // Suppression du délai
             }}
           >
             {translations.projects}
@@ -223,7 +223,7 @@ const HeroSection: React.FC = () => {
               transition={{ 
                 duration: 0.6, 
                 ease: "easeOut",
-                delay: 1.3
+                delay: 0 // Suppression du délai
               }}
             >
               <motion.span

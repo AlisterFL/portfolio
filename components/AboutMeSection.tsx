@@ -170,7 +170,7 @@ const AboutMeSection: React.FC = () => {
           >
             <h2 className="text-[#A6A6A6] mb-4">{translations.tools}</h2>
             <p className={`${FiraCodeFont.className} text-xs`}>
-              GitHub / N8N / Docker / Vercel / Figma / Notion
+              GitHub / N8N / Docker / Vercel / Figma / Notion / Tailwind
             </p>
           </motion.div>
         </motion.div>

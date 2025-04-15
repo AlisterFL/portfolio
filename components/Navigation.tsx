@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
@@ -15,6 +14,26 @@ const Navigation: React.FC = () => {
 
   const toggleMenu = (): void => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Fonction pour le défilement fluide
+  const scrollToSection = (id: string): void => {
+    setIsMenuOpen(false); // Fermer le menu si ouvert
+    
+    // Trouver l'élément cible
+    const targetElement = document.getElementById(id);
+    if (!targetElement) return;
+    
+    // Calculer la position de défilement
+    const headerOffset = 80; // Hauteur approximative de la barre de navigation
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+    // Effectuer le défilement fluide
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
   };
 
   useEffect(() => {
@@ -74,30 +93,47 @@ const Navigation: React.FC = () => {
   const { language, toggleLanguage, translations } = useLanguage();
 
   return (
-    <motion.nav
+    <motion.header
       className={`fixed text-white w-full shadow-md z-50 ${FiraCodeFont.className}`}
       initial={{ y: 0 }}
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
+      role="banner"
     >
-      <div className="w-full bg-[#121212]">
+      <nav className="w-full bg-[#121212]" aria-label="Navigation principale">
         <div className="max-w-[1300px] m-auto px-4 py-3 flex justify-between items-center">
           <div className="text-xl font-normal flex flex-col">
-            <Link className="flex flex-col" href="/">
+            <a 
+              className="flex flex-col" 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              aria-label="Retour en haut de page"
+            >
               <span className="cursor-pointer hover:text-gray-400">
                 Alister
               </span>
               <span className="cursor-pointer hover:text-gray-400">
                 Flandrinck
               </span>
-            </Link>
+            </a>
           </div>
 
-          <ul className="text-xs hidden md:flex space-x-14">
-            {(["about", "projects", "skills", "contact"] as const).map(
+          <ul className="text-xs hidden md:flex space-x-14" role="menubar" aria-label="Menu principal">
+            {(["about", "projects", "contact"] as const).map(
               (key) => (
-                <li key={key}>
-                  <Link href={`#${key}`}>
+                <li key={key} role="none">
+                  <a 
+                    href={`#${key}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(key);
+                    }}
+                    role="menuitem"
+                    aria-label={translations[key]}
+                  >
                     <AnimatePresence mode="wait">
                       <motion.span
                         key={language}
@@ -110,18 +146,19 @@ const Navigation: React.FC = () => {
                         {translations[key]}
                       </motion.span>
                     </AnimatePresence>
-                  </Link>
+                  </a>
                 </li>
               )
             )}
           </ul>
 
-          <div className="md:flex hidden text-xl font-bold">
+          <div className="md:flex hidden text-xl font-bold" role="group" aria-label="Sélection de langue">
             <button
               onClick={() => toggleLanguage("en")}
               className={`px-2 py-1 ${
                 language === "en" ? "font-bold" : "font-normal text-gray-400"
               }`}
+              aria-pressed={language === "en"}
             >
               EN
             </button>
@@ -130,6 +167,7 @@ const Navigation: React.FC = () => {
               className={`px-2 py-1 ${
                 language === "fr" ? "font-bold" : "font-normal text-gray-400"
               }`}
+              aria-pressed={language === "fr"}
             >
               FR
             </button>
@@ -140,6 +178,9 @@ const Navigation: React.FC = () => {
               onClick={toggleMenu}
               className="focus:outline-none"
               ref={buttonRef}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
               <motion.svg
                 className="w-6 h-6"
@@ -149,6 +190,7 @@ const Navigation: React.FC = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 initial={false}
                 animate={isMenuOpen ? "open" : "closed"}
+                aria-hidden="true"
               >
                 <motion.path
                   strokeLinecap="round"
@@ -164,26 +206,33 @@ const Navigation: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
+      </nav>
 
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+            id="mobile-menu"
             ref={menuRef}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="absolute top-full left-0 w-full bg-[#121212] shadow-lg bg-opacity-95 backdrop-blur-md"
+            role="menu"
+            aria-label="Menu mobile"
           >
             <div className="max-w-[1300px] m-auto px-4 py-3">
-              <ul className="m-auto space-y-4 pb-4">
+              <ul className="m-auto space-y-4 pb-4" role="menu">
                 {(["about", "projects", "skills", "contact"] as const).map(
                   (key) => (
-                    <li key={key}>
-                      <Link
+                    <li key={key} role="none">
+                      <a
                         href={`#${key}`}
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          scrollToSection(key);
+                        }}
+                        role="menuitem"
                       >
                         <motion.span
                           initial={{ opacity: 0, y: -5 }}
@@ -194,13 +243,13 @@ const Navigation: React.FC = () => {
                         >
                           {translations[key]}
                         </motion.span>
-                      </Link>
+                      </a>
                     </li>
                   )
                 )}
               </ul>
 
-              <div className="text-xl font-bold">
+              <div className="text-xl font-bold" role="group" aria-label="Sélection de langue">
                 <button
                   onClick={() => toggleLanguage("en")}
                   className={`py-1 pr-[6px] ${
@@ -208,6 +257,7 @@ const Navigation: React.FC = () => {
                       ? "font-bold"
                       : "font-normal text-gray-400"
                   }`}
+                  aria-pressed={language === "en"}
                 >
                   EN
                 </button>
@@ -218,6 +268,7 @@ const Navigation: React.FC = () => {
                       ? "font-bold"
                       : "font-normal text-gray-400"
                   }`}
+                  aria-pressed={language === "fr"}
                 >
                   FR
                 </button>
@@ -226,7 +277,7 @@ const Navigation: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </motion.header>
   );
 };
 
