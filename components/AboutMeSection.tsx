@@ -44,8 +44,8 @@ const AboutMeSection: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.1, // Réduit le délai entre les animations des enfants
+        delayChildren: 0.2,   // Réduit le délai initial
       },
     },
   };
@@ -55,7 +55,10 @@ const AboutMeSection: React.FC = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { 
+        duration: 0.4, // Réduit la durée de l'animation
+        ease: "easeOut" 
+      },
     },
   };
 
@@ -64,16 +67,22 @@ const AboutMeSection: React.FC = () => {
     visible: {
       x: 0,
       opacity: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { 
+        duration: 0.3, // Réduit la durée de l'animation
+        ease: "easeOut" 
+      },
     },
   };
 
   const imageVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
+    hidden: { scale: 0.9, opacity: 0 }, // Ajuste l'échelle initiale
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.7, ease: "easeOut" },
+      transition: { 
+        duration: 0.5, // Réduit la durée de l'animation
+        ease: "easeOut" 
+      },
     },
   };
 
@@ -149,12 +158,12 @@ const AboutMeSection: React.FC = () => {
                       whileHover={{
                         x: 4,
                         y: -4,
-                        transition: { duration: 0.15 },
+                        transition: { duration: 0.1 }, // Réduit la durée du hover
                       }}
                       animate={{
                         x: 0,
                         y: 0,
-                        transition: { duration: 0.15 },
+                        transition: { duration: 0.1 }, // Réduit la durée de l'animation
                       }}
                     >
                       &#8599;
