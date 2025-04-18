@@ -55,7 +55,7 @@ const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects"
-      className="max-w-[1300px] mx-auto w-full h-auto flex flex-col justify-center pb-4 pt-14 p-6"
+      className="max-w-[1300px] mx-auto w-full flex flex-col justify-center pb-4 pt-14 px-4 sm:px-6 overflow-hidden"
     >
       <div className="flex flex-row justify-between">
         <p
@@ -66,7 +66,7 @@ const ProjectsSection: React.FC = () => {
       </div>
 
       {/* Guzzle */}
-      <div className="flex flex-col items-center md:flex-row my-6 gap-8">
+      <div className="flex flex-col items-center md:flex-row my-6 gap-4 md:gap-8 w-full">
         <motion.div 
           className="w-full md:w-1/3 flex flex-col justify-center text-white"
           initial="hidden"
@@ -113,7 +113,7 @@ const ProjectsSection: React.FC = () => {
       </div>
 
       {/* Job Manager */}
-      <div className="flex items-center flex-col-reverse md:flex-row gap-8 my-6">
+      <div className="flex items-center flex-col-reverse md:flex-row gap-4 md:gap-8 my-6 w-full">
         <div className="w-full md:w-2/3">
           <ImageGrid2
             image1="/images/jobManager/loginScreen.png"
@@ -159,7 +159,7 @@ const ProjectsSection: React.FC = () => {
       </div>
 
       {/* Arosaje */}
-      <div className="flex flex-col items-center md:flex-row md:mb-10 gap-8 my-6">
+      <div className="flex flex-col items-center md:flex-row md:mb-10 gap-4 md:gap-8 my-6 w-full">
         <motion.div 
           className="w-full md:w-1/3 flex flex-col justify-center text-white"
           initial="hidden"
@@ -168,7 +168,7 @@ const ProjectsSection: React.FC = () => {
           variants={textVariants}
         >
           <motion.h3 
-            className={`${OpenSansFont.className} text-5xl font-thin`}
+            className={`${OpenSansFont.className} text-5xl font-thin break-words`}
             variants={childVariants}
           >
             {translations.projectNameArosaje}
