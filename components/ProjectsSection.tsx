@@ -199,7 +199,7 @@ const ProjectsSection: React.FC = () => {
           <ImageGrid3
             smallImage="/images/arosaje/logo.png"
             halfImage="/images/arosaje/largeScreen.png"
-            largeImage="/images/arosaje/mainscreen4.png"
+            largeImage="/images/arosaje/mainScreen4.png"
             tallImage="/images/arosaje/loginScreen.png"
           />
         </div>
