@@ -63,6 +63,8 @@
   "projectDescriptionJobManager": "I developed a web application for company technicians to simplify the management of their field operations. The app enables easy creation of job site reports, automatic PDF report generation, planning of upcoming maintenance tasks, and tracking of completed interventions. A secure login system ensures data confidentiality and access control.",
   "projectNameArosaje": "Arosaje",
   "projectDescriptionArosaje": "As part of my academic journey, I developed a web application that connects individuals to support each other with plant sitting. Users can post small ads to find someone to take care of their plants while they’re away, share their availability to help others, or give advice on plant care. The goal is to create a friendly and supportive community centered around plant care.",
+  "projectNamePixelWarCampus": "PixelWar Campus",
+  "projectDescriptionPixelWarCampus": "Pixel War Campus is a project inspired by the PixelWar concept, adapted to the scale of my educational institution with enhanced features. I developed an integrated shop system for purchasing items as well as a clan system with rankings to encourage competition between teams.",
   "contactMe": "Contact me",
   "getInTouch": "Get in touch",
   "contactText": "Feel free to contact me to discuss your projects or professional opportunities."

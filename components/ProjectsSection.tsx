@@ -13,43 +13,44 @@ const ProjectsSection: React.FC = () => {
   const pastillesGuzzle = ["React native", "Expo"];
   const pastillesJobManager = ["Svelte", "Supabase", "N8N", "Gotenberg"];
   const pastillesArosaje = ["React native", "Expo", "SQLite"];
+  const pastillesPixelWarCampus = ["React", "Vercel", "Supabase"];
 
   // Variantes d'animation pour les textes
   const textVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
-      transition: { 
-        duration: 0.6, 
+      transition: {
+        duration: 0.6,
         ease: "easeOut",
         staggerChildren: 0.1,
-      } 
-    }
+      },
+    },
   };
 
   const childVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 
   // Variantes pour les textes à droite (Job Manager)
   const textVariantsRight = {
     hidden: { opacity: 0, x: 50 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
-      transition: { 
-        duration: 0.6, 
+      transition: {
+        duration: 0.6,
         ease: "easeOut",
         staggerChildren: 0.1,
-      } 
-    }
+      },
+    },
   };
 
   const childVariantsRight = {
     hidden: { opacity: 0, x: 20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 
   return (
@@ -67,20 +68,20 @@ const ProjectsSection: React.FC = () => {
 
       {/* Guzzle */}
       <div className="flex flex-col items-center md:flex-row my-6 gap-4 md:gap-8 w-full">
-        <motion.div 
+        <motion.div
           className="w-full md:w-1/3 flex flex-col justify-center text-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={textVariants}
         >
-          <motion.h3 
+          <motion.h3
             className={`${OpenSansFont.className} text-5xl font-thin`}
             variants={childVariants}
           >
             {translations.projectNameGuzzle}
           </motion.h3>
-          <motion.div 
+          <motion.div
             className="flex justify-start gap-2 mt-10 flex-wrap"
             variants={childVariants}
           >
@@ -94,10 +95,7 @@ const ProjectsSection: React.FC = () => {
               </motion.div>
             ))}
           </motion.div>
-          <motion.p 
-            className="mt-4 text-lg"
-            variants={childVariants}
-          >
+          <motion.p className="mt-4 text-lg" variants={childVariants}>
             {translations.projectDescriptionGuzzle}
           </motion.p>
         </motion.div>
@@ -122,20 +120,20 @@ const ProjectsSection: React.FC = () => {
             image4="/images/jobManager/list.png"
           />
         </div>
-        <motion.div 
+        <motion.div
           className="w-full md:w-1/3 flex flex-col justify-center text-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={textVariantsRight}
         >
-          <motion.h3 
+          <motion.h3
             className={`${OpenSansFont.className} text-5xl font-thin`}
             variants={childVariantsRight}
           >
             {translations.projectNameJobManager}
           </motion.h3>
-          <motion.div 
+          <motion.div
             className="flex justify-start gap-2 mt-10 flex-wrap"
             variants={childVariantsRight}
           >
@@ -149,10 +147,7 @@ const ProjectsSection: React.FC = () => {
               </motion.div>
             ))}
           </motion.div>
-          <motion.p 
-            className="mt-4 text-lg"
-            variants={childVariantsRight}
-          >
+          <motion.p className="mt-4 text-lg" variants={childVariantsRight}>
             {translations.projectDescriptionJobManager}
           </motion.p>
         </motion.div>
@@ -160,20 +155,20 @@ const ProjectsSection: React.FC = () => {
 
       {/* Arosaje */}
       <div className="flex flex-col items-center md:flex-row md:mb-10 gap-4 md:gap-8 my-6 w-full">
-        <motion.div 
+        <motion.div
           className="w-full md:w-1/3 flex flex-col justify-center text-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={textVariants}
         >
-          <motion.h3 
+          <motion.h3
             className={`${OpenSansFont.className} text-5xl font-thin break-words`}
             variants={childVariants}
           >
             {translations.projectNameArosaje}
           </motion.h3>
-          <motion.div 
+          <motion.div
             className="flex justify-start gap-2 mt-10 flex-wrap"
             variants={childVariants}
           >
@@ -187,10 +182,7 @@ const ProjectsSection: React.FC = () => {
               </motion.div>
             ))}
           </motion.div>
-          <motion.p 
-            className="mt-4 text-lg"
-            variants={childVariants}
-          >
+          <motion.p className="mt-4 text-lg" variants={childVariants}>
             {translations.projectDescriptionArosaje}
           </motion.p>
         </motion.div>
@@ -203,6 +195,49 @@ const ProjectsSection: React.FC = () => {
             tallImage="/images/arosaje/loginScreen.png"
           />
         </div>
+      </div>
+
+      {/* PixelWar Campus */}
+      <div className="flex items-center flex-col-reverse md:flex-row gap-4 md:gap-8 my-6 w-full">
+        <div className="w-full md:w-2/3">
+          <ImageGrid1
+            smallImage="/images/pixelWarCampus/logo.png"
+            halfImage="/images/pixelWarCampus/shopList.png"
+            largeImage="/images/pixelWarCampus/gameScreen.png"
+            tallImage="/images/pixelWarCampus/clanList.png"
+          />
+        </div>
+        <motion.div
+          className="w-full md:w-1/3 flex flex-col justify-center text-white"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={textVariantsRight}
+        >
+          <motion.h3
+            className={`${OpenSansFont.className} text-5xl font-thin`}
+            variants={childVariantsRight}
+          >
+            {translations.projectNamePixelWarCampus}
+          </motion.h3>
+          <motion.div
+            className="flex justify-start gap-2 mt-10 flex-wrap"
+            variants={childVariantsRight}
+          >
+            {pastillesPixelWarCampus.map((pastille, index) => (
+              <motion.div
+                key={index}
+                className="border-2 border-white px-4 py-0.5 rounded-full text-white"
+                variants={childVariantsRight}
+              >
+                {pastille}
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.p className="mt-4 text-lg" variants={childVariantsRight}>
+            {translations.projectDescriptionPixelWarCampus}
+          </motion.p>
+        </motion.div>
       </div>
     </section>
   );
