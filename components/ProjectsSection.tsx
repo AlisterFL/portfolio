@@ -201,10 +201,10 @@ const ProjectsSection: React.FC = () => {
       <div className="flex items-center flex-col-reverse md:flex-row gap-4 md:gap-8 my-6 w-full">
         <div className="w-full md:w-2/3">
           <ImageGrid1
-            smallImage="/images/pixelWarCampus/logo.png"
-            halfImage="/images/pixelWarCampus/shopList.png"
-            largeImage="/images/pixelWarCampus/gameScreen.png"
-            tallImage="/images/pixelWarCampus/clanList.png"
+            smallImage="/images/PixelWarCampus/logo.png"
+            halfImage="/images/PixelWarCampus/shopList.png"
+            largeImage="/images/PixelWarCampus/gameScreen.png"
+            tallImage="/images/PixelWarCampus/clanList.png"
           />
         </div>
         <motion.div
