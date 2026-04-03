@@ -9,8 +9,8 @@ export default {
   ],
   theme: {
 	fontFamily: {
-		sans: ['var(--font-geist-sans)'],
-		caption: ['var(--font-caption)'],
+		sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+		display: ['var(--font-display)', 'system-ui', 'sans-serif'],
 	},
   	extend: {
   		colors: {

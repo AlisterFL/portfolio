@@ -1,71 +1,113 @@
 {
-  "about": "About",
-  "projects": "Projects",
-  "skills": "Skills",
-  "contact": "Contact",
-  "language": "Language",
-  "full_stack": "Full-stack",
-  "developer": "Developer",
-  "quote": "The more I learn, the more I realize how much I don't know.",
-  "aboutMe": "Hey! I'm Alister, 23 years old, and a developer with 2 years of experience. Passionate about technology, I love taking on challenges and learning every day to improve my skills and explore new technologies.",
-  "tools": "Tools",
-  "experience": "Experiences",
-  "experiences": [
-    {
-      "id": 1,
-      "period": "Sept 2025",
-      "periodTime": "1 year",
-      "title": "Full stack developer Work-Study",
-      "company": "Searching Company",
-      "description": "Travail en full-stack pour divers clients du secteur industriel, en concevant et développant des solutions sur mesure adaptées à leurs besoins spécifiques."
+  "nav": {
+    "services": "Services",
+    "projects": "Projects",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "cta": "Start a project"
+  },
+  "hero": {
+    "badge": "New",
+    "badgeText": "See my latest work",
+    "title1": "Your website,",
+    "title2": "built to",
+    "titleHighlight": "perform.",
+    "description": "Custom design, high-performance development and",
+    "description2": "a polished user experience.",
+    "cta": "Start a project",
+    "ctaSecondary": "View my work"
+  },
+  "services": {
+    "title": "Everything your website needs to perform",
+    "design": {
+      "title": "Custom design",
+      "description": "Unique interfaces crafted for your brand. Every pixel is refined to create a memorable experience that sets you apart from the competition."
     },
-    {
-      "id": 1,
-      "period": "2023 - 2025",
-      "periodTime": "2 years",
-      "title": "Full stack developer Work-Study",
-      "company": "SAASAK",
-      "description": "Full-stack development for various clients in the industrial sector, designing and building tailored solutions to meet their specific needs."
+    "seo": {
+      "title": "Optimized SEO",
+      "description": "Rank at the top of Google.",
+      "growth": "+340%"
+    },
+    "security": {
+      "title": "Enhanced security",
+      "description": "Your website and your users' data are protected.",
+      "items": ["SSL Certificate", "Secure hosting", "GDPR Compliance", "Data protection"]
+    },
+    "performance": {
+      "title": "Maximum performance",
+      "description": "Every millisecond counts.",
+      "score": "Google Score",
+      "scoreDetails": "Performance, SEO, accessibility",
+      "loadTime": "Load time",
+      "mobile": "Mobile optimization",
+      "seoScore": "Technical SEO score"
+    },
+    "responsive": {
+      "title": "Responsive & Mobile",
+      "description": "Your website adapts automatically to every device — desktop, tablet, mobile — for a seamless experience everywhere."
+    },
+    "content": {
+      "title": "Dynamic content",
+      "description": "Manage your content easily. Blog, news, projects — everything is editable without touching code."
+    },
+    "ctaTitle": "Have a project in mind?",
+    "ctaDescription": "Let's discuss your goals and find the best solution.",
+    "ctaButton": "Get in touch"
+  },
+  "trusted": {
+    "title": "They trusted me",
+    "subtitle": "Every project is a unique collaboration.",
+    "clients": {
+      "g3j": "Showcase website for an agency specializing in real estate and property management.",
+      "noe": "Complete platform for a real estate firm with property catalog.",
+      "plant": "Institutional website for a Belgian national plant protection association."
     }
-  ],
-  "education": "Education",
-  "education_list": [
-    {
-      "id": 1,
-      "period": "2024 - 2026",
-      "periodTime": "2 years",
-      "title": "IT and Information Systems Expert",
-      "company": "Master's Degree | EPSI Lille",
-      "description": ""
-    },
-    {
-      "id": 2,
-      "period": "2023 - 2024",
-      "periodTime": "1 year",
-      "title": "Application Developer Designer",
-      "company": "Bachelor's Degree | EPSI Lille",
-      "description": ""
-    },
-    {
-      "id": 3,
-      "period": "2022 - 2023",
-      "periodTime": "1 year",
-      "title": "Application Developer Designer",
-      "company": "Associate's Degree | OpenClassrooms",
-      "description": ""
-    }
-  ],
-  "projectsTitle": "My Projects",
-  "projectsDescription": "Here are some of the projects I have worked on.",
-  "projectNameGuzzle": "Guzzle (Work in progress)",
-  "projectDescriptionGuzzle": "Guzzle is an app designed to liven up your evenings with friends. Through a series of challenges and interactive mini-games, the app creates a festive and friendly atmosphere, where every participant can get involved and take on fun dares. Perfect for groups, Guzzle turns every gathering into a memorable moment, full of laughter and friendly competition.",
-  "projectNameJobManager": "Job Site & Maintenance Manager",
-  "projectDescriptionJobManager": "I developed a web application for company technicians to simplify the management of their field operations. The app enables easy creation of job site reports, automatic PDF report generation, planning of upcoming maintenance tasks, and tracking of completed interventions. A secure login system ensures data confidentiality and access control.",
-  "projectNameArosaje": "Arosaje",
-  "projectDescriptionArosaje": "As part of my academic journey, I developed a web application that connects individuals to support each other with plant sitting. Users can post small ads to find someone to take care of their plants while they’re away, share their availability to help others, or give advice on plant care. The goal is to create a friendly and supportive community centered around plant care.",
-  "projectNamePixelWarCampus": "PixelWar Campus",
-  "projectDescriptionPixelWarCampus": "Pixel War Campus is a project inspired by the PixelWar concept, adapted to the scale of my educational institution with enhanced features. I developed an integrated shop system for purchasing items as well as a clan system with rankings to encourage competition between teams.",
-  "contactMe": "Contact me",
-  "getInTouch": "Get in touch",
-  "contactText": "Feel free to contact me to discuss your projects or professional opportunities."
+  },
+  "testimonials": {
+    "title": "What they say",
+    "reviews": [
+      {
+        "name": "Gautier Jufft",
+        "role": "Manager, G3J Immobilier",
+        "quote": "I had an excellent experience with Alister. The collaboration was smooth from start to finish. He was both creative and insightful, quickly understanding my needs. The final result met my expectations — aesthetic and functional. I highly recommend his services."
+      },
+      {
+        "name": "Bernard Pecquereau",
+        "role": "Secretary, Plant Protect",
+        "quote": "Alister was truly attentive to our needs and the specificities of our association. He did everything to find tailored solutions adapted to our profile. Our website is responsive, dynamic, modern and user-friendly."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know before getting started.",
+    "questions": [
+      {
+        "question": "How long does it take to create a complete website?",
+        "answer": "It depends on the project. A showcase website can be delivered in 2-3 weeks, while a more complex site with databases or dynamic features typically takes 4-8 weeks."
+      },
+      {
+        "question": "Will the website be optimized for Google (SEO)?",
+        "answer": "Absolutely. Every project is delivered with a clean semantic structure, compressed images, and ultra-fast performance to maximize your organic visibility from launch."
+      },
+      {
+        "question": "Can I edit my content myself?",
+        "answer": "I offer this option for complex sites that require regular content management. In that case, I develop a custom dashboard. For showcase sites, I handle updates to ensure design and performance integrity."
+      },
+      {
+        "question": "Why choose a freelancer over an agency?",
+        "answer": "Proximity and responsiveness. You have a single point of contact who knows your project inside out. No agency overhead costs — you only pay for expertise and production."
+      },
+      {
+        "question": "Do I fully own the website after delivery?",
+        "answer": "Yes, you own 100% of your domain name, hosting, and source code. I provide all access credentials at launch."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Have a project in mind?",
+    "description": "Let's discuss your goals and find the best solution.",
+    "email": "Send an email",
+    "linkedin": "LinkedIn"
+  }
 }

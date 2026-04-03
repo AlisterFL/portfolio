@@ -1,71 +1,113 @@
 {
-  "about": "Présentation",
-  "projects": "Projets",
-  "skills": "Compétences",
-  "contact": "Contact",
-  "language": "Langue",
-  "full_stack": "Full-stack",
-  "developer": "Developeur",
-  "quote": "Plus j'apprends, plus je me rends compte de combien je ne sais pas.",
-  "aboutMe": "Hey ! Je m'appelle Alister, j'ai 23 ans et je suis développeur avec 2 ans d'expérience. Passionné par l'informatique, j'aime relever des défis et apprendre chaque jour pour améliorer mes compétences et explorer de nouvelles technologies.",
-  "tools": "Outils",
-  "experience": "Experiences",
-  "experiences": [
-    {
-      "id": 1,
-      "period": "Sept 2025",
-      "periodTime": "1 an",
-      "title": "Alternance développeur Full-stack ",
-      "company": "En recherche d'entreprise",
-      "description": "Travail en full-stack pour divers clients du secteur industriel, en concevant et développant des solutions sur mesure adaptées à leurs besoins spécifiques."
+  "nav": {
+    "services": "Services",
+    "projects": "Projets",
+    "reviews": "Avis",
+    "contact": "Contact",
+    "cta": "Lancer un projet"
+  },
+  "hero": {
+    "badge": "Nouveau",
+    "badgeText": "Voir mes dernières réalisations",
+    "title1": "Votre site web,",
+    "title2": "pensé pour",
+    "titleHighlight": "performer.",
+    "description": "Design sur-mesure, développement performant et",
+    "description2": "expérience utilisateur soignée.",
+    "cta": "Démarrer un projet",
+    "ctaSecondary": "Voir mes projets"
+  },
+  "services": {
+    "title": "Tout ce dont votre site a besoin pour performer",
+    "design": {
+      "title": "Design sur-mesure",
+      "description": "Interfaces uniques pensées pour votre marque. Chaque pixel est soigné pour créer une expérience mémorable qui vous distingue de la concurrence."
     },
-    {
-      "id": 1,
-      "period": "2023 - 2025",
-      "periodTime": "2 ans",
-      "title": "Développeur Full stack ",
-      "company": "SAASAK",
-      "description": "Travail en full-stack pour divers clients du secteur industriel, en concevant et développant des solutions sur mesure adaptées à leurs besoins spécifiques."
+    "seo": {
+      "title": "Référencement optimisé",
+      "description": "Apparaissez en tête de Google.",
+      "growth": "+340%"
+    },
+    "security": {
+      "title": "Sécurité renforcée",
+      "description": "Votre site et les données de vos utilisateurs sont protégés.",
+      "items": ["Certificat SSL", "Hébergement sécurisé", "Conformité RGPD", "Protection des données"]
+    },
+    "performance": {
+      "title": "Performance maximale",
+      "description": "Chaque milliseconde compte.",
+      "score": "Score Google",
+      "scoreDetails": "Performance, SEO, accessibilité",
+      "loadTime": "Temps de chargement",
+      "mobile": "Optimisation mobile",
+      "seoScore": "Score SEO technique"
+    },
+    "responsive": {
+      "title": "Responsive & Mobile",
+      "description": "Votre site s'adapte automatiquement à chaque appareil — desktop, tablette, mobile — pour une expérience fluide partout."
+    },
+    "content": {
+      "title": "Contenu dynamique",
+      "description": "Gérez votre contenu facilement. Blog, actualités, projets — tout est modifiable sans toucher au code."
+    },
+    "ctaTitle": "Un projet en tête ?",
+    "ctaDescription": "Discutons de vos objectifs et trouvons la meilleure solution.",
+    "ctaButton": "Prendre contact"
+  },
+  "trusted": {
+    "title": "Ils m'ont fait confiance",
+    "subtitle": "Chaque projet est une collaboration unique.",
+    "clients": {
+      "g3j": "Site vitrine pour une agence spécialisée dans l'immobilier et la gestion locative.",
+      "noe": "Plateforme complète pour un cabinet immobilier avec catalogue de biens.",
+      "plant": "Site institutionnel pour une association nationale belge de protection des plantes."
     }
-  ],
-  "education": "Formations",
-  "education_list": [
-    {
-      "id": 1,
-      "period": "2024 - 2026",
-      "periodTime": "2 ans",
-      "title": "Expert en informatique et système d'information",
-      "company": " Master | EPSI Lille",
-      "description": ""
-    },
-    {
-      "id": 2,
-      "period": "2023 - 2024",
-      "periodTime": "1 an",
-      "title": "Concepteur développeur d'applications",
-      "company": " Bachelor | EPSI Lille",
-      "description": ""
-    },
-    {
-      "id": 3,
-      "period": "2022 - 2023",
-      "periodTime": "1 an",
-      "title": "Concepteur développeur d'applications",
-      "company": "Bac +2 | OpenClassroom",
-      "description": ""
-    }
-  ],
-  "projectsTitle": "Mes Projets",
-  "projectsDescription": "Voici quelques-uns des projets sur lesquels j'ai travaillé.",
-  "projectNameGuzzle": "Guzzle (En Developpement)",
-  "projectDescriptionGuzzle": "Guzzle est une application conçue pour animer vos soirées entre amis.\nÀ travers une série de défis et de mini-jeux interactifs, l'application crée une ambiance festive et conviviale,\noù chaque participant peut s'impliquer et relever des défis amusants.\nIdéale pour les groupes, Guzzle transforme chaque soirée en un moment mémorable, rempli de rires et de compétition amicale.",
-  "projectNameJobManager": "Outilde gestion de chantiers et dépannages",
-  "projectDescriptionJobManager": "J’ai conçu une application web à destination des techniciens d’une entreprise permettant de simplifier la gestion de leurs interventions, en particulier pour la rédaction de rapports de chantiers, la génération automatique de rapport PDF, la planification des interventions de dépannage à venir et le suivi des interventions effectuées. Un système de login sécurisé permet d’assurer la confidentialité et la gestion des accès.",
-  "projectNameArosaje": "Arosaje",
-  "projectDescriptionArosaje": "Dans le contexte de mon parcours scolaire, j’ai conçu une application web de mise en relation entre particuliers pour s’entraider sur le gardiennage de plantes. Les particuliers peuvent publier des petites annonces pour faire garder leurs plantes pendant leur absence, proposer leurs disponibilités, ou partager des conseils sur l’entretien de plantes. L’objectif est de créer une communauté d’entraide autour du soin des plantes de manière simple et amicale.",
-  "projectNamePixelWarCampus": "PixelWar Campus",
-  "projectDescriptionPixelWarCampus": "Pixel War Campus est un projet inspiré du concept de PixelWar, adapté à l'échelle de mon établissement scolaire avec des fonctionnalités enrichies. J'ai développé un système de boutique intégrée permettant l'achat d'objets ainsi qu'un système de clans avec classement pour encourager la compétition entre équipes",
-  "contactMe": "Me contacter",
-  "getInTouch": "Prenons contact",
-  "contactText": "N'hésitez pas à me contacter pour discuter de vos projets ou opportunités professionnelles."
+  },
+  "testimonials": {
+    "title": "Ce qu'ils en disent",
+    "reviews": [
+      {
+        "name": "Gautier Jufft",
+        "role": "Gérant, G3J Immobilier",
+        "quote": "J'ai eu une excellente expérience avec Alister. La collaboration a été fluide du début à la fin. Il a su être à la fois créatif et perspicace en comprenant rapidement mes besoins. Le résultat final est à la hauteur de mes attentes, esthétique et fonctionnel. Je recommande vivement ses services."
+      },
+      {
+        "name": "Bernard Pecquereau",
+        "role": "Secrétaire, Plant Protect",
+        "quote": "Alister a été vraiment à l'écoute de nos besoins et des spécificités de notre association. Il a mis tout en œuvre pour trouver des solutions sur mesure adaptées à notre profil. Notre site est responsive, dynamique, moderne et agréable pour l'utilisateur."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Tout ce que vous devez savoir avant de démarrer.",
+    "questions": [
+      {
+        "question": "Combien de temps faut-il pour créer un site complet ?",
+        "answer": "Tout dépend de la nature du projet. Un site vitrine peut être livré en 2 à 3 semaines, tandis qu'un site plus complexe avec base de données ou fonctionnalités dynamiques demande généralement entre 4 et 8 semaines."
+      },
+      {
+        "question": "Le site sera-t-il optimisé pour Google (SEO) ?",
+        "answer": "Absolument. Je livre chaque projet avec une structure technique sémantique, des images compressées et des performances ultra-rapides pour maximiser votre visibilité naturelle dès le lancement."
+      },
+      {
+        "question": "Est-ce que je pourrai modifier mon contenu moi-même ?",
+        "answer": "Je propose cette possibilité pour les sites complexes qui demandent une gestion régulière. Dans ce cas, je développe un tableau de bord sur mesure. Pour les sites vitrines, je conserve la main sur les mises à jour pour garantir le design et les performances."
+      },
+      {
+        "question": "Pourquoi choisir un freelance plutôt qu'une agence ?",
+        "answer": "La proximité et la réactivité. Vous avez un interlocuteur unique qui connaît votre projet par cœur. Pas de frais de structure, vous payez uniquement pour l'expertise et la production."
+      },
+      {
+        "question": "Le site m'appartient-il totalement après la livraison ?",
+        "answer": "Oui, vous êtes propriétaire à 100% de votre nom de domaine, de l'hébergement et du code source. Je vous fournis tous les accès lors de la mise en ligne."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Un projet en tête ?",
+    "description": "Discutons de vos objectifs et trouvons la meilleure solution.",
+    "email": "Envoyer un email",
+    "linkedin": "LinkedIn"
+  }
 }

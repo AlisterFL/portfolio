@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
+import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 
 import { LanguageProvider } from "../context/LanguageContext";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 
 export const metadata: Metadata = {
@@ -43,6 +56,15 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Alister Flandrinck · Développeur Web',
+    description: 'Portfolio de Alister Flandrinck, développeur web spécialisé en React, Next.js et applications modernes.',
+    images: ['/images/og-image.jpg'],
+  },
+  alternates: {
+    canonical: 'https://alisterflandrinck.com',
+  },
   verification: {
     google: 'google-site-verification=3x2CZXnuR6Xb3erUezaSqwtBrxM7OMF1uft0n-q1SxQ',
   },
@@ -61,7 +83,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`h-full bg-[#121212]`}>
+      <body className={`${inter.variable} ${sora.variable} font-sans h-full bg-[#121212]`}>
         <LanguageProvider>
           {/* Structure sémantique pour améliorer le SEO */}
           <main>
@@ -82,7 +104,7 @@ export default function RootLayout({
                   'https://github.com/AlisterFL',
                   'https://linkedin.com/in/alisterflandrinck',
                 ],
-                image: 'https://alisterflandrinck.com/images/alister.jpeg',
+                image: 'https://alisterflandrinck.com/images/alisterface1.png',
               }),
             }}
           />

@@ -1,25 +1,24 @@
-import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
-import AboutMeSection from '@/components/AboutMeSection';
-import ExperiencesSection from '@/components/ExperiencesSection';
-import EducationSection from '@/components/EducationSection';
-import ProjectsSection from '@/components/ProjectsSection';
-import ContactSection from '@/components/ContactSection';
-import ScrollToTop from '@/components/ScrollToTop';
+"use client";
 
-const Page = () => {
+import React from "react";
+import Navigation from "@/components/pro/Navigation";
+import HeroSection from "@/components/pro/HeroSection";
+import BentoServices from "@/components/pro/BentoServices";
+import TrustedBy from "@/components/pro/TrustedBy";
+import Testimonials from "@/components/pro/Testimonials";
+import FAQ from "@/components/pro/FAQ";
+import Contact from "@/components/pro/Contact";
+
+export default function Page() {
   return (
-    <div className=''>
+    <main className="relative bg-white min-h-screen">
       <Navigation />
       <HeroSection />
-      <AboutMeSection />
-      <EducationSection />
-      <ExperiencesSection />
-      <ProjectsSection />
-      <ContactSection />
-      <ScrollToTop />
-    </div>
+      <BentoServices />
+      <TrustedBy />
+      <Testimonials />
+      <FAQ />
+      <Contact />
+    </main>
   );
-};
-
-export default Page;
+}
