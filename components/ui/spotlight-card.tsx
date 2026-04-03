@@ -31,7 +31,9 @@ const GlowCard: React.FC<GlowCardProps> = ({
     const card = cardRef.current;
     if (!card) return;
 
+    // Only track mouse, not touch — touch must not interfere with scrolling
     const handleMove = (e: PointerEvent) => {
+      if (e.pointerType === "touch") return;
       const rect = card.getBoundingClientRect();
       setMousePos({
         x: e.clientX - rect.left,
@@ -39,8 +41,14 @@ const GlowCard: React.FC<GlowCardProps> = ({
       });
     };
 
-    const handleEnter = () => setIsHovered(true);
-    const handleLeave = () => setIsHovered(false);
+    const handleEnter = (e: PointerEvent) => {
+      if (e.pointerType === "touch") return;
+      setIsHovered(true);
+    };
+    const handleLeave = (e: PointerEvent) => {
+      if (e.pointerType === "touch") return;
+      setIsHovered(false);
+    };
 
     card.addEventListener('pointermove', handleMove);
     card.addEventListener('pointerenter', handleEnter);
@@ -87,7 +95,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
         p-6 md:p-8
         gap-4
         transition-transform duration-300 ease-out
-        hover:scale-[1.02]
+        md:hover:scale-[1.02]
         ${className}
       `}
     >

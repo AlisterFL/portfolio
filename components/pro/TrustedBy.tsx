@@ -62,11 +62,12 @@ const TrustedBy = () => {
     const tab = tabRefs.current[index];
     const container = tabsRef.current;
     if (tab && container) {
-      const containerRect = container.getBoundingClientRect();
-      const tabRect = tab.getBoundingClientRect();
-      if (tabRect.left < containerRect.left || tabRect.right > containerRect.right) {
-        tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-      }
+      // Use scrollLeft on the container instead of scrollIntoView to avoid page scroll
+      const tabLeft = tab.offsetLeft;
+      const tabWidth = tab.offsetWidth;
+      const containerWidth = container.offsetWidth;
+      const scrollTarget = tabLeft - (containerWidth / 2) + (tabWidth / 2);
+      container.scrollTo({ left: scrollTarget, behavior: "smooth" });
     }
   }, []);
 

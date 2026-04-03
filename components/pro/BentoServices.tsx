@@ -292,7 +292,7 @@ const BentoServices = () => {
                 </p>
 
                 {/* Safari + iPhone superposés */}
-                <div className="relative h-[140px] sm:h-[170px] md:h-[195px] xl:h-[220px] 2xl:h-[250px] mt-4 -mx-2 -mb-4 md:-mx-4 md:-mb-6">
+                <div className="relative h-[180px] sm:h-[190px] md:h-[195px] xl:h-[220px] 2xl:h-[250px] mt-4 -mx-2 -mb-4 md:-mx-4 md:-mb-6">
                   {/* Safari (desktop) */}
                   <div className="absolute top-0 left-0 w-[90%] drop-shadow-md">
                     <Safari url="votresite.com" mode="simple">
@@ -401,18 +401,17 @@ const BentoServices = () => {
               customSize
               className="!aspect-auto w-full h-full !overflow-hidden"
             >
-              <div className="relative z-10 flex flex-row items-start gap-8">
+              <div className="relative z-10 flex flex-col md:flex-row items-start gap-8 min-h-[200px] md:min-h-0">
                 <div className="relative z-10 max-w-sm shrink-0">
                   <h3 className="text-xl md:text-2xl font-medium text-[#0A0A0A] mb-3">
                     {t.services.content.title}
                   </h3>
                   <p className="text-[#0A0A0A]/50 text-[15px] leading-relaxed">
-                    Gérez votre contenu facilement. Blog, actualités, projets —
-                    tout est modifiable sans toucher au code.
+                    {t.services.content.description}
                   </p>
                 </div>
                 {/* Globe — oversized, clipped by card */}
-                <div className="absolute right-[-60px] top-[-40px] bottom-[-40px] w-[380px] pointer-events-auto">
+                <div className="absolute right-[-60px] top-[120px] md:top-[-40px] bottom-[-40px] w-[280px] md:w-[380px] pointer-events-none md:pointer-events-auto">
                   <GlobeCdn className="w-full" speed={0.002} />
                 </div>
               </div>
