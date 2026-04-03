@@ -1,4 +1,5 @@
 import type { HTMLAttributes } from "react"
+import Image from "next/image"
 
 const SAFARI_WIDTH = 1203
 const SAFARI_HEIGHT = 753
@@ -78,10 +79,11 @@ export function Safari({
             borderRadius: "0 0 11px 11px",
           }}
         >
-          <img
+          <Image
             src={imageSrc}
             alt=""
-            className="block size-full object-cover object-top"
+            fill
+            className="object-cover object-top"
           />
         </div>
       )}
