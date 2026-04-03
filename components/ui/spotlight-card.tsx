@@ -68,7 +68,6 @@ const GlowCard: React.FC<GlowCardProps> = ({
 
   const inlineStyles: React.CSSProperties = {
     position: 'relative',
-    touchAction: 'none',
     background: '#FFFFFF',
     border: '1px solid rgba(0, 0, 0, 0.06)',
   };
