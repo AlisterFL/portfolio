@@ -5,6 +5,8 @@ import TerraMission from "./components/TerraMission";
 import TerraProducts from "./components/TerraProducts";
 import TerraStats from "./components/TerraStats";
 import TerraTestimonials from "./components/TerraTestimonials";
+import TerraContact from "./components/TerraContact";
+import TerraFooter from "./components/TerraFooter";
 
 export default function TerraPage() {
   return (
@@ -14,8 +16,8 @@ export default function TerraPage() {
       <TerraProducts />
       <TerraStats />
       <TerraTestimonials />
-      {/* Spacer */}
-      <div className="h-[50vh] bg-[#1a472a]" />
+      <TerraContact />
+      <TerraFooter />
     </main>
   );
 }
