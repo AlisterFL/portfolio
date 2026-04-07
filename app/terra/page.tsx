@@ -2,14 +2,16 @@
 
 import TerraHero from "./components/TerraHero";
 import TerraMission from "./components/TerraMission";
+import TerraProducts from "./components/TerraProducts";
 
 export default function TerraPage() {
   return (
     <main>
       <TerraHero />
       <TerraMission />
-      {/* Spacer to test scroll */}
-      <div className="h-screen bg-[#f5f0e8]" />
+      <TerraProducts />
+      {/* Spacer */}
+      <div className="h-screen bg-[#1a472a]" />
     </main>
   );
 }
