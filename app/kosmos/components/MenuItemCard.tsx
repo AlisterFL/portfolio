@@ -8,16 +8,62 @@ interface MenuItemCardProps {
   onClick: () => void;
 }
 
-const tagDisplay: Record<string, { label: Record<Language, string>; color: string }> = {
-  vegetarian: { label: { fr: "Vege", nl: "Veg", en: "Veggie", de: "Veg" }, color: "bg-green-900/50 text-green-400" },
-  vegan: { label: { fr: "Vegan", nl: "Vegan", en: "Vegan", de: "Vegan" }, color: "bg-green-900/50 text-green-400" },
-  spicy: { label: { fr: "Epice", nl: "Pikant", en: "Spicy", de: "Scharf" }, color: "bg-orange-900/50 text-orange-400" },
-  popular: { label: { fr: "Populaire", nl: "Populair", en: "Popular", de: "Beliebt" }, color: "bg-[#d4af37]/20 text-[#d4af37]" },
-  new: { label: { fr: "Nouveau", nl: "Nieuw", en: "New", de: "Neu" }, color: "bg-blue-900/50 text-blue-400" },
+const tagIcons: Record<string, { label: Record<Language, string>; icon: React.ReactNode; color: string }> = {
+  vegetarian: {
+    label: { fr: "Végé", nl: "Veg", en: "Veggie", de: "Veg" },
+    icon: (
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 22c1.25-1.25 2.5-3 3.5-5.5C7 13 8 10.5 12 7c-3.5 4-6 5-8.5 6.5C1 14.5 0 16 0 16" />
+        <path d="M22 2L15 9" />
+        <path d="M15 2C15 2 12 5 9 9" />
+        <path d="M22 9C22 9 19 6 15 9" />
+      </svg>
+    ),
+    color: "text-green-600",
+  },
+  vegan: {
+    label: { fr: "Végan", nl: "Vegan", en: "Vegan", de: "Vegan" },
+    icon: (
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22c4-4 8-10 8-16H4c0 6 4 12 8 16Z" />
+        <path d="M12 10v6" />
+        <path d="M9 13h6" />
+      </svg>
+    ),
+    color: "text-green-600",
+  },
+  spicy: {
+    label: { fr: "Épicé", nl: "Pikant", en: "Spicy", de: "Scharf" },
+    icon: (
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2c0 4-4 6-4 10a4 4 0 0 0 8 0c0-4-4-6-4-10Z" />
+        <path d="M12 18v4" />
+      </svg>
+    ),
+    color: "text-orange-500",
+  },
+  popular: {
+    label: { fr: "Populaire", nl: "Populair", en: "Popular", de: "Beliebt" },
+    icon: (
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+      </svg>
+    ),
+    color: "text-[var(--accent)]",
+  },
+  new: {
+    label: { fr: "Nouveau", nl: "Nieuw", en: "New", de: "Neu" },
+    icon: (
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 5v14M5 12h14" />
+      </svg>
+    ),
+    color: "text-blue-500",
+  },
 };
 
 export default function MenuItemCard({ item, language, onClick }: MenuItemCardProps) {
-  const tags = item.tags?.filter((t) => tagDisplay[t]) ?? [];
+  const tags = item.tags?.filter((t) => tagIcons[t]) ?? [];
   const allergenCount = item.allergens?.length ?? 0;
 
   return (
@@ -51,9 +97,11 @@ export default function MenuItemCard({ item, language, onClick }: MenuItemCardPr
             {tags.map((tag) => (
               <span
                 key={tag}
-                className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${tagDisplay[tag].color}`}
+                className={`flex items-center gap-1 text-[10px] font-medium ${tagIcons[tag].color}`}
+                title={tagIcons[tag].label[language]}
               >
-                {tagDisplay[tag].label[language]}
+                {tagIcons[tag].icon}
+                {tagIcons[tag].label[language]}
               </span>
             ))}
             {item.nutrition && (
