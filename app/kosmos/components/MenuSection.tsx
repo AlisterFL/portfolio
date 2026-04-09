@@ -1,15 +1,16 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { MenuCategory, Language } from "../types";
+import { MenuCategory, MenuItem, Language } from "../types";
 import MenuItemCard from "./MenuItemCard";
 
 interface MenuSectionProps {
   category: MenuCategory;
   language: Language;
+  onItemClick: (item: MenuItem) => void;
 }
 
-export default function MenuSection({ category, language }: MenuSectionProps) {
+export default function MenuSection({ category, language, onItemClick }: MenuSectionProps) {
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -20,9 +21,20 @@ export default function MenuSection({ category, language }: MenuSectionProps) {
         transition={{ duration: 0.2 }}
         className="flex flex-col gap-3 p-4"
       >
-        {category.items.map((item) => (
-          <MenuItemCard key={item.id} item={item} language={language} />
-        ))}
+        {category.items.length === 0 ? (
+          <p className="py-8 text-center text-sm text-white/30">
+            Aucun résultat
+          </p>
+        ) : (
+          category.items.map((item) => (
+            <MenuItemCard
+              key={item.id}
+              item={item}
+              language={language}
+              onClick={() => onItemClick(item)}
+            />
+          ))
+        )}
       </motion.div>
     </AnimatePresence>
   );
