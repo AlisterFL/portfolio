@@ -33,7 +33,7 @@ export default function LanguageDropdown({ language, onLanguageChange }: Languag
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 rounded-md border border-[#d4af37]/30 bg-[#d4af37]/15 px-3 py-1.5 text-xs font-medium text-[#d4af37] transition-colors hover:bg-[#d4af37]/25"
+        className="flex items-center gap-1 rounded-md border border-[var(--border-accent)] px-3 py-1.5 text-xs font-medium text-[var(--accent)] transition-colors"
       >
         {languageLabels[language]}
         <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className={`transition-transform ${open ? "rotate-180" : ""}`}>
@@ -41,7 +41,7 @@ export default function LanguageDropdown({ language, onLanguageChange }: Languag
         </svg>
       </button>
       {open && (
-        <div className="absolute right-0 top-full mt-1 z-50 overflow-hidden rounded-md border border-white/10 bg-[#1a1a1a] shadow-lg">
+        <div className="absolute right-0 top-full mt-1 z-50 overflow-hidden rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] shadow-lg">
           {(Object.keys(languageLabels) as Language[]).map((lang) => (
             <button
               key={lang}
@@ -49,8 +49,8 @@ export default function LanguageDropdown({ language, onLanguageChange }: Languag
                 onLanguageChange(lang);
                 setOpen(false);
               }}
-              className={`block w-full px-4 py-2 text-left text-xs transition-colors hover:bg-white/5 ${
-                lang === language ? "text-[#d4af37]" : "text-white/70"
+              className={`block w-full px-4 py-2 text-left text-xs transition-colors hover:bg-[var(--surface)] ${
+                lang === language ? "text-[var(--accent)]" : "text-[var(--text-secondary)]"
               }`}
             >
               {languageLabels[lang]}

@@ -26,7 +26,7 @@ export default function CategoryTabs({ categories, activeCategory, onCategoryCha
   return (
     <div
       ref={tabsRef}
-      className="flex overflow-x-auto border-b border-white/10 px-3 scrollbar-none"
+      className="flex overflow-x-auto border-b border-[var(--border)] px-3 scrollbar-none"
     >
       {categories.map((cat) => {
         const isActive = cat.id === activeCategory;
@@ -37,8 +37,8 @@ export default function CategoryTabs({ categories, activeCategory, onCategoryCha
             onClick={() => onCategoryChange(cat.id)}
             className={`whitespace-nowrap px-4 py-3 text-[13px] transition-colors ${
               isActive
-                ? "border-b-2 border-[#d4af37] font-semibold text-[#d4af37]"
-                : "text-white/50 hover:text-white/70"
+                ? "border-b-2 border-[var(--accent)] font-semibold text-[var(--accent)]"
+                : "text-[var(--text-secondary)] hover:text-[var(--text)]"
             }`}
           >
             {cat.name[language]}

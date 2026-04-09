@@ -11,16 +11,16 @@ interface FilterBarProps {
 }
 
 const tagLabels: Record<string, Record<Language, string>> = {
-  vegetarian: { fr: "Végétarien", nl: "Vegetarisch", en: "Vegetarian", de: "Vegetarisch" },
-  vegan: { fr: "Végan", nl: "Veganistisch", en: "Vegan", de: "Vegan" },
-  spicy: { fr: "Épicé", nl: "Pikant", en: "Spicy", de: "Scharf" },
+  vegetarian: { fr: "Vegetarien", nl: "Vegetarisch", en: "Vegetarian", de: "Vegetarisch" },
+  vegan: { fr: "Vegan", nl: "Veganistisch", en: "Vegan", de: "Vegan" },
+  spicy: { fr: "Epice", nl: "Pikant", en: "Spicy", de: "Scharf" },
 };
 
 const allergenFilterLabels: Record<string, Record<Language, string>> = {
   gluten: { fr: "Sans gluten", nl: "Glutenvrij", en: "Gluten-free", de: "Glutenfrei" },
   dairy: { fr: "Sans lactose", nl: "Lactosevrij", en: "Dairy-free", de: "Laktosefrei" },
-  crustaceans: { fr: "Sans crustacés", nl: "Zonder schaaldieren", en: "No crustaceans", de: "Ohne Krebstiere" },
-  eggs: { fr: "Sans œufs", nl: "Zonder eieren", en: "Egg-free", de: "Ohne Eier" },
+  crustaceans: { fr: "Sans crustaces", nl: "Zonder schaaldieren", en: "No crustaceans", de: "Ohne Krebstiere" },
+  eggs: { fr: "Sans oeufs", nl: "Zonder eieren", en: "Egg-free", de: "Ohne Eier" },
   nuts: { fr: "Sans noix", nl: "Notenvrij", en: "Nut-free", de: "Nussfrei" },
 };
 
@@ -53,7 +53,7 @@ export default function FilterBar({
             className={`shrink-0 px-3 py-1 text-xs rounded-full border transition-colors ${
               isActive
                 ? getTagActiveClass(tag)
-                : "bg-white/[0.06] text-white/50 border-white/10"
+                : "bg-[var(--surface)] text-[var(--text-secondary)] border-[var(--border)]"
             }`}
           >
             {tagLabels[tag][language]}
@@ -62,7 +62,7 @@ export default function FilterBar({
       })}
 
       {/* Divider */}
-      <div className="shrink-0 w-px h-4 bg-white/10 mx-1" />
+      <div className="shrink-0 w-px h-4 bg-[var(--border)] mx-1" />
 
       {/* Allergen exclusion filters */}
       {ALLERGEN_KEYS.map((allergen) => {
@@ -74,7 +74,7 @@ export default function FilterBar({
             className={`shrink-0 px-3 py-1 text-xs rounded-full border transition-colors ${
               isExcluded
                 ? "bg-red-900/30 text-red-400 border-red-500/30"
-                : "bg-white/[0.06] text-white/50 border-white/10"
+                : "bg-[var(--surface)] text-[var(--text-secondary)] border-[var(--border)]"
             }`}
           >
             {allergenFilterLabels[allergen][language]}

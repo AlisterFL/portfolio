@@ -1,4 +1,5 @@
 export type Language = "fr" | "nl" | "en" | "de";
+export type Theme = "dark" | "light";
 
 export interface Translatable {
   fr: string;

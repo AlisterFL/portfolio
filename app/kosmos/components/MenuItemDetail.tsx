@@ -11,47 +11,47 @@ interface MenuItemDetailProps {
 
 const allergenLabels: Record<Allergen, Record<Language, string>> = {
   gluten: { fr: "Gluten", nl: "Gluten", en: "Gluten", de: "Gluten" },
-  crustaceans: { fr: "Crustacés", nl: "Schaaldieren", en: "Crustaceans", de: "Krebstiere" },
-  eggs: { fr: "Œufs", nl: "Eieren", en: "Eggs", de: "Eier" },
+  crustaceans: { fr: "Crustaces", nl: "Schaaldieren", en: "Crustaceans", de: "Krebstiere" },
+  eggs: { fr: "Oeufs", nl: "Eieren", en: "Eggs", de: "Eier" },
   fish: { fr: "Poisson", nl: "Vis", en: "Fish", de: "Fisch" },
-  peanuts: { fr: "Arachides", nl: "Pinda's", en: "Peanuts", de: "Erdnüsse" },
+  peanuts: { fr: "Arachides", nl: "Pinda's", en: "Peanuts", de: "Erdnusse" },
   soy: { fr: "Soja", nl: "Soja", en: "Soy", de: "Soja" },
   dairy: { fr: "Lait", nl: "Melk", en: "Dairy", de: "Milch" },
-  nuts: { fr: "Fruits à coque", nl: "Noten", en: "Nuts", de: "Nüsse" },
-  celery: { fr: "Céleri", nl: "Selderij", en: "Celery", de: "Sellerie" },
+  nuts: { fr: "Fruits a coque", nl: "Noten", en: "Nuts", de: "Nusse" },
+  celery: { fr: "Celeri", nl: "Selderij", en: "Celery", de: "Sellerie" },
   mustard: { fr: "Moutarde", nl: "Mosterd", en: "Mustard", de: "Senf" },
-  sesame: { fr: "Sésame", nl: "Sesam", en: "Sesame", de: "Sesam" },
+  sesame: { fr: "Sesame", nl: "Sesam", en: "Sesame", de: "Sesam" },
   sulphites: { fr: "Sulfites", nl: "Sulfieten", en: "Sulphites", de: "Sulfite" },
   lupin: { fr: "Lupin", nl: "Lupine", en: "Lupin", de: "Lupine" },
   molluscs: { fr: "Mollusques", nl: "Weekdieren", en: "Molluscs", de: "Weichtiere" },
 };
 
 const allergenEmojis: Record<Allergen, string> = {
-  gluten: "🌾",
-  crustaceans: "🦐",
-  eggs: "🥚",
-  fish: "🐟",
-  peanuts: "🥜",
-  soy: "🫘",
-  dairy: "🥛",
-  nuts: "🌰",
-  celery: "🥬",
-  mustard: "🟡",
-  sesame: "⚪",
-  sulphites: "🍷",
-  lupin: "🌸",
-  molluscs: "🐚",
+  gluten: "\u{1F33E}",
+  crustaceans: "\u{1F990}",
+  eggs: "\u{1F95A}",
+  fish: "\u{1F41F}",
+  peanuts: "\u{1F95C}",
+  soy: "\u{1FAD8}",
+  dairy: "\u{1F95B}",
+  nuts: "\u{1F330}",
+  celery: "\u{1F96C}",
+  mustard: "\u{1F7E1}",
+  sesame: "\u26AA",
+  sulphites: "\u{1F377}",
+  lupin: "\u{1F338}",
+  molluscs: "\u{1F41A}",
 };
 
 const sectionLabels = {
-  ingredients: { fr: "Ingrédients", nl: "Ingrediënten", en: "Ingredients", de: "Zutaten" },
-  allergens: { fr: "Allergènes", nl: "Allergenen", en: "Allergens", de: "Allergene" },
-  nutrition: { fr: "Valeurs nutritionnelles", nl: "Voedingswaarden", en: "Nutrition facts", de: "Nährwerte" },
+  ingredients: { fr: "Ingredients", nl: "Ingredienten", en: "Ingredients", de: "Zutaten" },
+  allergens: { fr: "Allergenes", nl: "Allergenen", en: "Allergens", de: "Allergene" },
+  nutrition: { fr: "Valeurs nutritionnelles", nl: "Voedingswaarden", en: "Nutrition facts", de: "Nahrwerte" },
 };
 
 const nutritionLabels = {
-  calories: { fr: "Calories", nl: "Calorieën", en: "Calories", de: "Kalorien" },
-  protein: { fr: "Protéines", nl: "Eiwitten", en: "Protein", de: "Protein" },
+  calories: { fr: "Calories", nl: "Calorieen", en: "Calories", de: "Kalorien" },
+  protein: { fr: "Proteines", nl: "Eiwitten", en: "Protein", de: "Protein" },
   carbs: { fr: "Glucides", nl: "Koolhydraten", en: "Carbs", de: "Kohlenhydrate" },
   fat: { fr: "Lipides", nl: "Vetten", en: "Fat", de: "Fett" },
 };
@@ -64,7 +64,7 @@ const tagStyles: Record<string, string> = {
   new: "bg-blue-500/20 text-blue-400 border-blue-500/30",
 };
 
-const defaultTagStyle = "bg-white/10 text-white/60 border-white/10";
+const defaultTagStyle = "bg-[var(--surface)] text-[var(--text-secondary)] border-[var(--border)]";
 
 export default function MenuItemDetail({ item, language, onClose }: MenuItemDetailProps) {
   return (
@@ -80,13 +80,13 @@ export default function MenuItemDetail({ item, language, onClose }: MenuItemDeta
         >
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            className="absolute inset-0 bg-[var(--backdrop)] backdrop-blur-md"
             onClick={onClose}
           />
 
           {/* Modal */}
           <motion.div
-            className="relative z-10 max-h-[90dvh] w-full max-w-lg overflow-y-auto rounded-2xl border border-white/[0.08] bg-[#0a0a0a] shadow-2xl"
+            className="relative z-10 max-h-[90dvh] w-full max-w-lg overflow-y-auto rounded-2xl border border-[var(--border)] bg-[var(--bg)] shadow-2xl"
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -113,14 +113,14 @@ export default function MenuItemDetail({ item, language, onClose }: MenuItemDeta
             <div className="space-y-5 p-5">
               {/* Name + Price */}
               <div className="flex items-start justify-between gap-3">
-                <h2 className="text-xl font-bold text-white">{item.name[language]}</h2>
-                <span className="shrink-0 text-xl font-bold text-[#d4af37]">
-                  €{item.price.toFixed(2)}
+                <h2 className="text-xl font-bold text-[var(--text)]">{item.name[language]}</h2>
+                <span className="shrink-0 text-xl font-bold text-[var(--accent)]">
+                  &euro;{item.price.toFixed(2)}
                 </span>
               </div>
 
               {/* Description */}
-              <p className="text-sm leading-relaxed text-white/60">
+              <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
                 {item.description[language]}
               </p>
 
@@ -141,10 +141,10 @@ export default function MenuItemDetail({ item, language, onClose }: MenuItemDeta
               {/* Ingredients */}
               {item.ingredients && (
                 <div>
-                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#d4af37]">
+                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">
                     {sectionLabels.ingredients[language]}
                   </h3>
-                  <p className="text-sm leading-relaxed text-white/50">
+                  <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
                     {item.ingredients[language]}
                   </p>
                 </div>
@@ -153,17 +153,17 @@ export default function MenuItemDetail({ item, language, onClose }: MenuItemDeta
               {/* Allergens */}
               {item.allergens && item.allergens.length > 0 && (
                 <div>
-                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#d4af37]">
+                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">
                     {sectionLabels.allergens[language]}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {item.allergens.map((allergen) => (
                       <div
                         key={allergen}
-                        className="flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.04] px-2.5 py-1.5"
+                        className="flex items-center gap-1.5 rounded-lg border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1.5"
                       >
                         <span className="text-sm">{allergenEmojis[allergen]}</span>
-                        <span className="text-xs text-white/70">
+                        <span className="text-xs text-[var(--text-secondary)]">
                           {allergenLabels[allergen][language]}
                         </span>
                       </div>
@@ -175,22 +175,22 @@ export default function MenuItemDetail({ item, language, onClose }: MenuItemDeta
               {/* Nutrition */}
               {item.nutrition && (
                 <div>
-                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#d4af37]">
+                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">
                     {sectionLabels.nutrition[language]}
                   </h3>
                   <div className="grid grid-cols-2 gap-2">
                     {(["calories", "protein", "carbs", "fat"] as const).map((key) => (
                       <div
                         key={key}
-                        className="rounded-xl border border-white/[0.06] bg-white/[0.03] p-3 text-center"
+                        className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3 text-center"
                       >
-                        <div className="text-lg font-bold text-white">
+                        <div className="text-lg font-bold text-[var(--text)]">
                           {item.nutrition![key]}
-                          <span className="ml-0.5 text-xs font-normal text-white/40">
+                          <span className="ml-0.5 text-xs font-normal text-[var(--text-tertiary)]">
                             {key === "calories" ? "kcal" : "g"}
                           </span>
                         </div>
-                        <div className="mt-0.5 text-[11px] text-white/40">
+                        <div className="mt-0.5 text-[11px] text-[var(--text-tertiary)]">
                           {nutritionLabels[key][language]}
                         </div>
                       </div>

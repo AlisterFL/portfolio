@@ -20,7 +20,7 @@ export default function SearchBar({ value, onChange, language }: SearchBarProps)
     <div className="relative mx-4 mt-3">
       {/* Search icon */}
       <svg
-        className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-white/30"
+        className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-tertiary)]"
         width="15"
         height="15"
         viewBox="0 0 15 15"
@@ -36,14 +36,15 @@ export default function SearchBar({ value, onChange, language }: SearchBarProps)
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholders[language]}
-        className="w-full rounded-xl border border-white/10 bg-white/[0.06] py-2 pl-9 pr-8 text-[13px] text-white placeholder-white/30 outline-none transition-colors focus:border-white/20 focus:bg-white/[0.09]"
+        className="w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] py-2 pl-9 pr-8 text-[13px] text-[var(--text)] outline-none transition-colors focus:border-[var(--text-tertiary)] focus:bg-[var(--surface-hover)]"
+        style={{ colorScheme: "auto" }}
       />
 
       {/* Clear button */}
       {value && (
         <button
           onClick={() => onChange("")}
-          className="absolute right-2.5 top-1/2 -translate-y-1/2 text-white/30 transition-colors hover:text-white/60"
+          className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[var(--text-tertiary)] transition-colors hover:text-[var(--text-secondary)]"
           aria-label="Clear search"
         >
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">

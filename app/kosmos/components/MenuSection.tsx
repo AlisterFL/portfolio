@@ -22,8 +22,8 @@ export default function MenuSection({ category, language, onItemClick }: MenuSec
         className="flex flex-col gap-3 p-4"
       >
         {category.items.length === 0 ? (
-          <p className="py-8 text-center text-sm text-white/30">
-            Aucun résultat
+          <p className="py-8 text-center text-sm text-[var(--text-tertiary)]">
+            Aucun resultat
           </p>
         ) : (
           category.items.map((item) => (
