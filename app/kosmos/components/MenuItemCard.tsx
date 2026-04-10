@@ -36,8 +36,13 @@ export default function MenuItemCard({ item, language, onClick }: MenuItemCardPr
   return (
     <div
       onClick={onClick}
-      className="flex cursor-pointer gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3 transition hover:bg-[var(--surface-hover)]"
+      className="relative flex cursor-pointer gap-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-3 transition hover:bg-[var(--surface-hover)]"
     >
+      {item.tags?.includes("popular") && (
+        <span className="absolute -right-1 -top-1 flex items-center gap-0.5 rounded-full bg-[var(--accent)] px-2 py-0.5 text-[9px] font-semibold text-white shadow-sm">
+          ★ {({ fr: "Populaire", nl: "Populair", en: "Popular", de: "Beliebt" } as Record<Language, string>)[language]}
+        </span>
+      )}
       <img
         src={item.image}
         alt={item.name[language]}
