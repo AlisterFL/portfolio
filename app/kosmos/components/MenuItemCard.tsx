@@ -2,10 +2,21 @@
 
 import { MenuItem, Language, Allergen } from "../types";
 
-const allergenEmoji: Record<Allergen, string> = {
-  gluten: "🌾", crustaceans: "🦐", eggs: "🥚", fish: "🐟", peanuts: "🥜",
-  soy: "🫘", dairy: "🥛", nuts: "🌰", celery: "🥬", mustard: "🟡",
-  sesame: "⚪", sulphites: "🍷", lupin: "🌸", molluscs: "🐚",
+const allergenShort: Record<Allergen, Record<Language, string>> = {
+  gluten: { fr: "Gluten", nl: "Gluten", en: "Gluten", de: "Gluten" },
+  crustaceans: { fr: "Crustacés", nl: "Schaaldieren", en: "Shellfish", de: "Krebstiere" },
+  eggs: { fr: "Œufs", nl: "Eieren", en: "Eggs", de: "Eier" },
+  fish: { fr: "Poisson", nl: "Vis", en: "Fish", de: "Fisch" },
+  peanuts: { fr: "Arachides", nl: "Pinda's", en: "Peanuts", de: "Erdnüsse" },
+  soy: { fr: "Soja", nl: "Soja", en: "Soy", de: "Soja" },
+  dairy: { fr: "Lait", nl: "Melk", en: "Dairy", de: "Milch" },
+  nuts: { fr: "Noix", nl: "Noten", en: "Nuts", de: "Nüsse" },
+  celery: { fr: "Céleri", nl: "Selderij", en: "Celery", de: "Sellerie" },
+  mustard: { fr: "Moutarde", nl: "Mosterd", en: "Mustard", de: "Senf" },
+  sesame: { fr: "Sésame", nl: "Sesam", en: "Sesame", de: "Sesam" },
+  sulphites: { fr: "Sulfites", nl: "Sulfieten", en: "Sulphites", de: "Sulfite" },
+  lupin: { fr: "Lupin", nl: "Lupine", en: "Lupin", de: "Lupine" },
+  molluscs: { fr: "Mollusques", nl: "Weekdieren", en: "Molluscs", de: "Weichtiere" },
 };
 
 interface MenuItemCardProps {
@@ -39,11 +50,9 @@ export default function MenuItemCard({ item, language, onClick }: MenuItemCardPr
         {(item.nutrition || (item.allergens && item.allergens.length > 0)) && (
           <div className="mt-1.5 flex items-center justify-between">
             {item.allergens && item.allergens.length > 0 ? (
-              <div className="flex gap-0.5">
-                {item.allergens.map((a) => (
-                  <span key={a} className="text-[11px] leading-none">{allergenEmoji[a]}</span>
-                ))}
-              </div>
+              <p className="text-[10px] text-[var(--text-tertiary)]">
+                {item.allergens.map((a) => allergenShort[a][language]).join(" · ")}
+              </p>
             ) : <span />}
             {item.nutrition && (
               <span className="text-[10px] text-[var(--text-tertiary)]">
