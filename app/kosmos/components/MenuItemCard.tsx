@@ -1,6 +1,12 @@
 "use client";
 
-import { MenuItem, Language } from "../types";
+import { MenuItem, Language, Allergen } from "../types";
+
+const allergenEmoji: Record<Allergen, string> = {
+  gluten: "🌾", crustaceans: "🦐", eggs: "🥚", fish: "🐟", peanuts: "🥜",
+  soy: "🫘", dairy: "🥛", nuts: "🌰", celery: "🥬", mustard: "🟡",
+  sesame: "⚪", sulphites: "🍷", lupin: "🌸", molluscs: "🐚",
+};
 
 interface MenuItemCardProps {
   item: MenuItem;
@@ -30,10 +36,21 @@ export default function MenuItemCard({ item, language, onClick }: MenuItemCardPr
         <p className="mt-1 text-xs leading-relaxed text-[var(--text-secondary)]">
           {item.description[language]}
         </p>
-        {item.nutrition && (
-          <p className="mt-1 text-[10px] text-[var(--text-tertiary)]">
-            {item.nutrition.calories} kcal
-          </p>
+        {(item.nutrition || (item.allergens && item.allergens.length > 0)) && (
+          <div className="mt-1.5 flex items-center justify-between">
+            {item.allergens && item.allergens.length > 0 ? (
+              <div className="flex gap-0.5">
+                {item.allergens.map((a) => (
+                  <span key={a} className="text-[11px] leading-none">{allergenEmoji[a]}</span>
+                ))}
+              </div>
+            ) : <span />}
+            {item.nutrition && (
+              <span className="text-[10px] text-[var(--text-tertiary)]">
+                {item.nutrition.calories} kcal
+              </span>
+            )}
+          </div>
         )}
       </div>
     </div>
