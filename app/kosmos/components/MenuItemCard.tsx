@@ -54,24 +54,26 @@ export default function MenuItemCard({ item, language, onClick }: MenuItemCardPr
         <p className="mt-1 text-xs leading-relaxed text-[var(--text-secondary)]">
           {item.description[language]}
         </p>
-        {item.allergens && item.allergens.length > 0 && (
-          <div className="mt-1.5 flex flex-wrap gap-1">
-            {item.allergens.map((a) => (
-              <span
-                key={a}
-                className="rounded-full border border-[var(--border)] bg-[var(--surface-hover)] px-2 py-0.5 text-[9px] text-[var(--text-tertiary)]"
-              >
-                {allergenLabel[a][language]}
-              </span>
-            ))}
-          </div>
-        )}
-        <p className="mt-1.5 flex items-center gap-1 text-[10px] text-[var(--accent)]">
-          <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" />
-          </svg>
-          {detailHint[language]}
-        </p>
+        <div className="mt-1.5 flex items-end justify-between gap-2">
+          {item.allergens && item.allergens.length > 0 ? (
+            <div className="flex flex-wrap gap-1">
+              {item.allergens.map((a) => (
+                <span
+                  key={a}
+                  className="rounded-full border border-[var(--border)] bg-[var(--surface-hover)] px-2 py-0.5 text-[9px] text-[var(--text-tertiary)]"
+                >
+                  {allergenLabel[a][language]}
+                </span>
+              ))}
+            </div>
+          ) : <span />}
+          <span className="flex shrink-0 items-center gap-1 text-[10px] text-[var(--accent)]">
+            <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" />
+            </svg>
+            {detailHint[language]}
+          </span>
+        </div>
       </div>
     </div>
   );
