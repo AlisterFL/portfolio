@@ -20,15 +20,17 @@ interface KosmosSiteHeroProps {
 export default function KosmosSiteHero({ language }: KosmosSiteHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const veilRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
     const image = imageRef.current;
+    const veil = veilRef.current;
     const overlay = overlayRef.current;
     const content = contentRef.current;
-    if (!container || !image || !overlay || !content) return;
+    if (!container || !image || !veil || !overlay || !content) return;
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -44,6 +46,14 @@ export default function KosmosSiteHero({ language }: KosmosSiteHeroProps) {
       image,
       { scale: 1 },
       { scale: 1.4, ease: "none" },
+      0
+    );
+
+    // Fade out white veil (visible at start, disappears on scroll)
+    tl.fromTo(
+      veil,
+      { opacity: 1 },
+      { opacity: 0, ease: "none" },
       0
     );
 
@@ -84,8 +94,11 @@ export default function KosmosSiteHero({ language }: KosmosSiteHeroProps) {
           }}
         />
 
-        {/* Light veil to brighten dark image */}
-        <div className="absolute inset-0 bg-white/10" />
+        {/* White veil to brighten image — visible at start, fades out on scroll */}
+        <div
+          ref={veilRef}
+          className="absolute inset-0 bg-white/20"
+        />
 
         {/* Cream overlay that fades in on scroll */}
         <div
@@ -93,7 +106,7 @@ export default function KosmosSiteHero({ language }: KosmosSiteHeroProps) {
           className="absolute inset-0 bg-[#faf9f6] opacity-0"
         />
 
-        {/* Centered content */}
+        {/* Centered content (above veil) */}
         <div
           ref={contentRef}
           className="absolute inset-0 flex flex-col items-center justify-center"
