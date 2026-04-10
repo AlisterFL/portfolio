@@ -1,12 +1,29 @@
 "use client";
 
-import { MenuItem, Language } from "../types";
+import { MenuItem, Language, Allergen } from "../types";
+
+const allergenLabel: Record<Allergen, Record<Language, string>> = {
+  gluten: { fr: "Gluten", nl: "Gluten", en: "Gluten", de: "Gluten" },
+  crustaceans: { fr: "Crustacés", nl: "Schaaldieren", en: "Shellfish", de: "Krebstiere" },
+  eggs: { fr: "Œufs", nl: "Eieren", en: "Eggs", de: "Eier" },
+  fish: { fr: "Poisson", nl: "Vis", en: "Fish", de: "Fisch" },
+  peanuts: { fr: "Arachides", nl: "Pinda's", en: "Peanuts", de: "Erdnüsse" },
+  soy: { fr: "Soja", nl: "Soja", en: "Soy", de: "Soja" },
+  dairy: { fr: "Lait", nl: "Melk", en: "Dairy", de: "Milch" },
+  nuts: { fr: "Noix", nl: "Noten", en: "Nuts", de: "Nüsse" },
+  celery: { fr: "Céleri", nl: "Selderij", en: "Celery", de: "Sellerie" },
+  mustard: { fr: "Moutarde", nl: "Mosterd", en: "Mustard", de: "Senf" },
+  sesame: { fr: "Sésame", nl: "Sesam", en: "Sesame", de: "Sesam" },
+  sulphites: { fr: "Sulfites", nl: "Sulfieten", en: "Sulphites", de: "Sulfite" },
+  lupin: { fr: "Lupin", nl: "Lupine", en: "Lupin", de: "Lupine" },
+  molluscs: { fr: "Mollusques", nl: "Weekdieren", en: "Molluscs", de: "Weichtiere" },
+};
 
 const detailHint: Record<Language, string> = {
-  fr: "Voir détails",
-  nl: "Bekijk details",
-  en: "View details",
-  de: "Details ansehen",
+  fr: "Plus de détails",
+  nl: "Meer details",
+  en: "More details",
+  de: "Mehr Details",
 };
 
 interface MenuItemCardProps {
@@ -37,6 +54,18 @@ export default function MenuItemCard({ item, language, onClick }: MenuItemCardPr
         <p className="mt-1 text-xs leading-relaxed text-[var(--text-secondary)]">
           {item.description[language]}
         </p>
+        {item.allergens && item.allergens.length > 0 && (
+          <div className="mt-1.5 flex flex-wrap gap-1">
+            {item.allergens.map((a) => (
+              <span
+                key={a}
+                className="rounded-full border border-[var(--border)] bg-[var(--surface-hover)] px-2 py-0.5 text-[9px] text-[var(--text-tertiary)]"
+              >
+                {allergenLabel[a][language]}
+              </span>
+            ))}
+          </div>
+        )}
         <p className="mt-1.5 flex items-center gap-1 text-[10px] text-[var(--accent)]">
           <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z" />
