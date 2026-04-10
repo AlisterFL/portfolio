@@ -113,6 +113,21 @@ export default function KosmosSiteContact({ language }: KosmosSiteContactProps) 
         </div>
       </div>
 
+      {/* Map */}
+      <div className="animate-in mx-auto mt-16 max-w-3xl overflow-hidden rounded-xl">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.8!2d2.8855!3d50.8514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcc5e0e1b1b1b1%3A0x1234567890abcdef!2sGrote%20Markt%2026%2C%208900%20Ieper!5e0!3m2!1sfr!2sbe!4v1700000000000!5m2!1sfr!2sbe"
+          width="100%"
+          height="250"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Kosmos Ieper location"
+          className="opacity-80 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+        />
+      </div>
+
       {/* Footer */}
       <div className="mx-auto mt-16 max-w-3xl border-t border-white/10 pt-6 text-center text-xs text-white/20">
         {t.footer[language]}

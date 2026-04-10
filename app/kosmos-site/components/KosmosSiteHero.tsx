@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Language } from "../types";
+import heroImage from "../assets/hero.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,8 +78,7 @@ export default function KosmosSiteHero({ language }: KosmosSiteHeroProps) {
           ref={imageRef}
           className="h-full w-full will-change-transform"
           style={{
-            backgroundImage:
-              "url('https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/sero6u/restaurant-kosmos-ieper-1.png')",
+            backgroundImage: `url('${heroImage.src}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
