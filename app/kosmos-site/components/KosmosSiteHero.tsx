@@ -84,7 +84,10 @@ export default function KosmosSiteHero({ language }: KosmosSiteHeroProps) {
           }}
         />
 
-        {/* Cream overlay that fades in */}
+        {/* Light veil over dark image */}
+        <div className="absolute inset-0 bg-white/25" />
+
+        {/* Cream overlay that fades in on scroll */}
         <div
           ref={overlayRef}
           className="absolute inset-0 bg-[#faf9f6] opacity-0"
