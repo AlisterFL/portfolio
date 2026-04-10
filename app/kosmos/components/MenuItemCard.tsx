@@ -42,7 +42,7 @@ export default function MenuItemCard({ item, language, onClick }: MenuItemCardPr
         src={item.image}
         alt={item.name[language]}
         loading="lazy"
-        className="h-20 w-20 flex-shrink-0 rounded-[10px] object-cover"
+        className="min-h-20 w-20 flex-shrink-0 self-stretch rounded-[10px] object-cover"
       />
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-2">
