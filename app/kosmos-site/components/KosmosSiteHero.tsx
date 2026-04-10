@@ -84,8 +84,8 @@ export default function KosmosSiteHero({ language }: KosmosSiteHeroProps) {
           }}
         />
 
-        {/* Light veil over dark image */}
-        <div className="absolute inset-0 bg-white/25" />
+        {/* Light veil to brighten dark image */}
+        <div className="absolute inset-0 bg-white/10" />
 
         {/* Cream overlay that fades in on scroll */}
         <div
