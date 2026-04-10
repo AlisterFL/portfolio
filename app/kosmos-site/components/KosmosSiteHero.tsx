@@ -3,10 +3,20 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Language } from "../types";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function KosmosSiteHero() {
+const t = {
+  subtitle: { fr: "Restaurant & Bar à Tapas", nl: "Restaurant & Tapas Bar", en: "Restaurant & Tapas Bar", de: "Restaurant & Tapas Bar" },
+  scroll: { fr: "Défiler", nl: "Scroll", en: "Scroll", de: "Scrollen" },
+};
+
+interface KosmosSiteHeroProps {
+  language: Language;
+}
+
+export default function KosmosSiteHero({ language }: KosmosSiteHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -54,7 +64,7 @@ export default function KosmosSiteHero() {
 
     return () => {
       tl.kill();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
 
@@ -90,20 +100,14 @@ export default function KosmosSiteHero() {
             alt="Kosmos Ieper"
             className="mb-6 h-16 drop-shadow-lg"
           />
-          <h1
-            className="mb-3 text-center font-[family-name:var(--font-playfair)] text-5xl font-bold text-white md:text-7xl"
-            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}
-          >
-            Kosmos
-          </h1>
           <p
             className="mb-8 text-center text-lg tracking-[0.2em] uppercase text-white/80 md:text-xl"
             style={{ textShadow: "0 1px 10px rgba(0,0,0,0.3)" }}
           >
-            Restaurant & Tapas Bar
+            {t.subtitle[language]}
           </p>
           <div className="flex flex-col items-center gap-2 text-white/60">
-            <span className="text-xs tracking-[0.15em] uppercase">Scroll</span>
+            <span className="text-xs tracking-[0.15em] uppercase">{t.scroll[language]}</span>
             <svg
               className="h-5 w-5 animate-bounce"
               fill="none"

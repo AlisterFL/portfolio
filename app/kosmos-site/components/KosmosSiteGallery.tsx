@@ -4,8 +4,19 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Language } from "../types";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const t = {
+  heading: { fr: "Ambiance", nl: "Sfeer", en: "Atmosphere", de: "Atmosphäre" },
+  subtitle: {
+    fr: "Découvrez l'ambiance unique de notre restaurant",
+    nl: "Geniet van de unieke sfeer in ons restaurant",
+    en: "Experience the unique atmosphere of our restaurant",
+    de: "Erleben Sie die einzigartige Atmosphäre unseres Restaurants",
+  },
+};
 
 const photos = [
   {
@@ -40,7 +51,11 @@ const photos = [
   },
 ];
 
-export default function KosmosSiteGallery() {
+interface KosmosSiteGalleryProps {
+  language: Language;
+}
+
+export default function KosmosSiteGallery({ language }: KosmosSiteGalleryProps) {
   const headingRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -88,7 +103,7 @@ export default function KosmosSiteGallery() {
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
 
@@ -97,11 +112,11 @@ export default function KosmosSiteGallery() {
       {/* Section heading */}
       <div ref={headingRef} className="mb-16 text-center opacity-0">
         <h2 className="font-[family-name:var(--font-playfair)] text-4xl font-bold text-[#1a1a1a] md:text-5xl">
-          Sfeer
+          {t.heading[language]}
         </h2>
         <div className="mx-auto mt-4 h-[2px] w-16 bg-[#d4af37]" />
         <p className="mt-5 text-base tracking-wide text-[#1a1a1a]/60 md:text-lg">
-          Geniet van de unieke sfeer in ons restaurant
+          {t.subtitle[language]}
         </p>
       </div>
 

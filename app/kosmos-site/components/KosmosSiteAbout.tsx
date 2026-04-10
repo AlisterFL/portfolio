@@ -3,81 +3,114 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Language } from "../types";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const features = [
-  {
-    label: "Verse Tapas",
-    description:
-      "Kwalitatieve verse tapas met Spaanse en Italiaanse specialiteiten, dagelijks bereid.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        {/* Fork & knife */}
-        <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
-        <path d="M7 2v20" />
-        <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7" />
-      </svg>
-    ),
+const t = {
+  sectionLabel: { fr: "À propos", nl: "Over Kosmos", en: "About", de: "Über uns" },
+  heading1: { fr: "Autrefois une agence de voyages,", nl: "Ooit een reisbureau,", en: "Once a travel agency,", de: "Einst ein Reisebüro," },
+  heading2: { fr: "aujourd'hui un bar à tapas branché.", nl: "nu een hippe tapastent.", en: "now a trendy tapas bar.", de: "jetzt eine trendige Tapas-Bar." },
+  boldText: { fr: "Grand-Place d'Ypres", nl: "Grote Markt van Ieper", en: "Grote Markt in Ypres", de: "Grote Markt in Ypern" },
+  body1: {
+    fr: "Situé en plein cœur de la Grand-Place d'Ypres, Kosmos propose un mélange unique de saveurs espagnoles et italiennes. Nos tapas frais sont préparés quotidiennement avec les meilleurs ingrédients — petits par la taille, grands par le goût.",
+    nl: "Gelegen pal op de Grote Markt van Ieper, biedt Kosmos een unieke mix van Spaanse en Italiaanse smaken. Onze verse tapas worden dagelijks bereid met de beste ingrediënten — klein van formaat, groot van smaak.",
+    en: "Located right on the Grote Markt in Ypres, Kosmos offers a unique blend of Spanish and Italian flavors. Our fresh tapas are prepared daily with the finest ingredients — small in size, big on taste.",
+    de: "Direkt am Grote Markt in Ypern gelegen, bietet Kosmos eine einzigartige Mischung aus spanischen und italienischen Aromen. Unsere frischen Tapas werden täglich mit den besten Zutaten zubereitet — klein im Format, groß im Geschmack.",
   },
-  {
-    label: "Cocktails & Mocktails",
-    description:
-      "Zelf gemaakte cocktails, mocktails en onze alomgekende picon. Voor elk zijn smaak.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        {/* Cocktail glass */}
-        <path d="M8 21h8" />
-        <path d="M12 15v6" />
-        <path d="M4 3h16l-8 12Z" />
-        <path d="M15 8.5 19 3" />
-      </svg>
-    ),
+  body2: {
+    fr: "Que vous dégustiez nos cocktails artisanaux, mocktails ou le légendaire picon — chez Kosmos, vous êtes toujours au bon endroit. Musique tendance et ambiance chaleureuse pour tous.",
+    nl: "Of je nu geniet van onze handgemaakte cocktails, mocktails of de legendarische picon — bij Kosmos ben je altijd op de juiste plek. Trendy muziek en een warme sfeer voor jong en oud.",
+    en: "Whether you enjoy our handcrafted cocktails, mocktails or the legendary picon — at Kosmos, you're always in the right place. Trendy music and a warm atmosphere for everyone.",
+    de: "Ob handgemachte Cocktails, Mocktails oder der legendäre Picon — bei Kosmos sind Sie immer am richtigen Ort. Trendige Musik und eine warme Atmosphäre für Jung und Alt.",
   },
-  {
-    label: "Sfeer & Ambiance",
-    description:
-      "De place to be met trendy muziek voor jong en oud — pal op de Grote Markt van Ieper.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        {/* Music note */}
-        <path d="M9 18V5l12-2v13" />
-        <circle cx="6" cy="18" r="3" />
-        <circle cx="18" cy="16" r="3" />
-      </svg>
-    ),
+  feat1Label: { fr: "Tapas frais", nl: "Verse Tapas", en: "Fresh Tapas", de: "Frische Tapas" },
+  feat1Desc: {
+    fr: "Tapas frais de qualité avec des spécialités espagnoles et italiennes, préparés quotidiennement.",
+    nl: "Kwalitatieve verse tapas met Spaanse en Italiaanse specialiteiten, dagelijks bereid.",
+    en: "Quality fresh tapas with Spanish and Italian specialties, prepared daily.",
+    de: "Hochwertige frische Tapas mit spanischen und italienischen Spezialitäten, täglich zubereitet.",
   },
+  feat2Label: { fr: "Cocktails & Mocktails", nl: "Cocktails & Mocktails", en: "Cocktails & Mocktails", de: "Cocktails & Mocktails" },
+  feat2Desc: {
+    fr: "Cocktails et mocktails faits maison, et notre célèbre picon. Pour tous les goûts.",
+    nl: "Zelf gemaakte cocktails, mocktails en onze alomgekende picon. Voor elk zijn smaak.",
+    en: "Handmade cocktails, mocktails and our famous picon. Something for every taste.",
+    de: "Selbstgemachte Cocktails, Mocktails und unser berühmter Picon. Für jeden Geschmack.",
+  },
+  feat3Label: { fr: "Ambiance", nl: "Sfeer & Ambiance", en: "Atmosphere", de: "Atmosphäre" },
+  feat3Desc: {
+    fr: "L'endroit incontournable avec musique tendance pour tous — en plein cœur d'Ypres.",
+    nl: "De place to be met trendy muziek voor jong en oud — pal op de Grote Markt van Ieper.",
+    en: "The place to be with trendy music for everyone — right on Ypres' main square.",
+    de: "Der Ort für trendige Musik für Jung und Alt — direkt am Grote Markt in Ypern.",
+  },
+};
+
+const featureIcons = [
+  (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-6 w-6"
+    >
+      <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+      <path d="M7 2v20" />
+      <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7" />
+    </svg>
+  ),
+  (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-6 w-6"
+    >
+      <path d="M8 21h8" />
+      <path d="M12 15v6" />
+      <path d="M4 3h16l-8 12Z" />
+      <path d="M15 8.5 19 3" />
+    </svg>
+  ),
+  (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-6 w-6"
+    >
+      <path d="M9 18V5l12-2v13" />
+      <circle cx="6" cy="18" r="3" />
+      <circle cx="18" cy="16" r="3" />
+    </svg>
+  ),
 ];
 
-export default function KosmosSiteAbout() {
+interface KosmosSiteAboutProps {
+  language: Language;
+}
+
+export default function KosmosSiteAbout({ language }: KosmosSiteAboutProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
+
+  const features = [
+    { label: t.feat1Label[language], description: t.feat1Desc[language], icon: featureIcons[0] },
+    { label: t.feat2Label[language], description: t.feat2Desc[language], icon: featureIcons[1] },
+    { label: t.feat3Label[language], description: t.feat3Desc[language], icon: featureIcons[2] },
+  ];
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -154,14 +187,14 @@ export default function KosmosSiteAbout() {
         <div ref={textRef} className="opacity-0">
           {/* Section label */}
           <p className="mb-4 text-xs tracking-[0.25em] uppercase text-[#d4af37]">
-            Over Kosmos
+            {t.sectionLabel[language]}
           </p>
 
           {/* Heading */}
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl font-bold leading-tight text-[#1a1a1a] md:text-5xl">
-            Ooit een reisbureau,
+            {t.heading1[language]}
             <br />
-            nu een hippe tapastent.
+            {t.heading2[language]}
           </h2>
 
           {/* Gold accent line */}
@@ -169,15 +202,10 @@ export default function KosmosSiteAbout() {
 
           {/* Body copy */}
           <p className="mb-5 text-base leading-relaxed text-[#1a1a1a]/70">
-            Gelegen pal op de <strong className="text-[#1a1a1a]">Grote Markt van Ieper</strong>, biedt
-            Kosmos een unieke mix van Spaanse en Italiaanse smaken. Onze verse
-            tapas worden dagelijks bereid met de beste ingrediënten — klein van
-            formaat, groot van smaak.
+            {t.body1[language]}
           </p>
           <p className="text-base leading-relaxed text-[#1a1a1a]/70">
-            Of je nu geniet van onze handgemaakte cocktails, mocktails of de
-            legendarische picon — bij Kosmos ben je altijd op de juiste plek.
-            Trendy muziek en een warme sfeer voor jong en oud.
+            {t.body2[language]}
           </p>
         </div>
 

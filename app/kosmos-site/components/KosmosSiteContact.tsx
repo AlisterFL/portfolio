@@ -3,10 +3,43 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Language } from "../types";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function KosmosSiteContact() {
+const t = {
+  heading: { fr: "Réserver", nl: "Reserveer", en: "Reserve", de: "Reservieren" },
+  subtitle: {
+    fr: "Venez déguster vos tapas préférés sur la Grand-Place d'Ypres",
+    nl: "Kom jij jouw favoriete tapas proeven op de Grote Markt van Ieper?",
+    en: "Come taste your favorite tapas on Ypres' main square",
+    de: "Probieren Sie Ihre Lieblingstapas am Grote Markt in Ypern",
+  },
+  hours: {
+    fr: "Mardi - Dimanche, 11h - 23h",
+    nl: "Dinsdag - Zondag, 11:00 - 23:00",
+    en: "Tuesday - Sunday, 11:00 AM - 11:00 PM",
+    de: "Dienstag - Sonntag, 11:00 - 23:00",
+  },
+  facebook: {
+    fr: "Suivez-nous sur Facebook \u2192",
+    nl: "Volg ons op Facebook \u2192",
+    en: "Follow us on Facebook \u2192",
+    de: "Folgen Sie uns auf Facebook \u2192",
+  },
+  footer: {
+    fr: "\u00A9 2026 Kosmos Ieper \u2014 Tous droits r\u00E9serv\u00E9s",
+    nl: "\u00A9 2026 Kosmos Ieper \u2014 Alle rechten voorbehouden",
+    en: "\u00A9 2026 Kosmos Ieper \u2014 All rights reserved",
+    de: "\u00A9 2026 Kosmos Ieper \u2014 Alle Rechte vorbehalten",
+  },
+};
+
+interface KosmosSiteContactProps {
+  language: Language;
+}
+
+export default function KosmosSiteContact({ language }: KosmosSiteContactProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -22,18 +55,18 @@ export default function KosmosSiteContact() {
       }
     );
 
-    return () => { ScrollTrigger.getAll().forEach((t) => t.kill()); };
+    return () => { ScrollTrigger.getAll().forEach((st) => st.kill()); };
   }, []);
 
   return (
     <section ref={sectionRef} className="bg-[#1a1a1a] px-6 py-24">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="animate-in mb-3 font-[family-name:var(--font-playfair)] text-4xl font-bold text-white md:text-5xl">
-          Reserveer
+          {t.heading[language]}
         </h2>
         <div className="animate-in mx-auto mb-6 h-[2px] w-16 bg-[#d4af37]" />
         <p className="animate-in mb-10 text-white/60">
-          Kom jij jouw favoriete tapas proeven op de Grote Markt van Ieper?
+          {t.subtitle[language]}
         </p>
 
         <a
@@ -58,7 +91,7 @@ export default function KosmosSiteContact() {
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Dinsdag - Zondag, 11:00 - 23:00
+            {t.hours[language]}
           </div>
           <div className="flex items-center gap-2">
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -75,14 +108,14 @@ export default function KosmosSiteContact() {
             rel="noopener noreferrer"
             className="text-sm text-white/30 transition-colors hover:text-[#d4af37]"
           >
-            Volg ons op Facebook → #kosmosieper
+            {t.facebook[language]} #kosmosieper
           </a>
         </div>
       </div>
 
       {/* Footer */}
       <div className="mx-auto mt-16 max-w-3xl border-t border-white/10 pt-6 text-center text-xs text-white/20">
-        © 2026 Kosmos Ieper — Alle rechten voorbehouden
+        {t.footer[language]}
       </div>
     </section>
   );
