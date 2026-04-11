@@ -149,7 +149,7 @@ export default function MenuItemDetail({ item, language, onClose }: MenuItemDeta
               <div className="flex items-start justify-between gap-3">
                 <h2 className="text-xl font-bold text-[var(--text)]">{item.name[language]}</h2>
                 <span className="shrink-0 text-xl font-bold text-[var(--accent)]">
-                  &euro;{item.price.toFixed(2)}
+                  {item.price > 0 ? `€${item.price.toFixed(2)}` : ({ fr: "Prix du marché", nl: "Marktprijs", en: "Market price", de: "Marktpreis" } as Record<string, string>)[language]}
                 </span>
               </div>
 
@@ -157,6 +157,13 @@ export default function MenuItemDetail({ item, language, onClose }: MenuItemDeta
               <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
                 {item.description[language]}
               </p>
+
+              {/* Price note */}
+              {item.priceNote && (
+                <p className="text-xs text-[var(--accent)]">
+                  {item.priceNote[language]}
+                </p>
+              )}
 
               {/* Tags */}
               {item.tags && item.tags.length > 0 && (

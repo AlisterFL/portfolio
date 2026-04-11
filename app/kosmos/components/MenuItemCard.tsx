@@ -53,12 +53,17 @@ export default function MenuItemCard({ item, language, onClick }: MenuItemCardPr
         <div className="flex items-start justify-between gap-2">
           <h3 className="text-[15px] font-semibold text-[var(--text)]">{item.name[language]}</h3>
           <span className="whitespace-nowrap text-[15px] font-bold text-[var(--accent)]">
-            &euro;{item.price.toFixed(2)}
+            {item.price > 0 ? `€${item.price.toFixed(2)}` : ({ fr: "Prix du marché", nl: "Marktprijs", en: "Market price", de: "Marktpreis" } as Record<Language, string>)[language]}
           </span>
         </div>
         <p className="mt-1 text-xs leading-relaxed text-[var(--text-secondary)]">
           {item.description[language]}
         </p>
+        {item.priceNote && (
+          <p className="mt-0.5 text-[10px] text-[var(--accent)]">
+            {item.priceNote[language]}
+          </p>
+        )}
         <div className="mt-1.5 flex items-end justify-between gap-2">
           {item.allergens && item.allergens.length > 0 ? (
             <div className="flex flex-wrap gap-1">

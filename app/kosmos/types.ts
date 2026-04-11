@@ -37,6 +37,7 @@ export interface MenuItem {
   name: Translatable;
   description: Translatable;
   price: number;
+  priceNote?: Translatable;  // e.g. "+ Poulet : €11" or "€3,20 / €3,50"
   image: string;
   tags?: string[];           // "vegetarian", "vegan", "spicy", "new", "popular"
   allergens?: Allergen[];
