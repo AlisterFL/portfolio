@@ -52,19 +52,6 @@ export default function KosmosHeader({ language, onLanguageChange, theme, onThem
             />
           </a>
 
-          {/* Center nav */}
-          <nav className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-xs font-medium tracking-[0.1em] uppercase text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
-              >
-                {link.label[language]}
-              </a>
-            ))}
-          </nav>
-
           {/* Right: theme + socials + language */}
           <div className="flex items-center gap-3">
             <ThemeToggle theme={theme} onToggle={onThemeToggle} />
