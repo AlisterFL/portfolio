@@ -25,8 +25,13 @@ export default function KosmosSiteHero({ language }: KosmosSiteHeroProps) {
         }}
       />
 
-      {/* Light veil */}
-      <div className="absolute inset-0 bg-white/15" />
+      {/* Radial vignette — darkens center where text sits */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 60%, transparent 100%)",
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center">
