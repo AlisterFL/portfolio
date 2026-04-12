@@ -12,8 +12,15 @@ const languages: Language[] = ["fr", "nl", "en", "de"];
 const navLinks: { href: string; label: Record<Language, string> }[] = [
   { href: "/kosmos/menu", label: { fr: "Menu", nl: "Menu", en: "Menu", de: "Speisekarte" } },
   { href: "/kosmos/photos", label: { fr: "Photos", nl: "Foto's", en: "Photos", de: "Fotos" } },
-  { href: "#contact", label: { fr: "Contact", nl: "Contact", en: "Contact", de: "Kontakt" } },
+  { href: "/kosmos#contact", label: { fr: "Contact", nl: "Contact", en: "Contact", de: "Kontakt" } },
 ];
+
+const reserveLabel: Record<Language, string> = {
+  fr: "Réserver",
+  nl: "Reserveren",
+  en: "Book",
+  de: "Reservieren",
+};
 
 export default function KosmosSiteHeader({ language, onLanguageChange }: KosmosSiteHeaderProps) {
   return (
@@ -39,6 +46,12 @@ export default function KosmosSiteHeader({ language, onLanguageChange }: KosmosS
               {link.label[language]}
             </a>
           ))}
+          <a
+            href="/kosmos#reservation"
+            className="rounded-full bg-[#d4af37] px-5 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#c4a030]"
+          >
+            {reserveLabel[language]}
+          </a>
         </nav>
 
         {/* Right: socials + language */}
