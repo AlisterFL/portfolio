@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
+import { Playfair_Display } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
-  title: "Kosmos Ieper — Menu",
-  description: "Carte du Restaurant-Eetcafe Kosmos, Grote Markt 26, Ieper. Tapas, cocktails & more.",
+  title: "Kosmos Ieper — Restaurant & Tapas Bar",
+  description:
+    "Ooit een reisbureau, nu een hippe tapastent op de Grote Markt van Ieper. Tapas, cocktails & meer.",
 };
 
 export default function KosmosLayout({
@@ -10,5 +17,9 @@ export default function KosmosLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <div className={`${playfair.variable} min-h-screen bg-[#faf9f6] text-[#1a1a1a]`}>
+      {children}
+    </div>
+  );
 }

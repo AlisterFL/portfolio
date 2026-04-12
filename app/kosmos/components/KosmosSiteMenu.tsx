@@ -89,7 +89,7 @@ export default function KosmosSiteMenu({ language }: KosmosSiteMenuProps) {
 
         <div className="mt-12 text-center">
           <a
-            href="/kosmos"
+            href="/kosmos/menu"
             className="inline-flex items-center gap-2 rounded-full border-2 border-[#d4af37] px-8 py-3 text-sm font-semibold text-[#d4af37] transition-colors hover:bg-[#d4af37] hover:text-white"
           >
             {t.cta[language]}
