@@ -41,7 +41,7 @@ const lightVars: React.CSSProperties = {
 
 export default function KosmosPage() {
   const [language, setLanguage] = useState<Language>("fr");
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
   const [activeCategory, setActiveCategory] = useState(menuCategories[0].id);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTags, setActiveTags] = useState<string[]>([]);
