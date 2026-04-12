@@ -56,21 +56,21 @@ export default function KosmosSiteHeader({ language, onLanguageChange }: KosmosS
           />
         </a>
 
-        {/* Center nav */}
-        <nav className="flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-xs font-medium tracking-[0.1em] uppercase text-[#1a1a1a]/60 transition-colors hover:text-[#d4af37]"
-            >
-              {link.label[language]}
-            </a>
-          ))}
-        </nav>
+        {/* Right: nav + language + reserve */}
+        <div className="flex items-center gap-6">
+          <nav className="flex items-center gap-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-xs font-medium tracking-[0.1em] uppercase text-[#1a1a1a]/60 transition-colors hover:text-[#d4af37]"
+              >
+                {link.label[language]}
+              </a>
+            ))}
+          </nav>
 
-        {/* Right: language dropdown + reserve button */}
-        <div className="flex items-center gap-4">
+          <div className="h-4 w-px bg-[#1a1a1a]/10" />
           {/* Language dropdown */}
           <div ref={langRef} className="relative">
             <button
