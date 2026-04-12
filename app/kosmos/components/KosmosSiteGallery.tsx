@@ -24,15 +24,21 @@ const t = {
     en: "Share your moment with us",
     de: "Teilen Sie Ihren Moment mit uns",
   },
+  viewAll: {
+    fr: "Voir toutes les photos",
+    nl: "Bekijk alle foto's",
+    en: "View all photos",
+    de: "Alle Fotos ansehen",
+  },
 };
 
 const photos = [
-  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/restaurant-kosmos-ieper-5.png", alt: "Kosmos interieur" },
-  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/restaurant-kosmos-ieper-3.png", alt: "Kosmos gerechten" },
-  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/restaurant-kosmos-ieper-4.png", alt: "Kosmos tapas" },
-  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/restaurant-kosmos-ieper-2.png", alt: "Kosmos sfeer" },
-  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/2021_06_17_Mediaheer_2602.jpg", alt: "Kosmos bar" },
-  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/2021_06_17_Mediaheer_2557.jpg", alt: "Kosmos ambiance" },
+  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/2021_06_17_Mediaheer_2411-2.jpg", alt: "Kosmos interieur" },
+  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/2021_06_17_Mediaheer_3945-1.jpg", alt: "Kosmos tapas" },
+  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/2021_06_17_Mediaheer_2602-2.jpg", alt: "Kosmos bar" },
+  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/2021_06_17_Mediaheer_2630-1.jpg", alt: "Kosmos sfeer" },
+  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/2021_06_17_Mediaheer_3972-1.jpg", alt: "Kosmos gerechten" },
+  { src: "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/2021_06_17_Mediaheer_2568-2-1.jpg", alt: "Kosmos ambiance" },
 ];
 
 interface KosmosSiteGalleryProps {
@@ -159,6 +165,19 @@ export default function KosmosSiteGallery({ language }: KosmosSiteGalleryProps) 
               className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-105 md:h-72"
             />
           </div>
+        </div>
+
+        {/* View all link */}
+        <div className="gallery-item mt-10 text-center">
+          <a
+            href="/kosmos/photos"
+            className="inline-flex items-center gap-2 text-sm text-[#1a1a1a]/50 transition-colors hover:text-[#d4af37]"
+          >
+            {t.viewAll[language]}
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
 
       </div>
