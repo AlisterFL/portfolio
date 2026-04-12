@@ -33,6 +33,12 @@ const t = {
     en: "\u00A9 2026 Kosmos Ieper \u2014 All rights reserved",
     de: "\u00A9 2026 Kosmos Ieper \u2014 Alle Rechte vorbehalten",
   },
+  reserveBtn: {
+    fr: "Réserver une table",
+    nl: "Reserveer een tafel",
+    en: "Book a table",
+    de: "Tisch reservieren",
+  },
 };
 
 interface KosmosSiteContactProps {
@@ -113,8 +119,21 @@ export default function KosmosSiteContact({ language }: KosmosSiteContactProps) 
         </div>
       </div>
 
+      {/* Reserve button */}
+      <div className="animate-in mx-auto mt-12 max-w-3xl text-center">
+        <a
+          href="/kosmos/reservation"
+          className="inline-flex items-center gap-2 rounded-full border-2 border-[#d4af37] px-8 py-3 text-sm font-semibold text-[#d4af37] transition-colors hover:bg-[#d4af37] hover:text-white"
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+          </svg>
+          {t.reserveBtn[language]}
+        </a>
+      </div>
+
       {/* Map */}
-      <div className="animate-in mx-auto mt-16 max-w-3xl overflow-hidden rounded-xl">
+      <div className="animate-in mx-auto mt-12 max-w-3xl overflow-hidden rounded-xl">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.8!2d2.8855!3d50.8514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dcc5e0e1b1b1b1%3A0x1234567890abcdef!2sGrote%20Markt%2026%2C%208900%20Ieper!5e0!3m2!1sfr!2sbe!4v1700000000000!5m2!1sfr!2sbe"
           width="100%"

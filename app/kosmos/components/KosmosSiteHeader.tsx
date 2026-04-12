@@ -106,7 +106,7 @@ export default function KosmosSiteHeader({ language, onLanguageChange }: KosmosS
 
           {/* Reserve button */}
           <a
-            href="/kosmos#reservation"
+            href="/kosmos/reservation"
             className="rounded-full bg-[#d4af37] px-5 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#c4a030]"
           >
             {reserveLabel[language]}
