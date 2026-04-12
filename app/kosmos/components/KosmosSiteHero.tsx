@@ -1,7 +1,7 @@
 "use client";
 
 import { Language } from "../types";
-import heroImage from "../assets/hero.png";
+import heroImage from "../assets/hero.webp";
 
 const t = {
   subtitle: { fr: "Restaurant & Bar à Tapas", nl: "Restaurant & Tapas Bar", en: "Restaurant & Tapas Bar", de: "Restaurant & Tapas Bar" },
