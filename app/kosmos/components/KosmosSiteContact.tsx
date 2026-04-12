@@ -124,7 +124,7 @@ export default function KosmosSiteContact({ language }: KosmosSiteContactProps) 
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           title="Kosmos Ieper location"
-          className="opacity-80 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+          className="opacity-90 transition-opacity hover:opacity-100"
         />
       </div>
 

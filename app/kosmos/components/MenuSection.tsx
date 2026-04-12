@@ -19,7 +19,7 @@ export default function MenuSection({ category, language, onItemClick }: MenuSec
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -8 }}
         transition={{ duration: 0.2 }}
-        className="flex flex-col gap-3 p-4"
+        className="grid grid-cols-1 gap-3 p-4 md:grid-cols-2 lg:grid-cols-3"
       >
         {category.items.length === 0 ? (
           <p className="py-8 text-center text-sm text-[var(--text-tertiary)]">

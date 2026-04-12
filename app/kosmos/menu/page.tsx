@@ -123,7 +123,7 @@ export default function KosmosPage() {
       className="min-h-screen transition-colors duration-300"
       style={{ ...themeVars, backgroundColor: "var(--bg)", color: "var(--text)" } as React.CSSProperties}
     >
-      <div className="mx-auto flex min-h-screen max-w-lg flex-col">
+      <div className="mx-auto flex min-h-screen max-w-5xl flex-col">
         <KosmosHeader language={language} onLanguageChange={handleLanguageChange} theme={theme} onThemeToggle={toggleTheme} />
         <SearchBar value={searchQuery} onChange={setSearchQuery} language={language} />
         <FilterBar
