@@ -107,9 +107,9 @@ export default function KosmosSiteAbout({ language }: KosmosSiteAboutProps) {
   const featuresRef = useRef<HTMLDivElement>(null);
 
   const features = [
-    { label: t.feat1Label[language], description: t.feat1Desc[language], icon: featureIcons[0] },
-    { label: t.feat2Label[language], description: t.feat2Desc[language], icon: featureIcons[1] },
-    { label: t.feat3Label[language], description: t.feat3Desc[language], icon: featureIcons[2] },
+    { id: "tapas", label: t.feat1Label[language], description: t.feat1Desc[language], icon: featureIcons[0] },
+    { id: "cocktails", label: t.feat2Label[language], description: t.feat2Desc[language], icon: featureIcons[1] },
+    { id: "ambiance", label: t.feat3Label[language], description: t.feat3Desc[language], icon: featureIcons[2] },
   ];
 
   useEffect(() => {
@@ -233,8 +233,8 @@ export default function KosmosSiteAbout({ language }: KosmosSiteAboutProps) {
       >
         {features.map((f) => (
           <div
-            key={f.label}
-            className="flex flex-col gap-4 border-t border-[#1a1a1a]/10 pt-8 opacity-0"
+            key={f.id}
+            className="flex flex-col gap-4 border-t border-[#1a1a1a]/10 pt-8"
           >
             {/* Icon */}
             <span className="text-[#d4af37]">{f.icon}</span>
