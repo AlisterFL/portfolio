@@ -1,31 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import { Language } from "../types";
+import KosmosSiteHeader from "../components/KosmosSiteHeader";
 
 const BASE = "https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv";
 
-const categories = [
-  {
-    id: "all",
-    label: "Tout",
-  },
-  {
-    id: "food",
-    label: "Cuisine",
-  },
-  {
-    id: "interior",
-    label: "Intérieur",
-  },
-  {
-    id: "bar",
-    label: "Bar",
-  },
-  {
-    id: "ambiance",
-    label: "Ambiance",
-  },
-];
+const categoryLabels: Record<string, Record<Language, string>> = {
+  all: { fr: "Tout", nl: "Alles", en: "All", de: "Alle" },
+  food: { fr: "Cuisine", nl: "Keuken", en: "Food", de: "Küche" },
+  interior: { fr: "Intérieur", nl: "Interieur", en: "Interior", de: "Interieur" },
+  bar: { fr: "Bar", nl: "Bar", en: "Bar", de: "Bar" },
+  ambiance: { fr: "Ambiance", nl: "Sfeer", en: "Ambiance", de: "Atmosphäre" },
+};
+
+const CATEGORY_KEYS = ["all", "food", "interior", "bar", "ambiance"] as const;
+
+const t = {
+  title: { fr: "Galerie", nl: "Galerij", en: "Gallery", de: "Galerie" },
+  photos: { fr: "photos", nl: "foto's", en: "photos", de: "Fotos" },
+};
 
 const photos = [
   // Food / Tapas
@@ -95,6 +89,7 @@ const photos = [
 ];
 
 export default function KosmosPhotosPage() {
+  const [language, setLanguage] = useState<Language>("nl");
   const [activeCategory, setActiveCategory] = useState("all");
   const [lightbox, setLightbox] = useState<string | null>(null);
 
@@ -103,54 +98,36 @@ export default function KosmosPhotosPage() {
     : photos.filter((p) => p.cat === activeCategory);
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a]">
-      {/* Header */}
-      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#1a1a1a]/95 px-6 py-4 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between">
-          <a href="/kosmos" className="flex items-center gap-3">
-            <img
-              src="https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/fnojkc/kosmos-gold-resized.png"
-              alt="Kosmos"
-              className="h-7"
-            />
-            <span className="text-sm text-white/40">/ Photos</span>
-          </a>
-          <a
-            href="/kosmos"
-            className="text-xs text-white/40 transition-colors hover:text-[#d4af37]"
-          >
-            ← Retour
-          </a>
-        </div>
-      </header>
+    <>
+      <KosmosSiteHeader language={language} onLanguageChange={setLanguage} />
 
       {/* Title */}
-      <div className="px-6 pt-16 pb-8">
+      <div className="px-6 pt-28 pb-8">
         <div className="mx-auto max-w-6xl">
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl font-bold text-white md:text-5xl">
-            Galerie
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl font-bold text-[#1a1a1a] md:text-5xl">
+            {t.title[language]}
           </h1>
           <div className="mt-3 h-[2px] w-16 bg-[#d4af37]" />
-          <p className="mt-4 text-sm text-white/40">
-            {filtered.length} photos
+          <p className="mt-4 text-sm text-[#1a1a1a]/40">
+            {filtered.length} {t.photos[language]}
           </p>
         </div>
       </div>
 
       {/* Category filters */}
-      <div className="sticky top-[65px] z-10 border-b border-white/5 bg-[#1a1a1a]/95 px-6 py-3 backdrop-blur-md">
+      <div className="sticky top-[53px] z-10 border-b border-[#1a1a1a]/5 bg-[#faf9f6]/95 px-6 py-3 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto scrollbar-none">
-          {categories.map((cat) => (
+          {CATEGORY_KEYS.map((cat) => (
             <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
               className={`shrink-0 rounded-full px-4 py-1.5 text-xs font-medium transition-colors ${
-                activeCategory === cat.id
+                activeCategory === cat
                   ? "bg-[#d4af37] text-white"
-                  : "bg-white/5 text-white/50 hover:text-white/70"
+                  : "bg-[#1a1a1a]/5 text-[#1a1a1a]/50 hover:text-[#1a1a1a]/70"
               }`}
             >
-              {cat.label}
+              {categoryLabels[cat][language]}
             </button>
           ))}
         </div>
@@ -163,7 +140,7 @@ export default function KosmosPhotosPage() {
             <div
               key={photo.src}
               onClick={() => setLightbox(photo.src)}
-              className="group relative cursor-pointer overflow-hidden rounded-xl bg-white/5"
+              className="group relative cursor-pointer overflow-hidden rounded-xl bg-[#1a1a1a]/5"
             >
               <img
                 src={photo.src}
@@ -171,7 +148,7 @@ export default function KosmosPhotosPage() {
                 loading="lazy"
                 className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
+              <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
             </div>
           ))}
         </div>
@@ -180,7 +157,7 @@ export default function KosmosPhotosPage() {
       {/* Lightbox */}
       {lightbox && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
           onClick={() => setLightbox(null)}
         >
           <button
@@ -199,6 +176,6 @@ export default function KosmosPhotosPage() {
           />
         </div>
       )}
-    </div>
+    </>
   );
 }
