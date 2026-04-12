@@ -84,12 +84,10 @@ export default function KosmosSiteGallery({ language }: KosmosSiteGalleryProps) 
         {/* Header — offset layout */}
         <div className="gallery-item mb-20 flex flex-col items-start md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-3 text-xs tracking-[0.25em] uppercase text-[#d4af37]">
-              — 0{photos.length} photos
-            </p>
             <h2 className="font-[family-name:var(--font-playfair)] text-5xl font-bold text-[#1a1a1a] md:text-6xl">
               {t.heading[language]}
             </h2>
+            <div className="mt-4 h-[2px] w-16 bg-[#d4af37]" />
           </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#1a1a1a]/50 md:mt-0 md:text-right">
             {t.quote1[language]}

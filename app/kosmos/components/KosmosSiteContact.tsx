@@ -59,7 +59,7 @@ export default function KosmosSiteContact({ language }: KosmosSiteContactProps) 
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#1a1a1a] px-6 py-24">
+    <section id="contact" ref={sectionRef} className="bg-[#1a1a1a] px-6 py-24">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="animate-in mb-3 font-[family-name:var(--font-playfair)] text-4xl font-bold text-white md:text-5xl">
           {t.heading[language]}
