@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Language } from "../types";
 import KosmosSiteHeader from "../components/KosmosSiteHeader";
 
@@ -93,13 +93,25 @@ export default function KosmosPhotosPage() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [lightbox, setLightbox] = useState<string | null>(null);
 
+  useEffect(() => {
+    const saved = localStorage.getItem("kosmos-lang") as Language | null;
+    if (saved && ["fr", "nl", "en", "de"].includes(saved)) {
+      setLanguage(saved);
+    }
+  }, []);
+
+  function handleLanguageChange(lang: Language) {
+    setLanguage(lang);
+    localStorage.setItem("kosmos-lang", lang);
+  }
+
   const filtered = activeCategory === "all"
     ? photos
     : photos.filter((p) => p.cat === activeCategory);
 
   return (
     <>
-      <KosmosSiteHeader language={language} onLanguageChange={setLanguage} />
+      <KosmosSiteHeader language={language} onLanguageChange={handleLanguageChange} />
 
       {/* Title */}
       <div className="px-6 pt-28 pb-8">
