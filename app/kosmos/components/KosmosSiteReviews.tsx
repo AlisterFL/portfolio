@@ -13,43 +13,13 @@ const t = {
   onGoogle: { fr: "sur Google", nl: "op Google", en: "on Google", de: "auf Google" },
 };
 
-const reviews = [
-  {
-    name: "Sophie V.",
-    rating: 5,
-    text: "Superbe découverte ! Les tapas sont délicieux et l'ambiance est top. Le personnel est très accueillant. On reviendra c'est sûr !",
-    time: { fr: "Il y a 2 semaines", nl: "2 weken geleden", en: "2 weeks ago", de: "Vor 2 Wochen" },
-  },
-  {
-    name: "Thomas D.",
-    rating: 5,
-    text: "Beste tapas van Ieper! De gambas en de patatas bravas zijn een must. Gezellige sfeer op de Grote Markt.",
-    time: { fr: "Il y a 1 mois", nl: "1 maand geleden", en: "1 month ago", de: "Vor 1 Monat" },
-  },
-  {
-    name: "Emma L.",
-    rating: 4,
-    text: "Very nice place on the main square. The cocktails are excellent and the tapas are fresh. A bit busy on weekends but worth the wait.",
-    time: { fr: "Il y a 3 semaines", nl: "3 weken geleden", en: "3 weeks ago", de: "Vor 3 Wochen" },
-  },
-  {
-    name: "Pieter M.",
-    rating: 5,
-    text: "Wij komen hier regelmatig en het is altijd top! De bediening is vlot, de cocktails perfect en de tapas vers. Aanrader!",
-    time: { fr: "Il y a 2 mois", nl: "2 maanden geleden", en: "2 months ago", de: "Vor 2 Monaten" },
-  },
-  {
-    name: "Julie B.",
-    rating: 5,
-    text: "Un vrai coup de cœur. Le picon est légendaire et les planches de charcuterie sont généreuses. Cadre magnifique sur la place.",
-    time: { fr: "Il y a 1 semaine", nl: "1 week geleden", en: "1 week ago", de: "Vor 1 Woche" },
-  },
-  {
-    name: "Marco R.",
-    rating: 4,
-    text: "Great atmosphere and good food. The calamari and the bruschetta were really tasty. Nice terrace with a view on the square.",
-    time: { fr: "Il y a 3 mois", nl: "3 maanden geleden", en: "3 months ago", de: "Vor 3 Monaten" },
-  },
+const reviewData = [
+  { name: "Sophie V.", rating: 5, text: "Superbe découverte ! Les tapas sont délicieux et l'ambiance est top. Le personnel est très accueillant. On reviendra c'est sûr !" },
+  { name: "Thomas D.", rating: 5, text: "Beste tapas van Ieper! De gambas en de patatas bravas zijn een must. Gezellige sfeer op de Grote Markt." },
+  { name: "Emma L.", rating: 4, text: "Very nice place on the main square. The cocktails are excellent and the tapas are fresh. A bit busy on weekends but worth the wait." },
+  { name: "Pieter M.", rating: 5, text: "Wij komen hier regelmatig en het is altijd top! De bediening is vlot, de cocktails perfect en de tapas vers. Aanrader!" },
+  { name: "Julie B.", rating: 5, text: "Un vrai coup de cœur. Le picon est légendaire et les planches de charcuterie sont généreuses. Cadre magnifique sur la place." },
+  { name: "Marco R.", rating: 4, text: "Great atmosphere and good food. The calamari and the bruschetta were really tasty. Nice terrace with a view on the square." },
 ];
 
 // Google "G" logo as inline SVG
@@ -233,7 +203,7 @@ export default function KosmosSiteReviews({ language }: KosmosSiteReviewsProps) 
           ref={gridRef}
           className="grid grid-cols-1 gap-6 sm:grid-cols-2"
         >
-          {reviews.map((review, i) => (
+          {reviewData.map((review, i) => (
             <div
               key={i}
               className="rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
@@ -255,7 +225,6 @@ export default function KosmosSiteReviews({ language }: KosmosSiteReviewsProps) 
               </p>
 
               {/* Time ago */}
-              <p className="text-xs text-[#1a1a1a]/40">{review.time[language]}</p>
             </div>
           ))}
         </div>
