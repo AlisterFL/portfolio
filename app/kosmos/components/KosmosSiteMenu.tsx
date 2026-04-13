@@ -30,10 +30,10 @@ export default function KosmosSiteMenu({ language }: KosmosSiteMenuProps) {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const highlights = [
-    { name: t.item1Name[language], desc: t.item1Desc[language], price: "€25.00", image: "https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=400&h=400&fit=crop&crop=center" },
-    { name: t.item2Name[language], desc: t.item2Desc[language], price: "€22.00", image: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=400&h=400&fit=crop&crop=center" },
-    { name: t.item3Name[language], desc: t.item3Desc[language], price: "€11.00", image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=400&h=400&fit=crop&crop=center" },
-    { name: t.item4Name[language], desc: t.item4Desc[language], price: "€12.00", image: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&h=400&fit=crop&crop=center" },
+    { id: "gambas", name: t.item1Name[language], desc: t.item1Desc[language], price: "€25.00", image: "https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=400&h=400&fit=crop&crop=center" },
+    { id: "planche", name: t.item2Name[language], desc: t.item2Desc[language], price: "€22.00", image: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=400&h=400&fit=crop&crop=center" },
+    { id: "churros", name: t.item3Name[language], desc: t.item3Desc[language], price: "€11.00", image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=400&h=400&fit=crop&crop=center" },
+    { id: "mojito", name: t.item4Name[language], desc: t.item4Desc[language], price: "€12.00", image: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&h=400&fit=crop&crop=center" },
   ];
 
   useEffect(() => {
@@ -69,9 +69,9 @@ export default function KosmosSiteMenu({ language }: KosmosSiteMenuProps) {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {highlights.map((item, i) => (
             <div
-              key={item.name}
+              key={item.id}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className="group overflow-hidden rounded-2xl bg-white opacity-0 shadow-sm transition-shadow hover:shadow-md"
+              className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-md"
             >
               <div className="aspect-square overflow-hidden">
                 <img
