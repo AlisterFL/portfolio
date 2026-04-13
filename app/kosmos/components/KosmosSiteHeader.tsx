@@ -20,6 +20,7 @@ const languageNames: Record<Language, string> = {
 const navLinks: { href: string; label: Record<Language, string> }[] = [
   { href: "/kosmos/menu", label: { fr: "Menu", nl: "Menu", en: "Menu", de: "Speisekarte" } },
   { href: "/kosmos/photos", label: { fr: "Photos", nl: "Foto's", en: "Photos", de: "Fotos" } },
+  { href: "/kosmos/gift-card", label: { fr: "Carte Cadeau", nl: "Cadeaubon", en: "Gift Card", de: "Geschenkkarte" } },
   { href: "/kosmos#contact", label: { fr: "Contact", nl: "Contact", en: "Contact", de: "Kontakt" } },
 ];
 
