@@ -11,10 +11,14 @@ const t = {
   heading: { fr: "Notre Carte", nl: "Onze Kaart", en: "Our Menu", de: "Unsere Karte" },
   subtitle: { fr: "Une sélection de nos favoris", nl: "Een selectie van onze favorieten", en: "A selection of our favorites", de: "Eine Auswahl unserer Favoriten" },
   cta: { fr: "Voir la carte complète", nl: "Bekijk de volledige kaart", en: "View the full menu", de: "Vollständige Karte ansehen" },
-  patatasDesc: { fr: "Pommes de terre croustillantes, sauce brava, aïoli", nl: "Krokante aardappelen, brava saus, aioli", en: "Crispy potatoes, brava sauce, aioli", de: "Knusprige Kartoffeln, Brava-Sauce, Aioli" },
-  gambasDesc: { fr: "Crevettes, ail, piment, huile d'olive", nl: "Garnalen, knoflook, chili, olijfolie", en: "Shrimp, garlic, chili, olive oil", de: "Garnelen, Knoblauch, Chili, Olivenöl" },
-  risottoDesc: { fr: "Arborio crémeux, huile de truffe, parmesan", nl: "Romige arborio, truffelolie, parmezaan", en: "Creamy arborio, truffle oil, parmesan", de: "Cremiger Arborio, Trüffelöl, Parmesan" },
-  espressoDesc: { fr: "Vodka, liqueur de café, espresso frais", nl: "Wodka, koffielikeur, verse espresso", en: "Vodka, coffee liqueur, fresh espresso", de: "Wodka, Kaffeelikör, frischer Espresso" },
+  item1Name: { fr: "Gambas", nl: "Gambas", en: "Gambas", de: "Gambas" },
+  item1Desc: { fr: "6 gambas grillées, ail et herbes fraîches", nl: "6 gegrilde gambas, knoflook en verse kruiden", en: "6 grilled gambas, garlic and fresh herbs", de: "6 gegrillte Gambas, Knoblauch und frische Kräuter" },
+  item2Name: { fr: "Planche Mixte", nl: "Gemengde Plank", en: "Mixed Board", de: "Gemischte Platte" },
+  item2Desc: { fr: "Sélection de fromages et charcuterie fine", nl: "Selectie van kazen en fijne vleeswaren", en: "Selection of cheeses and fine charcuterie", de: "Auswahl an Käse und feiner Wurst" },
+  item3Name: { fr: "Churros Chocolat", nl: "Churros Chocolade", en: "Churros Chocolate", de: "Churros Schokolade" },
+  item3Desc: { fr: "Churros croustillants, sauce chocolat maison", nl: "Krokante churros, huisgemaakte chocoladesaus", en: "Crispy churros, homemade chocolate sauce", de: "Knusprige Churros, hausgemachte Schokoladensauce" },
+  item4Name: { fr: "Mojito", nl: "Mojito", en: "Mojito", de: "Mojito" },
+  item4Desc: { fr: "Rhum, menthe fraîche, citron vert, sucre de canne", nl: "Rum, verse munt, limoen, rietsuiker", en: "Rum, fresh mint, lime, cane sugar", de: "Rum, frische Minze, Limette, Rohrzucker" },
 };
 
 interface KosmosSiteMenuProps {
@@ -26,10 +30,10 @@ export default function KosmosSiteMenu({ language }: KosmosSiteMenuProps) {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const highlights = [
-    { name: "Patatas Bravas", desc: t.patatasDesc[language], price: "€8.50", image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=300&h=300&fit=crop&crop=center" },
-    { name: "Gambas al Ajillo", desc: t.gambasDesc[language], price: "€12.50", image: "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=300&h=300&fit=crop&crop=center" },
-    { name: "Risotto à la Truffe", desc: t.risottoDesc[language], price: "€19.00", image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=300&h=300&fit=crop&crop=center" },
-    { name: "Espresso Martini", desc: t.espressoDesc[language], price: "€12.00", image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=300&h=300&fit=crop&crop=center" },
+    { name: t.item1Name[language], desc: t.item1Desc[language], price: "€25.00", image: "https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=400&h=400&fit=crop&crop=center" },
+    { name: t.item2Name[language], desc: t.item2Desc[language], price: "€22.00", image: "https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=400&h=400&fit=crop&crop=center" },
+    { name: t.item3Name[language], desc: t.item3Desc[language], price: "€11.00", image: "https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=400&h=400&fit=crop&crop=center" },
+    { name: t.item4Name[language], desc: t.item4Desc[language], price: "€12.00", image: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=400&h=400&fit=crop&crop=center" },
   ];
 
   useEffect(() => {
