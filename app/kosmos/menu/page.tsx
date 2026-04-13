@@ -10,6 +10,8 @@ import KosmosFooter from "../components/KosmosFooter";
 import SearchBar from "../components/SearchBar";
 import FilterBar from "../components/FilterBar";
 import MenuItemDetail from "../components/MenuItemDetail";
+import MenuSkeleton from "../components/MenuSkeleton";
+import PageTransition from "../components/PageTransition";
 
 const darkVars: React.CSSProperties = {
   "--bg": "#0a0a0a",
@@ -47,6 +49,7 @@ export default function KosmosPage() {
   const [activeTags, setActiveTags] = useState<string[]>([]);
   const [excludedAllergens, setExcludedAllergens] = useState<Allergen[]>([]);
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("kosmos-lang") as Language | null;
@@ -57,6 +60,7 @@ export default function KosmosPage() {
     if (savedTheme === "dark" || savedTheme === "light") {
       setTheme(savedTheme);
     }
+    setMounted(true);
   }, []);
 
   function handleLanguageChange(lang: Language) {
@@ -118,41 +122,51 @@ export default function KosmosPage() {
 
   const themeVars = theme === "dark" ? darkVars : lightVars;
 
+  if (!mounted) {
+    return (
+      <div className="min-h-screen" style={{ ...lightVars, backgroundColor: "var(--bg)", color: "var(--text)" } as React.CSSProperties}>
+        <MenuSkeleton />
+      </div>
+    );
+  }
+
   return (
-    <div
-      className="min-h-screen transition-colors duration-300"
-      style={{ ...themeVars, backgroundColor: "var(--bg)", color: "var(--text)" } as React.CSSProperties}
-    >
-      <div className="mx-auto flex min-h-screen max-w-5xl flex-col">
-        <KosmosHeader language={language} onLanguageChange={handleLanguageChange} theme={theme} onThemeToggle={toggleTheme} />
-        <SearchBar value={searchQuery} onChange={setSearchQuery} language={language} />
-        <FilterBar
-          activeTags={activeTags}
-          excludedAllergens={excludedAllergens}
-          onToggleTag={toggleTag}
-          onToggleAllergen={toggleAllergen}
-          language={language}
-        />
-        <CategoryTabs
-          categories={menuCategories}
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-          language={language}
-        />
-        <div className="flex-1">
-          <MenuSection
-            category={filteredCategory}
+    <PageTransition>
+      <div
+        className="min-h-screen transition-colors duration-300"
+        style={{ ...themeVars, backgroundColor: "var(--bg)", color: "var(--text)" } as React.CSSProperties}
+      >
+        <div className="mx-auto flex min-h-screen max-w-5xl flex-col">
+          <KosmosHeader language={language} onLanguageChange={handleLanguageChange} theme={theme} onThemeToggle={toggleTheme} />
+          <SearchBar value={searchQuery} onChange={setSearchQuery} language={language} />
+          <FilterBar
+            activeTags={activeTags}
+            excludedAllergens={excludedAllergens}
+            onToggleTag={toggleTag}
+            onToggleAllergen={toggleAllergen}
             language={language}
-            onItemClick={setSelectedItem}
+          />
+          <CategoryTabs
+            categories={menuCategories}
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+            language={language}
+          />
+          <div className="flex-1">
+            <MenuSection
+              category={filteredCategory}
+              language={language}
+              onItemClick={setSelectedItem}
+            />
+          </div>
+          <KosmosFooter language={language} />
+          <MenuItemDetail
+            item={selectedItem}
+            language={language}
+            onClose={() => setSelectedItem(null)}
           />
         </div>
-        <KosmosFooter language={language} />
-        <MenuItemDetail
-          item={selectedItem}
-          language={language}
-          onClose={() => setSelectedItem(null)}
-        />
       </div>
-    </div>
+    </PageTransition>
   );
 }

@@ -9,6 +9,7 @@ import KosmosSiteGallery from "./components/KosmosSiteGallery";
 import KosmosSiteMenu from "./components/KosmosSiteMenu";
 import KosmosSiteReviews from "./components/KosmosSiteReviews";
 import KosmosSiteContact from "./components/KosmosSiteContact";
+import AccessibilityWidget from "./components/AccessibilityWidget";
 
 export default function KosmosPage() {
   const [language, setLanguage] = useState<Language>("nl");
@@ -34,6 +35,7 @@ export default function KosmosPage() {
       <KosmosSiteMenu language={language} />
       <KosmosSiteReviews language={language} />
       <KosmosSiteContact language={language} />
+      <AccessibilityWidget language={language} />
     </main>
   );
 }
