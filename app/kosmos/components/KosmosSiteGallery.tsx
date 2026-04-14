@@ -64,18 +64,7 @@ export default function KosmosSiteGallery({ language }: KosmosSiteGalleryProps) 
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#111] text-white">
-
-      {/* Top gold gradient line */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent" />
-
-      {/* Noise texture */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-        }}
-      />
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#f3f1ec]">
 
       <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
 
@@ -89,7 +78,7 @@ export default function KosmosSiteGallery({ language }: KosmosSiteGalleryProps) 
               {t.heading[language]}
               <span className="text-[#d4af37]">.</span>
             </h2>
-            <p className="max-w-sm text-sm leading-relaxed text-white/40 md:text-right">
+            <p className="max-w-sm text-sm leading-relaxed text-[#1a1a1a]/40 md:text-right">
               {t.sub[language]}
             </p>
           </div>
@@ -108,7 +97,7 @@ export default function KosmosSiteGallery({ language }: KosmosSiteGalleryProps) 
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 p-6">
               <p className="text-[10px] font-medium tracking-[0.3em] uppercase text-[#d4af37]">{t.label1[language]}</p>
-              <p className="mt-1 font-[family-name:var(--font-playfair)] text-xl font-bold text-white/90">
+              <p className="mt-1 font-[family-name:var(--font-playfair)] text-xl font-bold text-[#1a1a1a]">
                 Grote Markt 26
               </p>
             </div>
@@ -141,12 +130,12 @@ export default function KosmosSiteGallery({ language }: KosmosSiteGalleryProps) 
           </div>
 
           {/* Middle right — quote card */}
-          <div className="reveal col-span-2 flex flex-col justify-center rounded-2xl border border-white/[0.06] bg-white/[0.03] p-8">
+          <div className="reveal col-span-2 flex flex-col justify-center rounded-2xl border border-[#1a1a1a]/[0.06] bg-white/60 p-8">
             <div className="mb-3 h-px w-10 bg-[#d4af37]" />
-            <p className="font-[family-name:var(--font-playfair)] text-lg leading-snug text-white/80 italic md:text-xl">
+            <p className="font-[family-name:var(--font-playfair)] text-lg leading-snug text-[#1a1a1a]/80 italic md:text-xl">
               &ldquo;{t.sub[language]}&rdquo;
             </p>
-            <p className="mt-4 text-[11px] tracking-[0.2em] uppercase text-white/25">Kosmos Ieper</p>
+            <p className="mt-4 text-[11px] tracking-[0.2em] uppercase text-[#1a1a1a]/25">Kosmos Ieper</p>
           </div>
 
           {/* Bottom left — ambiance */}
@@ -172,16 +161,16 @@ export default function KosmosSiteGallery({ language }: KosmosSiteGalleryProps) 
           </div>
 
           {/* Bottom right — CTA card */}
-          <div className="reveal col-span-2 flex items-center justify-between rounded-2xl border border-white/[0.06] bg-white/[0.03] p-8">
+          <div className="reveal col-span-2 flex items-center justify-between rounded-2xl border border-[#1a1a1a]/[0.06] bg-white/60 p-8">
             <div>
-              <p className="font-[family-name:var(--font-playfair)] text-lg font-bold text-white/90">
+              <p className="font-[family-name:var(--font-playfair)] text-lg font-bold text-[#1a1a1a]">
                 {t.viewAll[language]}
               </p>
-              <p className="mt-1 text-xs text-white/30">59 photos</p>
+              <p className="mt-1 text-xs text-[#1a1a1a]/30">59 photos</p>
             </div>
             <a
               href="/kosmos/photos"
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d4af37] text-[#111] transition-transform hover:scale-110"
+              className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d4af37] text-white transition-transform hover:scale-110"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -191,8 +180,6 @@ export default function KosmosSiteGallery({ language }: KosmosSiteGalleryProps) 
         </div>
       </div>
 
-      {/* Bottom gold line */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent" />
     </section>
   );
 }
