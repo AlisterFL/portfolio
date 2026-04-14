@@ -236,7 +236,7 @@ export default function KosmosSiteAbout({ language }: KosmosSiteAboutProps) {
                 <circle cx="8.5" cy="12.5" r="0.5" fill="#00AF87" />
                 <circle cx="15.5" cy="12.5" r="0.5" fill="#00AF87" />
               </svg>
-              <span className="text-sm font-medium text-[#1a1a1a]/60">4.5</span>
+              <span className="text-sm font-medium text-[#1a1a1a]/60">4.6</span>
               <div className="flex gap-px text-[#00AF87]">
                 {"●●●●".split("").map((_, i) => (
                   <span key={i} className="text-[8px]">●</span>
