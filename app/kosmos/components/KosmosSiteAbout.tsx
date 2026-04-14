@@ -228,20 +228,16 @@ export default function KosmosSiteAbout({ language }: KosmosSiteAboutProps) {
 
             {/* TripAdvisor */}
             <div className="flex items-center gap-2">
-              <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" aria-hidden="true">
-                <circle cx="12" cy="12" r="11" fill="none" stroke="#00AF87" strokeWidth="1.5" />
-                <circle cx="8.5" cy="12.5" r="2" fill="none" stroke="#00AF87" strokeWidth="1.5" />
-                <circle cx="15.5" cy="12.5" r="2" fill="none" stroke="#00AF87" strokeWidth="1.5" />
-                <path d="M6 9.5C7.5 8 9.5 7 12 7s4.5 1 6 2.5" fill="none" stroke="#00AF87" strokeWidth="1.5" strokeLinecap="round" />
-                <circle cx="8.5" cy="12.5" r="0.5" fill="#00AF87" />
-                <circle cx="15.5" cy="12.5" r="0.5" fill="#00AF87" />
+              <svg viewBox="0 0 3.7 3.7" className="h-4 w-4 shrink-0" aria-hidden="true">
+                <path fill="#34E0A1" d="M1.85 0C.83 0 0 .83 0 1.85s.83 1.85 1.85 1.85 1.85-.83 1.85-1.85S2.87 0 1.85 0z" />
+                <path fill="#000" d="M2.93 1.48h-.2a1.22 1.22 0 0 0-.88-.38c-.33 0-.63.14-.88.38h-.2c-.05 0-.08.03-.08.08 0 .02 0 .04.02.06l.2.25a.62.62 0 0 0-.1.34c0 .37.3.67.67.67a.67.67 0 0 0 .59-.35l.11.14.11-.14a.67.67 0 0 0 .59.35c.37 0 .67-.3.67-.67 0-.12-.04-.24-.1-.34l.2-.25c.01-.02.02-.04.02-.06 0-.05-.04-.08-.08-.08h-.01zM1.37 2.52a.3.3 0 1 1 0-.6.3.3 0 0 1 0 .6zm.48-.74c-.1-.1-.27-.18-.48-.18s-.38.07-.48.18l-.15-.19c.17-.15.39-.23.63-.23s.46.08.63.23l-.15.19zm.48.74a.3.3 0 1 1 0-.6.3.3 0 0 1 0 .6z" />
               </svg>
               <span className="text-sm font-medium text-[#1a1a1a]/60">4.6</span>
-              <div className="flex gap-px text-[#00AF87]">
-                {"●●●●".split("").map((_, i) => (
-                  <span key={i} className="text-[8px]">●</span>
+              <div className="flex gap-px text-[#34E0A1]">
+                {"★★★★".split("").map((_, i) => (
+                  <span key={i} className="text-xs">★</span>
                 ))}
-                <span className="text-[8px] opacity-40">●</span>
+                <span className="text-xs opacity-50">★</span>
               </div>
             </div>
           </div>
