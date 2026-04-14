@@ -7,7 +7,6 @@ import KosmosSiteHero from "./components/KosmosSiteHero";
 import KosmosSiteAbout from "./components/KosmosSiteAbout";
 import KosmosSiteGallery from "./components/KosmosSiteGallery";
 import KosmosSiteMenu from "./components/KosmosSiteMenu";
-import KosmosSiteReviews from "./components/KosmosSiteReviews";
 import KosmosSiteContact from "./components/KosmosSiteContact";
 import AccessibilityWidget from "./components/AccessibilityWidget";
 
@@ -33,7 +32,6 @@ export default function KosmosPage() {
       <KosmosSiteAbout language={language} />
       <KosmosSiteGallery language={language} />
       <KosmosSiteMenu language={language} />
-      <KosmosSiteReviews language={language} />
       <KosmosSiteContact language={language} />
       <AccessibilityWidget language={language} />
     </main>
