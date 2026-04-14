@@ -241,18 +241,7 @@ export default function KosmosSiteContact({ language }: KosmosSiteContactProps) 
                     </svg>
                   </a>
                 </div>
-                <p className="mt-3 text-xs text-white/25">#kosmosieper</p>
               </div>
-            </div>
-
-            {/* Email */}
-            <div className="reveal flex items-center gap-3 rounded-2xl border border-white/[0.06] bg-white/[0.03] px-6 py-4">
-              <svg className="h-4 w-4 shrink-0 text-[#d4af37]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-              </svg>
-              <a href="mailto:hello@kosmosieper.be" className="text-sm text-white/60 transition-colors hover:text-[#d4af37]">
-                hello@kosmosieper.be
-              </a>
             </div>
           </div>
         </div>
