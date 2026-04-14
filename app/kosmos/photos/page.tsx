@@ -111,7 +111,7 @@ export default function KosmosPhotosPage() {
 
   return (
     <>
-      <KosmosSiteHeader language={language} onLanguageChange={handleLanguageChange} />
+      <KosmosSiteHeader language={language} onLanguageChange={handleLanguageChange} solid />
 
       {/* Title */}
       <div className="px-6 pt-28 pb-8">

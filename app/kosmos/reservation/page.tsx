@@ -22,7 +22,7 @@ export default function ReservationPage() {
 
   return (
     <>
-      <KosmosSiteHeader language={language} onLanguageChange={handleLanguageChange} />
+      <KosmosSiteHeader language={language} onLanguageChange={handleLanguageChange} solid />
       <div className="pt-20">
         <KosmosSiteReservation language={language} />
       </div>

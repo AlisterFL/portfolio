@@ -6,6 +6,7 @@ import { Language } from "../types";
 interface KosmosSiteHeaderProps {
   language: Language;
   onLanguageChange: (lang: Language) => void;
+  solid?: boolean; // force solid/dark-text mode (for pages without hero)
 }
 
 const languages: Language[] = ["fr", "nl", "en", "de"];
@@ -38,15 +39,15 @@ const closeLabel: Record<Language, string> = {
   de: "Schließen",
 };
 
-export default function KosmosSiteHeader({ language, onLanguageChange }: KosmosSiteHeaderProps) {
-  const [scrolled, setScrolled] = useState(false);
+export default function KosmosSiteHeader({ language, onLanguageChange, solid = false }: KosmosSiteHeaderProps) {
+  const [scrolled, setScrolled] = useState(solid);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function handleScroll() {
-      setScrolled(window.scrollY > 60);
+      setScrolled(solid || window.scrollY > 60);
     }
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });

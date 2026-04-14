@@ -211,7 +211,7 @@ export default function GiftCardPage() {
 
   return (
     <>
-      <KosmosSiteHeader language={language} onLanguageChange={handleLanguageChange} />
+      <KosmosSiteHeader language={language} onLanguageChange={handleLanguageChange} solid />
 
       <main className="min-h-screen bg-[#faf9f6] pt-24 pb-16">
         <div className="mx-auto max-w-2xl px-6">
