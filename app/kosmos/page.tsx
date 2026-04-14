@@ -46,7 +46,7 @@ export default function KosmosPage() {
         <img
           src="https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/fnojkc/kosmos-gold-resized.png"
           alt="Kosmos"
-          className={`h-12 transition-all duration-700 ${loading ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
+          className={`h-16 transition-all duration-700 ${loading ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
         />
       </div>
 
