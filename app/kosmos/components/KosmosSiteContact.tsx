@@ -123,46 +123,30 @@ export default function KosmosSiteContact({ language }: KosmosSiteContactProps) 
 
           {/* Left column — CTA */}
           <div>
-            <p className="reveal mb-4 text-[11px] font-medium tracking-[0.3em] uppercase text-[#d4af37]">
-              {t.tagline[language]}
-            </p>
-
-            <h2 className="reveal font-[family-name:var(--font-playfair)] text-5xl font-bold leading-[1.1] md:text-7xl">
+            <h2 className="reveal font-[family-name:var(--font-playfair)] text-4xl font-bold leading-[1.15] text-white md:text-5xl">
               {t.heading[language]}
-              <span className="text-[#d4af37]">.</span>
             </h2>
-
+            <div className="reveal mt-4 h-px w-16 bg-[#d4af37]" />
             <p className="reveal mt-6 max-w-md text-base leading-relaxed text-white/50">
               {t.subtitle[language]}
             </p>
 
-            {/* CTA buttons */}
-            <div className="reveal mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="reveal mt-8 flex flex-wrap items-center gap-4">
               <a
                 href="/kosmos/reservation"
-                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-[#d4af37] px-8 py-4 text-sm font-semibold text-[#111] transition-all hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+                className="inline-flex items-center gap-2 rounded-full bg-[#d4af37] px-7 py-3 text-sm font-semibold text-[#111] transition-colors hover:bg-[#c4a030]"
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                  </svg>
-                  {t.reserveBtn[language]}
-                </span>
-                <div className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-full" />
+                {t.reserveBtn[language]}
               </a>
-
-              <div className="flex items-center gap-3">
-                <div className="hidden h-px w-8 bg-white/20 sm:block" />
-                <div>
-                  <p className="text-[10px] tracking-[0.15em] uppercase text-white/30">{t.callLabel[language]}</p>
-                  <a
-                    href="tel:+32480609844"
-                    className="text-sm font-medium text-white/70 transition-colors hover:text-[#d4af37]"
-                  >
-                    +32 480 60 98 44
-                  </a>
-                </div>
-              </div>
+              <a
+                href="tel:+32480609844"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white/70 transition-colors hover:border-[#d4af37]/50 hover:text-[#d4af37]"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                +32 480 60 98 44
+              </a>
             </div>
           </div>
 
