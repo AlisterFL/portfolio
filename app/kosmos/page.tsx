@@ -37,23 +37,32 @@ export default function KosmosPage() {
 
   return (
     <>
-      {/* Loader */}
+      {/* Loader — white bg fades out, logo stays and merges with hero logo */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center bg-white transition-all duration-700 ${
-          loading ? "opacity-100" : "pointer-events-none opacity-0"
+        className={`fixed inset-0 z-50 flex items-center justify-center transition-all ${
+          loading
+            ? "pointer-events-auto"
+            : "pointer-events-none"
         }`}
       >
+        {/* White background — fades out first */}
+        <div
+          className={`absolute inset-0 bg-white transition-opacity duration-1000 ${
+            loading ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        {/* Logo — stays visible longer, then fades */}
         <img
           src="https://primary.jwwb.nl/public/l/t/s/temp-jwqgqkdwmrnrolcreinv/fnojkc/kosmos-gold-resized.png"
           alt="Kosmos"
-          className={`h-16 -translate-y-12 transition-all duration-700 ${loading ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
+          className={`relative z-10 h-16 -translate-y-12 drop-shadow-lg transition-opacity duration-500 ${
+            loading ? "opacity-100" : "opacity-0 delay-700"
+          }`}
         />
       </div>
 
-      {/* Site content */}
-      <main
-        className={`transition-opacity duration-700 ${loading ? "opacity-0" : "opacity-100"}`}
-      >
+      {/* Site content — always rendered, revealed when loader fades */}
+      <main>
         <KosmosSiteHeader language={language} onLanguageChange={handleLanguageChange} />
         <KosmosSiteHero language={language} />
         <KosmosSiteAbout language={language} />
