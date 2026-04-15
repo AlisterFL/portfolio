@@ -21,12 +21,23 @@ export default function KosmosPage() {
     }
 
     // Wait for page to be fully ready
+    function onReady() {
+      setTimeout(() => {
+        setLoading(false);
+        // Scroll to hash anchor after loader disappears
+        if (window.location.hash) {
+          setTimeout(() => {
+            const el = document.querySelector(window.location.hash);
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        }
+      }, 800);
+    }
+
     if (document.readyState === "complete") {
-      setTimeout(() => setLoading(false), 800);
+      onReady();
     } else {
-      window.addEventListener("load", () => {
-        setTimeout(() => setLoading(false), 800);
-      });
+      window.addEventListener("load", onReady);
     }
   }, []);
 
