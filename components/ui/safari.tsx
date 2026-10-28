@@ -21,6 +21,7 @@ export interface SafariProps extends HTMLAttributes<HTMLDivElement> {
   imageSrc?: string
   videoSrc?: string
   mode?: SafariMode
+  imagePriority?: boolean
   children?: React.ReactNode
 }
 
@@ -29,6 +30,7 @@ export function Safari({
   videoSrc,
   url,
   mode = "default",
+  imagePriority = false,
   className,
   style,
   children,
@@ -83,6 +85,8 @@ export function Safari({
             src={imageSrc}
             alt=""
             fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            priority={imagePriority}
             className="object-cover object-top"
           />
         </div>

@@ -2,8 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowUpRight, Mail, Linkedin } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { AccentText } from "@/components/ui/accent-text";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -17,18 +19,41 @@ const Contact = () => {
     <section className="py-20 md:py-28 bg-[#F6F3FF]" id="contact">
       <div className="container mx-auto px-6 md:px-12">
         <div className="max-w-2xl mx-auto text-center">
+          {/* Portrait */}
+          <motion.div
+            {...fadeInUp}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col items-center mb-8"
+          >
+            <div className="relative w-24 h-24 rounded-full overflow-hidden bg-white ring-4 ring-white shadow-lg shadow-[#533AFC]/10 mb-3">
+              <Image
+                src="/images/alister-avatar.jpg"
+                alt="Alister Flandrinck"
+                fill
+                sizes="96px"
+                className="object-cover"
+              />
+            </div>
+            <p className="text-[14px] font-medium text-[#0A0A0A]">
+              Alister Flandrinck
+            </p>
+            <p className="text-[13px] text-[#0A0A0A]/60">
+              {t.contact.role} · {t.contact.personalNote}
+            </p>
+          </motion.div>
+
           {/* Header */}
           <motion.h2
             {...fadeInUp}
             transition={{ duration: 0.6 }}
             className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] mb-4"
           >
-            {t.contact.title}
+            <AccentText text={t.contact.title} />
           </motion.h2>
           <motion.p
             {...fadeInUp}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[#0A0A0A]/40 text-[16px] mb-12"
+            className="text-[#0A0A0A]/60 text-[16px] mb-12"
           >
             {t.contact.description}
           </motion.p>
@@ -74,7 +99,7 @@ const Contact = () => {
           >
             <a
               href="mailto:alisterflandrinck@gmail.com"
-              className="text-[#0A0A0A]/25 hover:text-[#533AFC] transition-colors text-[14px]"
+              className="text-[#0A0A0A]/60 hover:text-[#533AFC] transition-colors text-[14px]"
             >
               alisterflandrinck@gmail.com
             </a>

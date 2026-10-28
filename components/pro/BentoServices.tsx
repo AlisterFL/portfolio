@@ -3,15 +3,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Search,
   Palette,
   ArrowUpRight,
+  Check,
+  Zap,
 } from "lucide-react";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { Safari } from "@/components/ui/safari";
 import { Iphone } from "@/components/ui/iphone";
 import dynamic from "next/dynamic";
 import { useLanguage } from "@/context/LanguageContext";
+import { AccentText } from "@/components/ui/accent-text";
 
 const GlobeCdn = dynamic(
   () => import("@/components/ui/cobe-globe-cdn").then((m) => m.GlobeCdn),
@@ -36,7 +38,7 @@ const BentoServices = () => {
           className="mb-16"
         >
           <h2 className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] max-w-2xl">
-            {t.services.title}
+            <AccentText text={t.services.title} />
           </h2>
         </motion.div>
 
@@ -58,10 +60,8 @@ const BentoServices = () => {
                   <h3 className="text-xl md:text-2xl font-medium text-[#0A0A0A] mb-3">
                     {t.services.design.title}
                   </h3>
-                  <p className="text-[#0A0A0A]/50 text-[15px] leading-relaxed">
-                    Interfaces uniques pensées pour votre marque. Chaque pixel
-                    est soigné pour créer une expérience mémorable qui vous
-                    distingue de la concurrence.
+                  <p className="text-[#0A0A0A]/65 text-[15px] leading-relaxed">
+                    {t.services.design.description}
                   </p>
                 </div>
                 {/* Visual: mini UI mockup */}
@@ -90,10 +90,10 @@ const BentoServices = () => {
                       </div>
                       <div>
                         <div className="text-[9px] font-normal text-[#0A0A0A]">
-                          Design validé
+                          {t.services.design.badge}
                         </div>
-                        <div className="text-[8px] text-[#0A0A0A]/40">
-                          Figma → Code
+                        <div className="text-[8px] text-[#0A0A0A]/60">
+                          {t.services.design.badgeSubtitle}
                         </div>
                       </div>
                     </div>
@@ -116,8 +116,8 @@ const BentoServices = () => {
                 <h3 className="text-xl font-medium text-[#0A0A0A] mb-3">
                   {t.services.seo.title}
                 </h3>
-                <p className="text-[#0A0A0A]/50 text-[15px] leading-relaxed mb-8">
-                  Apparaissez en tête de Google.
+                <p className="text-[#0A0A0A]/65 text-[15px] leading-relaxed mb-8">
+                  {t.services.seo.description}
                 </p>
 
                 {/* Animated rising graph */}
@@ -143,19 +143,6 @@ const BentoServices = () => {
                       }}
                     />
                   ))}
-                  {/* Animated trend line */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 1.2, duration: 0.5 }}
-                    className="absolute top-2 right-0 flex items-center gap-1"
-                  >
-                    <Search size={10} className="text-[#533AFC]" />
-                    <span className="text-[10px] font-medium text-[#533AFC]">
-                      +340%
-                    </span>
-                  </motion.div>
                 </div>
               </div>
             </GlowCard>
@@ -175,16 +162,11 @@ const BentoServices = () => {
                 <h3 className="text-xl font-medium text-[#0A0A0A] mb-3">
                   {t.services.security.title}
                 </h3>
-                <p className="text-[#0A0A0A]/50 text-[15px] leading-relaxed mb-8">
-                  Votre site et les données de vos utilisateurs sont protégés.
+                <p className="text-[#0A0A0A]/65 text-[15px] leading-relaxed mb-8">
+                  {t.services.security.description}
                 </p>
                 <div className="space-y-3">
-                  {[
-                    "Certificat SSL",
-                    "Hébergement sécurisé",
-                    "Conformité RGPD",
-                    "Protection des données",
-                  ].map((item, i) => (
+                  {t.services.security.items.map((item, i) => (
                     <motion.div
                       key={item}
                       initial={{ opacity: 0, x: -10 }}
@@ -219,11 +201,11 @@ const BentoServices = () => {
                 <h3 className="text-xl font-medium text-[#0A0A0A] mb-3">
                   {t.services.performance.title}
                 </h3>
-                <p className="text-[#0A0A0A]/50 text-[15px] leading-relaxed mb-6">
-                  Un site rapide convertit plus. Le vôtre sera optimisé.
+                <p className="text-[#0A0A0A]/65 text-[15px] leading-relaxed mb-6">
+                  {t.services.performance.description}
                 </p>
 
-                {/* Score + label row */}
+                {/* Speed highlight */}
                 <div className="flex items-center gap-5 mb-5">
                   <div className="relative w-20 h-20 shrink-0">
                     <svg className="w-full h-full -rotate-90" viewBox="0 0 80 80">
@@ -235,38 +217,34 @@ const BentoServices = () => {
                         strokeLinecap="round"
                         strokeDasharray={2 * Math.PI * 34}
                         initial={{ strokeDashoffset: 2 * Math.PI * 34 }}
-                        whileInView={{ strokeDashoffset: 2 * Math.PI * 34 * 0.02 }}
+                        whileInView={{ strokeDashoffset: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       />
                     </svg>
-                    <span className="absolute inset-0 flex items-center justify-center text-xl font-medium text-[#533AFC]">
-                      98
+                    <span className="absolute inset-0 flex items-center justify-center text-[#533AFC]">
+                      <Zap size={24} strokeWidth={2} />
                     </span>
                   </div>
                   <div>
-                    <div className="text-[13px] font-medium text-[#0A0A0A]">Score Google</div>
-                    <div className="text-[11px] text-[#0A0A0A]/40">Performance, SEO, accessibilité</div>
+                    <div className="text-[13px] font-medium text-[#0A0A0A]">{t.services.performance.highlight}</div>
+                    <div className="text-[11px] text-[#0A0A0A]/60">{t.services.performance.highlightDetails}</div>
                   </div>
                 </div>
 
-                {/* Metrics list */}
+                {/* Practices list */}
                 <div className="space-y-2.5">
-                  {[
-                    { label: "Temps de chargement", value: "< 1s" },
-                    { label: "Optimisation mobile", value: "100%" },
-                    { label: "Score SEO technique", value: "98/100" },
-                  ].map((m, i) => (
+                  {t.services.performance.items.map((item, i) => (
                     <motion.div
-                      key={m.label}
+                      key={item}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.8 + i * 0.1 }}
                       className="flex items-center justify-between"
                     >
-                      <span className="text-[12px] text-[#0A0A0A]/40">{m.label}</span>
-                      <span className="text-[12px] font-medium text-[#533AFC]">{m.value}</span>
+                      <span className="text-[12px] text-[#0A0A0A]/60">{item}</span>
+                      <Check size={14} strokeWidth={2.5} className="text-[#533AFC]" />
                     </motion.div>
                   ))}
                 </div>
@@ -287,12 +265,13 @@ const BentoServices = () => {
                 <h3 className="text-xl font-medium text-[#0A0A0A] mb-3">
                   {t.services.responsive.title}
                 </h3>
-                <p className="text-[#0A0A0A]/50 text-[15px] leading-relaxed">
-                  Votre site s&apos;adapte automatiquement à chaque appareil — desktop, tablette, mobile — pour une expérience fluide partout.
+                <p className="text-[#0A0A0A]/65 text-[15px] leading-relaxed">
+                  {t.services.responsive.description}
                 </p>
 
                 {/* Safari + iPhone superposés */}
-                <div className="relative h-[180px] sm:h-[190px] md:h-[195px] xl:h-[220px] 2xl:h-[250px] mt-4 -mx-2 -mb-4 md:-mx-4 md:-mb-6">
+                {/* Mobile: height follows the width so the mockups never outgrow the card; md+: fixed heights fit the bento row */}
+                <div className="relative aspect-[100/60] md:aspect-auto md:h-[195px] xl:h-[220px] 2xl:h-[250px] mt-4 -mx-2 -mb-4 md:-mx-4 md:-mb-6">
                   {/* Safari (desktop) */}
                   <div className="absolute top-0 left-0 w-[90%] drop-shadow-md">
                     <Safari url="votresite.com" mode="simple">
@@ -406,7 +385,7 @@ const BentoServices = () => {
                   <h3 className="text-xl md:text-2xl font-medium text-[#0A0A0A] mb-3">
                     {t.services.content.title}
                   </h3>
-                  <p className="text-[#0A0A0A]/50 text-[15px] leading-relaxed">
+                  <p className="text-[#0A0A0A]/65 text-[15px] leading-relaxed">
                     {t.services.content.description}
                   </p>
                 </div>
@@ -432,7 +411,7 @@ const BentoServices = () => {
                   <h3 className="text-xl font-medium text-[#0A0A0A] mb-3">
                     {t.services.ctaTitle}
                   </h3>
-                  <p className="text-[#0A0A0A]/50 text-[15px] leading-relaxed">
+                  <p className="text-[#0A0A0A]/65 text-[15px] leading-relaxed">
                     {t.services.ctaDescription}
                   </p>
                 </div>

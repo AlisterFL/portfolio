@@ -3,22 +3,24 @@
 import React from "react";
 import Navigation from "@/components/pro/Navigation";
 import HeroSection from "@/components/pro/HeroSection";
+import Projects from "@/components/pro/Projects";
 import BentoServices from "@/components/pro/BentoServices";
-import TrustedBy from "@/components/pro/TrustedBy";
 import Testimonials from "@/components/pro/Testimonials";
 import FAQ from "@/components/pro/FAQ";
 import Contact from "@/components/pro/Contact";
+import Footer from "@/components/pro/Footer";
 
 export default function Page() {
   return (
-    <main className="relative bg-white min-h-screen">
+    <main className="portfolio font-sans relative bg-white min-h-screen">
       <Navigation />
       <HeroSection />
       <BentoServices />
-      <TrustedBy />
+      <Projects />
       <Testimonials />
       <FAQ />
       <Contact />
+      <Footer className="bg-[#F6F3FF]" />
     </main>
   );
 }

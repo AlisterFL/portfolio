@@ -7,40 +7,95 @@
     "cta": "Start a project"
   },
   "hero": {
-    "badge": "New",
-    "badgeText": "See my latest work",
+    "eyebrow": "Freelance web developer · React & Next.js",
     "title1": "Your website,",
     "title2": "built to",
-    "titleHighlight": "perform.",
-    "description": "Custom design, high-performance development and",
-    "description2": "a polished user experience.",
+    "titleHighlights": [
+      "perform.",
+      "convert.",
+      "stand out.",
+      "last."
+    ],
+    "description": "I design and build custom websites that are fast and made to turn your visitors into clients.",
     "cta": "Start a project",
-    "ctaSecondary": "View my work"
+    "ctaSecondary": "See my work"
+  },
+  "projects": {
+    "title": "A few *delivered* projects",
+    "subtitle": "Live websites, used every day by my clients.",
+    "visit": "Visit website",
+    "clients": {
+      "g3j": "Showcase website for an agency specializing in real estate and property management.",
+      "noe": "Complete platform for a real estate firm with property catalog.",
+      "plant": "Institutional website for a Belgian national plant protection association."
+    },
+    "pages": {
+      "g3j": [
+        "Home",
+        "Listings",
+        "Property page"
+      ],
+      "plant": [
+        "Home",
+        "Projects",
+        "Members"
+      ],
+      "noe": [
+        "Home",
+        "Sell",
+        "List a property"
+      ]
+    },
+    "tags": {
+      "g3j": [
+        "Showcase website",
+        "Real estate",
+        "Property management"
+      ],
+      "plant": [
+        "Institutional website",
+        "Association",
+        "Multilingual"
+      ],
+      "noe": [
+        "Property catalog",
+        "Real estate",
+        "Valuation"
+      ]
+    }
   },
   "services": {
-    "title": "Everything your website needs to perform",
+    "title": "Everything your website needs to *perform*",
     "design": {
       "title": "Custom design",
-      "description": "Unique interfaces crafted for your brand. Every pixel is refined to create a memorable experience that sets you apart from the competition."
+      "description": "Unique interfaces crafted for your brand. Every pixel is refined to create a memorable experience that sets you apart from the competition.",
+      "badge": "Design approved",
+      "badgeSubtitle": "Figma → Code"
     },
     "seo": {
       "title": "Optimized SEO",
-      "description": "Rank at the top of Google.",
-      "growth": "+340%"
+      "description": "Rank at the top of Google."
     },
     "security": {
       "title": "Enhanced security",
       "description": "Your website and your users' data are protected.",
-      "items": ["SSL Certificate", "Secure hosting", "GDPR Compliance", "Data protection"]
+      "items": [
+        "SSL Certificate",
+        "Secure hosting",
+        "GDPR Compliance",
+        "Data protection"
+      ]
     },
     "performance": {
       "title": "Maximum performance",
-      "description": "Every millisecond counts.",
-      "score": "Google Score",
-      "scoreDetails": "Performance, SEO, accessibility",
-      "loadTime": "Load time",
-      "mobile": "Mobile optimization",
-      "seoScore": "Technical SEO score"
+      "description": "A fast website converts better. Yours will be optimized.",
+      "highlight": "Built for speed",
+      "highlightDetails": "Following Google's Core Web Vitals criteria",
+      "items": [
+        "Compressed images, modern formats",
+        "Lean code, no bloat",
+        "Optimized for mobile"
+      ]
     },
     "responsive": {
       "title": "Responsive & Mobile",
@@ -54,17 +109,8 @@
     "ctaDescription": "Let's discuss your goals and find the best solution.",
     "ctaButton": "Get in touch"
   },
-  "trusted": {
-    "title": "My work",
-    "subtitle": "A few recently delivered projects.",
-    "clients": {
-      "g3j": "Showcase website for an agency specializing in real estate and property management.",
-      "noe": "Complete platform for a real estate firm with property catalog.",
-      "plant": "Institutional website for a Belgian national plant protection association."
-    }
-  },
   "testimonials": {
-    "title": "What they say",
+    "title": "What they *say*",
     "reviews": [
       {
         "name": "Gautier Jufft",
@@ -79,9 +125,13 @@
     ]
   },
   "faq": {
-    "title": "Frequently asked questions",
+    "title": "Frequently asked *questions*",
     "subtitle": "Everything you need to know before getting started.",
     "questions": [
+      {
+        "question": "How does a project work?",
+        "answer": "It all starts with a conversation to understand your business, your goals and your needs. I then send you a clear proposal. I design a mockup of your website, which you approve before development starts. Once the site is built and tested, I handle the launch."
+      },
       {
         "question": "How long does it take to create a complete website?",
         "answer": "It depends on the project. A showcase website can be delivered in 2-3 weeks, while a more complex site with databases or dynamic features typically takes 4-8 weeks."
@@ -105,9 +155,15 @@
     ]
   },
   "contact": {
-    "title": "Have a project in mind?",
+    "title": "Have a project in *mind*?",
     "description": "Let's discuss your goals and find the best solution.",
     "email": "Send an email",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "role": "Freelance web developer",
+    "personalNote": "I'll be the one reading your message."
+  },
+  "footer": {
+    "legal": "Legal notice",
+    "privacy": "Privacy policy"
   }
 }

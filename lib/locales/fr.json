@@ -7,40 +7,95 @@
     "cta": "Lancer un projet"
   },
   "hero": {
-    "badge": "Nouveau",
-    "badgeText": "Voir mes dernières réalisations",
+    "eyebrow": "Développeur web freelance · React & Next.js",
     "title1": "Votre site web,",
     "title2": "pensé pour",
-    "titleHighlight": "performer.",
-    "description": "Design sur-mesure, développement performant et",
-    "description2": "expérience utilisateur soignée.",
+    "titleHighlights": [
+      "performer.",
+      "convertir.",
+      "vous démarquer.",
+      "durer."
+    ],
+    "description": "Je conçois et développe des sites sur-mesure, rapides et pensés pour transformer vos visiteurs en clients.",
     "cta": "Démarrer un projet",
-    "ctaSecondary": "Voir mes projets"
+    "ctaSecondary": "Voir mes réalisations"
+  },
+  "projects": {
+    "title": "Quelques projets *livrés*",
+    "subtitle": "Des sites en ligne, utilisés chaque jour par mes clients.",
+    "visit": "Voir le site",
+    "clients": {
+      "g3j": "Site vitrine pour une agence spécialisée dans l'immobilier et la gestion locative.",
+      "noe": "Plateforme complète pour un cabinet immobilier avec catalogue de biens.",
+      "plant": "Site institutionnel pour une association nationale belge de protection des plantes."
+    },
+    "pages": {
+      "g3j": [
+        "Accueil",
+        "Annonces",
+        "Fiche bien"
+      ],
+      "plant": [
+        "Accueil",
+        "Projets",
+        "Membres"
+      ],
+      "noe": [
+        "Accueil",
+        "Vendre",
+        "Proposer un bien"
+      ]
+    },
+    "tags": {
+      "g3j": [
+        "Site vitrine",
+        "Immobilier",
+        "Gestion locative"
+      ],
+      "plant": [
+        "Site institutionnel",
+        "Association",
+        "Multilingue"
+      ],
+      "noe": [
+        "Catalogue de biens",
+        "Immobilier",
+        "Estimation"
+      ]
+    }
   },
   "services": {
-    "title": "Tout ce dont votre site a besoin pour performer",
+    "title": "Tout ce dont votre site a besoin pour *performer*",
     "design": {
       "title": "Design sur-mesure",
-      "description": "Interfaces uniques pensées pour votre marque. Chaque pixel est soigné pour créer une expérience mémorable qui vous distingue de la concurrence."
+      "description": "Interfaces uniques pensées pour votre marque. Chaque pixel est soigné pour créer une expérience mémorable qui vous distingue de la concurrence.",
+      "badge": "Design validé",
+      "badgeSubtitle": "Figma → Code"
     },
     "seo": {
       "title": "Référencement optimisé",
-      "description": "Apparaissez en tête de Google.",
-      "growth": "+340%"
+      "description": "Apparaissez en tête de Google."
     },
     "security": {
       "title": "Sécurité renforcée",
       "description": "Votre site et les données de vos utilisateurs sont protégés.",
-      "items": ["Certificat SSL", "Hébergement sécurisé", "Conformité RGPD", "Protection des données"]
+      "items": [
+        "Certificat SSL",
+        "Hébergement sécurisé",
+        "Conformité RGPD",
+        "Protection des données"
+      ]
     },
     "performance": {
       "title": "Performance maximale",
-      "description": "Chaque milliseconde compte.",
-      "score": "Score Google",
-      "scoreDetails": "Performance, SEO, accessibilité",
-      "loadTime": "Temps de chargement",
-      "mobile": "Optimisation mobile",
-      "seoScore": "Score SEO technique"
+      "description": "Un site rapide convertit plus. Le vôtre sera optimisé.",
+      "highlight": "Pensé pour la vitesse",
+      "highlightDetails": "Selon les critères Core Web Vitals de Google",
+      "items": [
+        "Images compressées, formats modernes",
+        "Code léger, sans superflu",
+        "Optimisé pour le mobile"
+      ]
     },
     "responsive": {
       "title": "Responsive & Mobile",
@@ -54,17 +109,8 @@
     "ctaDescription": "Discutons de vos objectifs et trouvons la meilleure solution.",
     "ctaButton": "Prendre contact"
   },
-  "trusted": {
-    "title": "Mes réalisations",
-    "subtitle": "Quelques projets livrés récemment.",
-    "clients": {
-      "g3j": "Site vitrine pour une agence spécialisée dans l'immobilier et la gestion locative.",
-      "noe": "Plateforme complète pour un cabinet immobilier avec catalogue de biens.",
-      "plant": "Site institutionnel pour une association nationale belge de protection des plantes."
-    }
-  },
   "testimonials": {
-    "title": "Ce qu'ils en disent",
+    "title": "Ce qu'ils en *disent*",
     "reviews": [
       {
         "name": "Gautier Jufft",
@@ -79,9 +125,13 @@
     ]
   },
   "faq": {
-    "title": "Questions fréquentes",
+    "title": "Questions *fréquentes*",
     "subtitle": "Tout ce que vous devez savoir avant de démarrer.",
     "questions": [
+      {
+        "question": "Comment se déroule un projet ?",
+        "answer": "Tout commence par un échange pour comprendre votre activité, vos objectifs et vos besoins. Je vous envoie ensuite une proposition claire. Je conçois la maquette de votre site, que vous validez avant le développement. Une fois le site développé et testé, je m'occupe de la mise en ligne."
+      },
       {
         "question": "Combien de temps faut-il pour créer un site complet ?",
         "answer": "Tout dépend de la nature du projet. Un site vitrine peut être livré en 2 à 3 semaines, tandis qu'un site plus complexe avec base de données ou fonctionnalités dynamiques demande généralement entre 4 et 8 semaines."
@@ -105,9 +155,15 @@
     ]
   },
   "contact": {
-    "title": "Un projet en tête ?",
+    "title": "Un projet en *tête* ?",
     "description": "Discutons de vos objectifs et trouvons la meilleure solution.",
     "email": "Envoyer un email",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "role": "Développeur web freelance",
+    "personalNote": "C'est moi qui lirai votre message."
+  },
+  "footer": {
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité"
   }
 }

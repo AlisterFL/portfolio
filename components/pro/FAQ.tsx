@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { AccentText } from "@/components/ui/accent-text";
 
 const FAQItem = ({
   faq,
@@ -42,7 +43,7 @@ const FAQItem = ({
           className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
             isOpen
               ? "bg-[#533AFC] text-white"
-              : "bg-[#0A0A0A]/[0.04] text-[#0A0A0A]/40"
+              : "bg-[#0A0A0A]/[0.04] text-[#0A0A0A]/60"
           }`}
         >
           {isOpen ? <Minus size={15} /> : <Plus size={15} />}
@@ -58,7 +59,7 @@ const FAQItem = ({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="px-6 pb-5 text-[#0A0A0A]/45 text-[15px] leading-relaxed">
+            <p className="px-6 pb-5 text-[#0A0A0A]/60 text-[15px] leading-relaxed">
               {faq.answer}
             </p>
           </motion.div>
@@ -83,9 +84,9 @@ const FAQ = () => {
             className="text-center mb-14"
           >
             <h2 className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] mb-4">
-              {t.faq.title}
+              <AccentText text={t.faq.title} />
             </h2>
-            <p className="text-[#0A0A0A]/40 text-[16px]">
+            <p className="text-[#0A0A0A]/60 text-[16px]">
               {t.faq.subtitle}
             </p>
           </motion.div>
