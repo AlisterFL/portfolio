@@ -215,7 +215,8 @@ export function GlobeCdn({
             opacity: `var(--cobe-visible-${m.id}, 0)`,
             filter: `blur(calc((1 - var(--cobe-visible-${m.id}, 0)) * 8px))`,
             transition: "opacity 0.3s, filter 0.3s",
-          }}
+            // positionAnchor (CSS Anchor Positioning) is missing from React's CSSProperties
+          } as React.CSSProperties}
         >
           <div
             style={{
