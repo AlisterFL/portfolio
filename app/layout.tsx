@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Bricolage_Grotesque, Instrument_Serif, Geist } from "next/font/google";
 import "./globals.css";
 
 import { LanguageProvider } from "../context/LanguageContext";
@@ -10,14 +10,29 @@ const inter = Inter({
   display: "swap",
 });
 
-const sora = Sora({
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
+});
+
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://alisterflandrinck.com'),
   title: "Alister Flandrinck · Développeur Web",
   description: "Portfolio de Alister Flandrinck, développeur web spécialisé en React, Next.js et applications modernes. Création de sites web performants et applications web sur mesure pour entreprises.",
   keywords: ["développeur web", "react", "next.js", "front-end", "développeur javascript", "création site web", "application web", "portfolio développeur"],
@@ -65,6 +80,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://alisterflandrinck.com',
   },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/icons/icon-192.png',
+  },
+  manifest: '/manifest.json',
   verification: {
     google: 'google-site-verification=3x2CZXnuR6Xb3erUezaSqwtBrxM7OMF1uft0n-q1SxQ',
   },
@@ -78,12 +98,7 @@ export default function RootLayout({
 
   return (
     <html lang="fr">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-      </head>
-      <body className={`${inter.variable} ${sora.variable} font-sans h-full bg-[#121212]`}>
+      <body className={`${inter.variable} ${geist.variable} ${bricolage.variable} ${instrumentSerif.variable} font-sans h-full bg-[#121212]`}>
         <LanguageProvider>
           {/* Structure sémantique pour améliorer le SEO */}
           <main>

@@ -24,7 +24,7 @@ const Navigation = () => {
 
   const navLinks = [
     { label: t.nav.services, href: "#expertise" },
-    { label: t.nav.projects, href: "#avis" },
+    { label: t.nav.projects, href: "#projets" },
     { label: t.nav.reviews, href: "#testimonials" },
     { label: t.nav.contact, href: "#contact" },
   ];
@@ -65,7 +65,7 @@ const Navigation = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#0A0A0A]/40 hover:text-[#0A0A0A] transition-colors"
+                  className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0A0A0A]/60 hover:text-[#0A0A0A] transition-colors"
                 >
                   {link.label}
                 </a>
@@ -139,7 +139,7 @@ const Navigation = () => {
 
                 {/* Language toggle — mobile */}
                 <div className="flex items-center gap-2 pt-4 mt-2 border-t border-black/[0.06]">
-                  <span className="text-[12px] text-[#0A0A0A]/40 mr-2">Langue</span>
+                  <span className="text-[12px] text-[#0A0A0A]/60 mr-2">Langue</span>
                   <div className="flex items-center bg-gray-100 rounded-full p-1 border border-black/[0.05]">
                     {(["EN", "FR"] as const).map((lang) => (
                       <button

@@ -15,9 +15,9 @@ interface LanguageContextType {
 
 // Valeur par défaut du contexte
 const LanguageContext = createContext<LanguageContextType>({
-  language: "en",
+  language: "fr",
   toggleLanguage: () => {}, // Fonction vide par défaut
-  translations: en, // Traductions par défaut en anglais
+  translations: fr, // Traductions par défaut en français
 });
 
 // Définition du type des props pour le provider
@@ -26,12 +26,12 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<"en" | "fr">("en");
-  const [translations, setTranslations] = useState<TranslationsType>(en); // Texte en anglais par défaut
+  const [language, setLanguage] = useState<"en" | "fr">("fr");
+  const [translations, setTranslations] = useState<TranslationsType>(fr); // Texte en français par défaut
 
   // Charger la langue depuis localStorage au montage
   useEffect(() => {
-    const savedLanguage = (localStorage.getItem("language") as "en" | "fr") || "en";
+    const savedLanguage = (localStorage.getItem("language") as "en" | "fr") || "fr";
     setLanguage(savedLanguage);
     setTranslations(savedLanguage === "fr" ? fr : en);
   }, []);

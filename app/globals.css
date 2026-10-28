@@ -6,6 +6,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Inter by default (Kosmos); the portfolio pages opt into Geist */
+body {
+  --font-sans: var(--font-inter);
+}
+.portfolio {
+  --font-sans: var(--font-geist);
+}
+
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
@@ -100,13 +108,107 @@ html {
   }
 }
 
-@theme inline {
-  @keyframes ripple {
+/* Hero entrance — pure CSS so it plays before hydration */
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-reveal {
+  animation: hero-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal {
+    animation: none;
+  }
+}
+
+/* Hero background blobs */
+@keyframes hero-float {
   0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    }
-  50% {
-    transform: translate(-50%, -50%) scale(0.9);
-    }
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(4%, -6%, 0) scale(1.08);
+  }
+  66% {
+    transform: translate3d(-5%, 4%, 0) scale(0.95);
+  }
+}
+
+.hero-blob {
+  animation: hero-float 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob {
+    animation: none;
+  }
+}
+
+/* 3D marquee columns — seamless loop (each column holds two copies of its tiles) */
+@keyframes marquee-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.marquee-col-up {
+  animation: marquee-up var(--marquee-duration, 50s) linear infinite;
+}
+
+.marquee-col-down {
+  animation: marquee-down var(--marquee-duration, 50s) linear infinite;
+}
+
+.marquee-col:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-col-up,
+  .marquee-col-down {
+    animation: none;
+  }
+}
+
+/* Project page switcher — 5s countdown before the next screenshot */
+@keyframes page-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.page-progress {
+  animation: page-progress 5s linear both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-progress {
+    animation: none;
+    display: none;
   }
 }
