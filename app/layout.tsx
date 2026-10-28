@@ -32,7 +32,7 @@ const instrumentSerif = Instrument_Serif({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://alisterflandrinck.com'),
+  metadataBase: new URL('https://www.alisterflandrinck.fr'),
   title: "Alister Flandrinck · Développeur Web",
   description: "Portfolio de Alister Flandrinck, développeur web spécialisé en React, Next.js et applications modernes. Création de sites web performants et applications web sur mesure pour entreprises.",
   keywords: ["développeur web", "react", "next.js", "front-end", "développeur javascript", "création site web", "application web", "portfolio développeur"],
@@ -58,16 +58,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://alisterflandrinck.com',
+    url: 'https://www.alisterflandrinck.fr',
     siteName: 'Alister Flandrinck - Développeur Web',
     title: 'Alister Flandrinck · Développeur Web',
     description: 'Portfolio de Alister Flandrinck, développeur web spécialisé en React, Next.js et applications modernes.',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/og-portfolio.jpg',
         width: 1200,
         height: 630,
-        alt: 'Alister Flandrinck - Portfolio',
+        alt: 'Alister Flandrinck - Développeur web freelance : aperçu de la page d\'accueil et des projets',
       },
     ],
   },
@@ -75,10 +75,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Alister Flandrinck · Développeur Web',
     description: 'Portfolio de Alister Flandrinck, développeur web spécialisé en React, Next.js et applications modernes.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/og-portfolio.jpg'],
   },
   alternates: {
-    canonical: 'https://alisterflandrinck.com',
+    canonical: 'https://www.alisterflandrinck.fr',
   },
   icons: {
     icon: '/favicon.ico',
@@ -112,14 +112,14 @@ export default function RootLayout({
                 '@context': 'https://schema.org',
                 '@type': 'Person',
                 name: 'Alister Flandrinck',
-                url: 'https://alisterflandrinck.com',
+                url: 'https://www.alisterflandrinck.fr',
                 jobTitle: 'Développeur Web',
                 knowsAbout: ['React', 'Next.js', 'JavaScript', 'Front-end Development'],
                 sameAs: [
                   'https://github.com/AlisterFL',
                   'https://linkedin.com/in/alisterflandrinck',
                 ],
-                image: 'https://alisterflandrinck.com/images/alisterface1.png',
+                image: 'https://www.alisterflandrinck.fr/images/alisterface1.png',
               }),
             }}
           />

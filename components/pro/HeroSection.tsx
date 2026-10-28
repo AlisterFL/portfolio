@@ -83,17 +83,14 @@ const HeroSection = () => {
       {/* ─── Headline ─── */}
       <div className="relative z-10 container mx-auto px-6 md:px-12 pt-32 pb-24 lg:py-0 pointer-events-none">
         <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left pointer-events-auto">
-          <p
-            className="hero-reveal inline-flex items-center gap-2 rounded-full border border-[#0A0A0A]/[0.08] bg-white/80 backdrop-blur px-4 py-1.5 text-[12px] md:text-[13px] font-medium text-[#0A0A0A]/70 mb-8"
-            style={{ animationDelay: "150ms" }}
-          >
+          <p className="hero-reveal inline-flex items-center gap-2 rounded-full border border-[#0A0A0A]/[0.08] bg-white/80 backdrop-blur px-4 py-1.5 text-[12px] md:text-[13px] font-medium text-[#0A0A0A]/70 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-[#533AFC]" />
             {t.hero.eyebrow}
           </p>
 
           <h1
             className="hero-reveal font-display font-semibold text-[2.75rem] leading-[1] sm:text-6xl md:text-7xl xl:text-[5.5rem] tracking-[-0.045em] text-[#0A0A0A] mb-7"
-            style={{ animationDelay: "300ms" }}
+            style={{ animationDelay: "50ms" }}
           >
             {t.hero.title1}
             <br />
@@ -107,14 +104,14 @@ const HeroSection = () => {
 
           <p
             className="hero-reveal text-[#0A0A0A]/65 text-[17px] md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mb-10"
-            style={{ animationDelay: "450ms" }}
+            style={{ animationDelay: "100ms" }}
           >
             {t.hero.description}
           </p>
 
           <div
             className="hero-reveal flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
-            style={{ animationDelay: "600ms" }}
+            style={{ animationDelay: "150ms" }}
           >
             <a
               href="#contact"

@@ -5,7 +5,7 @@ import { legal } from "@/lib/legal";
 
 export const metadata: Metadata = {
   title: "Mentions légales · Alister Flandrinck",
-  description: "Mentions légales du site alisterflandrinck.com : éditeur, hébergeur et propriété intellectuelle.",
+  description: "Mentions légales du site alisterflandrinck.fr : éditeur, hébergeur et propriété intellectuelle.",
   alternates: { canonical: "/mentions-legales" },
 };
 

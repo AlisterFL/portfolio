@@ -108,29 +108,27 @@ body {
   }
 }
 
-/* Hero entrance — pure CSS so it plays before hydration */
+/* Hero entrance — pure CSS so it plays before hydration; starts immediately, no delay */
 @keyframes hero-reveal {
   from {
     opacity: 0;
-    transform: translateY(24px);
-    filter: blur(6px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
     transform: none;
-    filter: blur(0);
   }
 }
 
 .hero-reveal {
-  animation: hero-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: hero-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* The 3D wall drifts in slowly under the headline */
+/* The 3D wall fades in right away under the headline */
 @keyframes hero-wall-reveal {
   from {
     opacity: 0;
-    transform: translateY(24px) scale(1.04);
+    transform: scale(1.02);
   }
   to {
     opacity: 1;
@@ -139,7 +137,7 @@ body {
 }
 
 .hero-wall {
-  animation: hero-wall-reveal 2s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+  animation: hero-wall-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

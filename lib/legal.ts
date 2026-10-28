@@ -15,6 +15,6 @@ export const legal = {
     address: "440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis",
     contact: "privacy@vercel.com",
   },
-  siteUrl: "alisterflandrinck.com",
+  siteUrl: "alisterflandrinck.fr",
   updatedAt: "28 octobre 2026",
 };
