@@ -13,9 +13,10 @@ const reviewSites = [
 ];
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 10 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
+  // Positive bottom margin: reveal just before the block scrolls into view
+  viewport: { once: true, margin: "0px 0px 15% 0px" },
 };
 
 const Testimonials = () => {
@@ -33,13 +34,13 @@ const Testimonials = () => {
         {/* Header */}
         <motion.h2
           {...fadeInUp}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.35 }}
           className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] mb-14 md:mb-20"
         >
           <AccentText text={tr.testimonials.title} />
         </motion.h2>
 
-        <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.1 }} className="max-w-5xl mx-auto">
+        <motion.div {...fadeInUp} transition={{ duration: 0.35 }} className="max-w-5xl mx-auto">
           <AnimatedTestimonials testimonials={testimonials} />
         </motion.div>
       </div>

@@ -8,19 +8,17 @@ import { AccentText } from "@/components/ui/accent-text";
 
 const FAQItem = ({
   faq,
-  index,
 }: {
   faq: { question: string; answer: string };
-  index: number;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.08 }}
-      viewport={{ once: true }}
+      transition={{ duration: 0.3 }}
+      viewport={{ once: true, margin: "0px 0px 15% 0px" }}
       className={`border border-[#0A0A0A]/[0.06] rounded-2xl transition-all duration-300 ${
         isOpen
           ? "bg-white shadow-md shadow-[#533AFC]/[0.04] border-[#533AFC]/15"
@@ -77,10 +75,10 @@ const FAQ = () => {
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "0px 0px 15% 0px" }}
+            transition={{ duration: 0.35 }}
             className="text-center mb-14"
           >
             <h2 className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] mb-4">
@@ -94,7 +92,7 @@ const FAQ = () => {
           {/* Questions */}
           <div className="space-y-3">
             {t.faq.questions.map((faq: { question: string; answer: string }, index: number) => (
-              <FAQItem key={index} faq={faq} index={index} />
+              <FAQItem key={index} faq={faq} />
             ))}
           </div>
         </div>

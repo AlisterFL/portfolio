@@ -33,11 +33,8 @@ const Navigation = () => {
 
   return (
     <>
-      <motion.header
+      <header
         className="fixed top-0 left-0 right-0 z-[9999] transition-all duration-300"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
         style={{
           background: showBg ? "rgba(255,255,255,0.95)" : "transparent",
           backdropFilter: showBg ? "blur(20px)" : "none",
@@ -160,7 +157,7 @@ const Navigation = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.header>
+      </header>
 
       {/* Backdrop overlay */}
       <AnimatePresence>

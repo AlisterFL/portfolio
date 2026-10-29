@@ -86,7 +86,8 @@ const Tile = ({ image, hidden }: { image: MarqueeImage; hidden: boolean }) => {
         src={image.src}
         alt={hidden ? "" : image.alt}
         fill
-        sizes="420px"
+        // Real rendered width: 406px column × the wrapper scale (0.55 / 0.75 / 0.9 / 1 by breakpoint)
+        sizes="(min-width: 1280px) 406px, (min-width: 1024px) 366px, (min-width: 640px) 305px, 224px"
         className="object-cover object-top opacity-80 transition-opacity duration-300 group-hover/tile:opacity-100"
         draggable={false}
       />

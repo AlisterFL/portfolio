@@ -21,9 +21,10 @@ const GlobeCdn = dynamic(
 );
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 10 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
+  // Positive bottom margin: reveal just before the block scrolls into view
+  viewport: { once: true, margin: "0px 0px 15% 0px" },
 };
 
 const BentoServices = () => {
@@ -34,7 +35,7 @@ const BentoServices = () => {
         {/* Section header */}
         <motion.div
           {...fadeInUp}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.35 }}
           className="mb-16"
         >
           <h2 className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] max-w-2xl">
@@ -47,7 +48,7 @@ const BentoServices = () => {
           {/* ─── Card 1: Design — Large (2 cols) ─── */}
           <motion.div
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.35 }}
             className="md:col-span-2 lg:col-span-2"
           >
             <GlowCard
@@ -106,7 +107,7 @@ const BentoServices = () => {
           {/* ─── Card 2: SEO ─── */}
           <motion.div
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.35 }}
           >
             <GlowCard
               customSize
@@ -129,8 +130,8 @@ const BentoServices = () => {
                       whileInView={{ height: `${h}%` }}
                       viewport={{ once: true }}
                       transition={{
-                        duration: 0.8,
-                        delay: 0.3 + i * 0.06,
+                        duration: 0.5,
+                        delay: i * 0.025,
                         ease: [0.22, 1, 0.36, 1],
                       }}
                       className="flex-1 rounded-t-md transition-all duration-300 group-hover/seo:scale-y-110 origin-bottom"
@@ -151,7 +152,7 @@ const BentoServices = () => {
           {/* ─── Card 3: Sécurité ─── */}
           <motion.div
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.35 }}
           >
             <GlowCard
 
@@ -166,13 +167,13 @@ const BentoServices = () => {
                   {t.services.security.description}
                 </p>
                 <div className="space-y-3">
-                  {t.services.security.items.map((item, i) => (
+                  {t.services.security.items.map((item) => (
                     <motion.div
                       key={item}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: 0.6 + i * 0.15 }}
+                      transition={{ duration: 0.25 }}
                       className="flex items-center gap-2.5 bg-[#FCFDFE] rounded-lg px-3 py-2 border border-black/[0.04]"
                     >
                       <div className="w-4 h-4 rounded-full bg-[#533AFC]/10 flex items-center justify-center shrink-0">
@@ -191,7 +192,7 @@ const BentoServices = () => {
           {/* ─── Card 4: Performance ─── */}
           <motion.div
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.35 }}
           >
             <GlowCard
               customSize
@@ -219,7 +220,7 @@ const BentoServices = () => {
                         initial={{ strokeDashoffset: 2 * Math.PI * 34 }}
                         whileInView={{ strokeDashoffset: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                       />
                     </svg>
                     <span className="absolute inset-0 flex items-center justify-center text-[#533AFC]">
@@ -234,13 +235,13 @@ const BentoServices = () => {
 
                 {/* Practices list */}
                 <div className="space-y-2.5">
-                  {t.services.performance.items.map((item, i) => (
+                  {t.services.performance.items.map((item) => (
                     <motion.div
                       key={item}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: 0.8 + i * 0.1 }}
+                      transition={{ duration: 0.25 }}
                       className="flex items-center justify-between"
                     >
                       <span className="text-[12px] text-[#0A0A0A]/60">{item}</span>
@@ -255,7 +256,7 @@ const BentoServices = () => {
           {/* ─── Card 5: Responsive & Mobile ─── */}
           <motion.div
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.45 }}
+            transition={{ duration: 0.35 }}
           >
             <GlowCard
               customSize
@@ -373,7 +374,7 @@ const BentoServices = () => {
           {/* ─── Card 6: Contenu dynamique — Large (2 cols) ─── */}
           <motion.div
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.35 }}
             className="md:col-span-2"
           >
             <GlowCard
@@ -400,7 +401,7 @@ const BentoServices = () => {
           {/* ─── Card 7: CTA — bottom right ─── */}
           <motion.div
             {...fadeInUp}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.35 }}
           >
             <GlowCard
               customSize
