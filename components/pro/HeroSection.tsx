@@ -6,26 +6,58 @@ import { WordRotate } from "@/components/ui/word-rotate";
 import { ThreeDMarquee, type MarqueeImage } from "@/components/ui/3d-marquee";
 import { useLanguage } from "@/context/LanguageContext";
 
+type Site = { label: string; href?: string };
+
 const sites = {
   g3j: { label: "G3J Immobilier", href: "#projet-g3j" },
   plant: { label: "Plant Protect", href: "#projet-plant" },
   noe: { label: "Noé Immobilier", href: "#projet-noe" },
+  kosmos: { label: "Kosmos", href: "/kosmos" },
+  // No public link yet — the tile stays a plain, non-clickable preview
+  chantier: { label: "ChantierClair" },
+} satisfies Record<string, Site>;
+
+const shot = (site: Site, src: string, page: string): MarqueeImage => ({
+  src,
+  alt: `${site.label} — ${page}`,
+  ...site,
+});
+
+const g3j = {
+  home: shot(sites.g3j, "/images/portfolio/G3JImmo/HomePage.png", "accueil"),
+  ads: shot(sites.g3j, "/images/portfolio/G3JImmo/AdsPage.png", "annonces"),
+  ad: shot(sites.g3j, "/images/portfolio/G3JImmo/AdPage.png", "annonce"),
+};
+const plant = {
+  home: shot(sites.plant, "/images/portfolio/PlantProtect/HomePage.png", "accueil"),
+  projects: shot(sites.plant, "/images/portfolio/PlantProtect/ProjectPage.png", "projets"),
+  members: shot(sites.plant, "/images/portfolio/PlantProtect/MembersPage.png", "membres"),
+};
+const noe = {
+  home: shot(sites.noe, "/images/portfolio/NoeImmo/HomePage.png", "accueil"),
+  sell: shot(sites.noe, "/images/portfolio/NoeImmo/ToSellPage.png", "vendre"),
+  propose: shot(sites.noe, "/images/portfolio/NoeImmo/ToProposePage.png", "proposer un bien"),
+};
+const kosmos = {
+  home: shot(sites.kosmos, "/images/portfolio/Kosmos/HomePage.jpg", "accueil"),
+  photos: shot(sites.kosmos, "/images/portfolio/Kosmos/PhotosPage.jpg", "galerie"),
+  booking: shot(sites.kosmos, "/images/portfolio/Kosmos/ReservationPage.jpg", "réservation"),
+  gift: shot(sites.kosmos, "/images/portfolio/Kosmos/GiftCardPage.jpg", "carte cadeau"),
+};
+const chantier = {
+  home: shot(sites.chantier, "/images/portfolio/ChantierClair/HomePage.webp", "accueil"),
+  demo: shot(sites.chantier, "/images/portfolio/ChantierClair/DemoPage.webp", "démo"),
+  pricing: shot(sites.chantier, "/images/portfolio/ChantierClair/PricingPage.webp", "tarifs"),
 };
 
-const screenshots: MarqueeImage[] = [
-  { src: "/images/portfolio/G3JImmo/HomePage.png", alt: "G3J Immobilier — accueil", ...sites.g3j },
-  { src: "/images/portfolio/PlantProtect/HomePage.png", alt: "Plant Protect — accueil", ...sites.plant },
-  { src: "/images/portfolio/NoeImmo/HomePage.png", alt: "Noé Immobilier — accueil", ...sites.noe },
-  { src: "/images/portfolio/G3JImmo/AdsPage.png", alt: "G3J Immobilier — annonces", ...sites.g3j },
-  { src: "/images/portfolio/PlantProtect/ProjectPage.png", alt: "Plant Protect — projets", ...sites.plant },
-  { src: "/images/portfolio/NoeImmo/ToSellPage.png", alt: "Noé Immobilier — vendre", ...sites.noe },
-  { src: "/images/portfolio/G3JImmo/AdPage.png", alt: "G3J Immobilier — annonce", ...sites.g3j },
-  { src: "/images/portfolio/PlantProtect/MembersPage.png", alt: "Plant Protect — membres", ...sites.plant },
-  { src: "/images/portfolio/NoeImmo/ToProposePage.png", alt: "Noé Immobilier — proposer un bien", ...sites.noe },
-];
-
-// 4 columns × 5 tiles: the 9 pages are cycled with an offset so the same page never sits twice in a column
-const marqueeImages = Array.from({ length: 20 }, (_, i) => screenshots[(i * 4) % screenshots.length]);
+// 4 columns × 5 tiles, top to bottom. Each column shows every project once, and no two columns repeat
+// (16 unique screenshots for 20 slots — the 4 repeats sit in the farthest column)
+const marqueeImages: MarqueeImage[] = [
+  [g3j.home, chantier.home, noe.home, kosmos.home, plant.home],
+  [kosmos.photos, plant.projects, g3j.ads, chantier.demo, noe.sell],
+  [noe.propose, kosmos.booking, chantier.pricing, plant.members, g3j.ad],
+  [kosmos.gift, noe.home, plant.home, g3j.home, chantier.home],
+].flat();
 
 const HeroSection = () => {
   const { translations: t } = useLanguage();
@@ -33,7 +65,7 @@ const HeroSection = () => {
   return (
     <section className="relative w-full min-h-[100svh] overflow-hidden bg-white flex items-center">
       {/* ─── 3D wall of real projects ─── */}
-      <div className="absolute inset-0 lg:left-[30%]">
+      <div className="hero-wall absolute inset-0 lg:left-[30%]">
         <ThreeDMarquee
           images={marqueeImages}
           className="h-full w-full"
@@ -58,7 +90,7 @@ const HeroSection = () => {
 
           <h1
             className="hero-reveal font-display font-semibold text-[2.75rem] leading-[1] sm:text-6xl md:text-7xl xl:text-[5.5rem] tracking-[-0.045em] text-[#0A0A0A] mb-7"
-            style={{ animationDelay: "60ms" }}
+            style={{ animationDelay: "50ms" }}
           >
             {t.hero.title1}
             <br />
@@ -72,14 +104,14 @@ const HeroSection = () => {
 
           <p
             className="hero-reveal text-[#0A0A0A]/65 text-[17px] md:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mb-10"
-            style={{ animationDelay: "120ms" }}
+            style={{ animationDelay: "100ms" }}
           >
             {t.hero.description}
           </p>
 
           <div
             className="hero-reveal flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
-            style={{ animationDelay: "180ms" }}
+            style={{ animationDelay: "150ms" }}
           >
             <a
               href="#contact"

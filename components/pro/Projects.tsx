@@ -184,8 +184,8 @@ const Projects = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12 md:mb-16"
+          transition={{ duration: 0.35 }}
+          className="scroll-reveal flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12 md:mb-16"
         >
           <h2 className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A]">
             <AccentText text={t.projects.title} />

@@ -4,6 +4,7 @@
 // Changes: seamless infinite columns, mouse parallax, clickable tiles with a hover label.
 import React, { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -81,25 +82,44 @@ export const ThreeDMarquee = ({
 const Tile = ({ image, hidden }: { image: MarqueeImage; hidden: boolean }) => {
   const content = (
     <div className="relative w-full aspect-[16/10] overflow-hidden rounded-lg ring-1 ring-[#0A0A0A]/5 shadow-sm bg-white transition-all duration-300 group-hover/tile:-translate-y-2.5 group-hover/tile:shadow-2xl group-hover/tile:shadow-[#533AFC]/20 group-hover/tile:ring-[#533AFC]/40">
-      <Image src={image.src} alt={hidden ? "" : image.alt} fill sizes="420px" className="object-cover object-top" draggable={false} />
+      <Image
+        src={image.src}
+        alt={hidden ? "" : image.alt}
+        fill
+        // Real rendered width: 406px column × the wrapper scale (0.55 / 0.75 / 0.9 / 1 by breakpoint)
+        sizes="(min-width: 1280px) 406px, (min-width: 1024px) 366px, (min-width: 640px) 305px, 224px"
+        className="object-cover object-top opacity-80 transition-opacity duration-300 group-hover/tile:opacity-100"
+        draggable={false}
+      />
       {image.label && (
         <span className="absolute left-3 bottom-3 rounded-full bg-[#0A0A0A]/85 px-3.5 py-1.5 text-[15px] font-medium text-white opacity-0 translate-y-1 transition-all duration-300 group-hover/tile:opacity-100 group-hover/tile:translate-y-0">
-          {image.label} →
+          {image.label}
+          {image.href && " →"}
         </span>
       )}
     </div>
   );
 
+  const linkProps = {
+    tabIndex: hidden ? -1 : undefined,
+    "aria-hidden": hidden || undefined,
+    className: "group/tile block",
+  };
+
   return (
     // Padding instead of gap so two copies of a column are exactly twice one copy's height
     <div className="relative w-full pb-8">
       <GridLineHorizontal className="-top-4" offset="20px" />
-      {image.href ? (
-        <a href={image.href} tabIndex={hidden ? -1 : undefined} aria-hidden={hidden || undefined} className="group/tile block">
+      {!image.href ? (
+        <div className="group/tile">{content}</div>
+      ) : image.href.startsWith("/") ? (
+        <Link href={image.href} {...linkProps}>
+          {content}
+        </Link>
+      ) : (
+        <a href={image.href} {...linkProps}>
           {content}
         </a>
-      ) : (
-        <div className="group/tile">{content}</div>
       )}
     </div>
   );

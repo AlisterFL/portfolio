@@ -6,7 +6,7 @@ import { legal } from "@/lib/legal";
 export const metadata: Metadata = {
   title: "Politique de confidentialité · Alister Flandrinck",
   description:
-    "Quelles données personnelles sont traitées sur alisterflandrinck.com, pourquoi, combien de temps, et comment exercer vos droits.",
+    "Quelles données personnelles sont traitées sur alisterflandrinck.fr, pourquoi, combien de temps, et comment exercer vos droits.",
   alternates: { canonical: "/confidentialite" },
 };
 

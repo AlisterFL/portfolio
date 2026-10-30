@@ -108,11 +108,11 @@ body {
   }
 }
 
-/* Hero entrance — pure CSS so it plays before hydration */
+/* Hero entrance — pure CSS so it plays before hydration; starts immediately, no delay */
 @keyframes hero-reveal {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -121,11 +121,28 @@ body {
 }
 
 .hero-reveal {
-  animation: hero-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: hero-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* The 3D wall fades in right away under the headline */
+@keyframes hero-wall-reveal {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-wall {
+  animation: hero-wall-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-reveal {
+  .hero-reveal,
+  .hero-wall {
     animation: none;
   }
 }
@@ -210,5 +227,20 @@ body {
   .page-progress {
     animation: none;
     display: none;
+  }
+}
+
+/* Scroll reveals are off on desktop: content is shown at once, so fast scrolling never shows blank blocks.
+   framer-motion writes its start state as inline styles, so only !important can override them here. */
+@media (min-width: 768px) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .scroll-reveal-bar {
+    height: var(--bar-height) !important;
+  }
+  .scroll-reveal-stroke {
+    stroke-dashoffset: 0 !important;
   }
 }
