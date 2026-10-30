@@ -229,3 +229,18 @@ body {
     display: none;
   }
 }
+
+/* Scroll reveals are off on desktop: content is shown at once, so fast scrolling never shows blank blocks.
+   framer-motion writes its start state as inline styles, so only !important can override them here. */
+@media (min-width: 768px) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .scroll-reveal-bar {
+    height: var(--bar-height) !important;
+  }
+  .scroll-reveal-stroke {
+    stroke-dashoffset: 0 !important;
+  }
+}

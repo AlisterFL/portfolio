@@ -19,7 +19,7 @@ const FAQItem = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       viewport={{ once: true, margin: "0px 0px 15% 0px" }}
-      className={`border border-[#0A0A0A]/[0.06] rounded-2xl transition-all duration-300 ${
+      className={`scroll-reveal border border-[#0A0A0A]/[0.06] rounded-2xl transition-all duration-300 ${
         isOpen
           ? "bg-white shadow-md shadow-[#533AFC]/[0.04] border-[#533AFC]/15"
           : "bg-white hover:border-[#0A0A0A]/[0.1]"
@@ -79,7 +79,7 @@ const FAQ = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px 15% 0px" }}
             transition={{ duration: 0.35 }}
-            className="text-center mb-14"
+            className="scroll-reveal text-center mb-14"
           >
             <h2 className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] mb-4">
               <AccentText text={t.faq.title} />

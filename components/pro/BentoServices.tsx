@@ -36,7 +36,7 @@ const BentoServices = () => {
         <motion.div
           {...fadeInUp}
           transition={{ duration: 0.35 }}
-          className="mb-16"
+          className="scroll-reveal mb-16"
         >
           <h2 className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] max-w-2xl">
             <AccentText text={t.services.title} />
@@ -49,7 +49,7 @@ const BentoServices = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
-            className="md:col-span-2 lg:col-span-2"
+            className="scroll-reveal md:col-span-2 lg:col-span-2"
           >
             <GlowCard
 
@@ -108,6 +108,7 @@ const BentoServices = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
+            className="scroll-reveal"
           >
             <GlowCard
               customSize
@@ -134,14 +135,15 @@ const BentoServices = () => {
                         delay: i * 0.025,
                         ease: [0.22, 1, 0.36, 1],
                       }}
-                      className="flex-1 rounded-t-md transition-all duration-300 group-hover/seo:scale-y-110 origin-bottom"
+                      className="scroll-reveal-bar flex-1 rounded-t-md transition-all duration-300 group-hover/seo:scale-y-110 origin-bottom"
                       style={{
                         background:
                           i >= 9
                             ? "linear-gradient(to top, #533AFC, #7C5CFC)"
                             : `rgba(83, 58, 252, ${0.06 + i * 0.02})`,
                         transitionDelay: `${i * 20}ms`,
-                      }}
+                        "--bar-height": `${h}%`,
+                      } as React.CSSProperties}
                     />
                   ))}
                 </div>
@@ -153,6 +155,7 @@ const BentoServices = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
+            className="scroll-reveal"
           >
             <GlowCard
 
@@ -174,7 +177,7 @@ const BentoServices = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.25 }}
-                      className="flex items-center gap-2.5 bg-[#FCFDFE] rounded-lg px-3 py-2 border border-black/[0.04]"
+                      className="scroll-reveal flex items-center gap-2.5 bg-[#FCFDFE] rounded-lg px-3 py-2 border border-black/[0.04]"
                     >
                       <div className="w-4 h-4 rounded-full bg-[#533AFC]/10 flex items-center justify-center shrink-0">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#533AFC]" />
@@ -193,6 +196,7 @@ const BentoServices = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
+            className="scroll-reveal"
           >
             <GlowCard
               customSize
@@ -217,6 +221,7 @@ const BentoServices = () => {
                         strokeWidth="5"
                         strokeLinecap="round"
                         strokeDasharray={2 * Math.PI * 34}
+                        className="scroll-reveal-stroke"
                         initial={{ strokeDashoffset: 2 * Math.PI * 34 }}
                         whileInView={{ strokeDashoffset: 0 }}
                         viewport={{ once: true }}
@@ -242,7 +247,7 @@ const BentoServices = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.25 }}
-                      className="flex items-center justify-between"
+                      className="scroll-reveal flex items-center justify-between"
                     >
                       <span className="text-[12px] text-[#0A0A0A]/60">{item}</span>
                       <Check size={14} strokeWidth={2.5} className="text-[#533AFC]" />
@@ -257,6 +262,7 @@ const BentoServices = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
+            className="scroll-reveal"
           >
             <GlowCard
               customSize
@@ -375,7 +381,7 @@ const BentoServices = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
-            className="md:col-span-2"
+            className="scroll-reveal md:col-span-2"
           >
             <GlowCard
               customSize
@@ -402,6 +408,7 @@ const BentoServices = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
+            className="scroll-reveal"
           >
             <GlowCard
               customSize

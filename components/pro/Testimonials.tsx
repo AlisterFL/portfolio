@@ -35,12 +35,12 @@ const Testimonials = () => {
         <motion.h2
           {...fadeInUp}
           transition={{ duration: 0.35 }}
-          className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] mb-14 md:mb-20"
+          className="scroll-reveal font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] mb-14 md:mb-20"
         >
           <AccentText text={tr.testimonials.title} />
         </motion.h2>
 
-        <motion.div {...fadeInUp} transition={{ duration: 0.35 }} className="max-w-5xl mx-auto">
+        <motion.div {...fadeInUp} transition={{ duration: 0.35 }} className="scroll-reveal max-w-5xl mx-auto">
           <AnimatedTestimonials testimonials={testimonials} />
         </motion.div>
       </div>

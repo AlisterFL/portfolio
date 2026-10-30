@@ -24,7 +24,7 @@ const Contact = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
-            className="flex flex-col items-center mb-8"
+            className="scroll-reveal flex flex-col items-center mb-8"
           >
             <div className="relative w-24 h-24 rounded-full overflow-hidden bg-white ring-4 ring-white shadow-lg shadow-[#533AFC]/10 mb-3">
               <Image
@@ -47,14 +47,14 @@ const Contact = () => {
           <motion.h2
             {...fadeInUp}
             transition={{ duration: 0.35 }}
-            className="font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] mb-4"
+            className="scroll-reveal font-display text-3xl md:text-5xl font-normal tracking-tight text-[#0A0A0A] mb-4"
           >
             <AccentText text={t.contact.title} />
           </motion.h2>
           <motion.p
             {...fadeInUp}
             transition={{ duration: 0.35 }}
-            className="text-[#0A0A0A]/60 text-[16px] mb-12"
+            className="scroll-reveal text-[#0A0A0A]/60 text-[16px] mb-12"
           >
             {t.contact.description}
           </motion.p>
@@ -63,7 +63,7 @@ const Contact = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="scroll-reveal flex flex-col sm:flex-row gap-4 justify-center mb-16"
           >
             <a
               href="mailto:alisterflandrinck@gmail.com"
@@ -97,6 +97,7 @@ const Contact = () => {
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.35 }}
+            className="scroll-reveal"
           >
             <a
               href="mailto:alisterflandrinck@gmail.com"
