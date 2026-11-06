@@ -1,0 +1,3 @@
+# app-ads.txt de alisterflandrinck.fr (Idle Ski Empire: Resort Tycoon)
+google.com, pub-1760310703588958, DIRECT, f08c47fec0942fa0
+# AppLovin : coller ici les lignes données par le tableau de bord MAX (une fois le compte confirmé)
