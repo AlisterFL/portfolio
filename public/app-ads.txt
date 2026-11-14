@@ -1,3 +1,4 @@
 # app-ads.txt de alisterflandrinck.fr (Idle Ski Empire: Resort Tycoon)
+# À la RACINE du domaine du site déclaré dans la fiche App Store (URL marketing / assistance) : https://alisterflandrinck.fr/app-ads.txt
+# Seule régie : Google AdMob (éditeur pub-1760310703588958). f08c47fec0942fa0 = identifiant de Google dans le registre TAG.
 google.com, pub-1760310703588958, DIRECT, f08c47fec0942fa0
-# AppLovin : coller ici les lignes données par le tableau de bord MAX (une fois le compte confirmé)
